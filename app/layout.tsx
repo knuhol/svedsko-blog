@@ -1,15 +1,41 @@
 import { type ReactNode } from 'react'
-import { Crete_Round, Work_Sans } from 'next/font/google'
+import { Metadata } from 'next'
 
-import '@/styles/globals.scss'
-import '@/styles/bootstrap.scss'
+import { Providers } from '@/app/providers'
+import siteConfig from '@/config/site.config.json'
 
-const workSans = Work_Sans({ weight: ['500', '600'], display: 'swap', subsets: ['latin-ext'] })
+import '@/template/styles/bootstrap.scss'
+import '@/template/styles/globals.scss'
 
+export const metadata: Metadata = {
+  title: siteConfig.metaData.title,
+  keywords: siteConfig.metaData.keyword,
+  authors: { name: siteConfig.metaData.author }, // TODO: Add URL
+  description: siteConfig.metaData.description,
+  openGraph: {
+    images: [siteConfig.metaData.ogImage],
+    url: siteConfig.baseURL,
+    title: siteConfig.metaData.title,
+    description: siteConfig.metaData.description,
+    siteName: siteConfig.metaData.title,
+    locale: 'cs_CZ',
+    type: 'website',
+  },
+}
+
+// TODO: Optimise fonts
 const RootLayout = ({ children }: { children: ReactNode }) => {
   return (
-    <html lang="en">
-      <body className={workSans.className}>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Crete+Round&family=Work+Sans:wght@500;600&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body>
+        <Providers>{children}</Providers>
+      </body>
     </html>
   )
 }

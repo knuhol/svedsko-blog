@@ -2,20 +2,29 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { TinaMarkdown } from 'tinacms/dist/rich-text'
 
-import { formatDate } from '@/utils/formatDate'
-import { readingTime } from '@/utils/readingTime'
-import { truncateString } from '@/utils/truncateString'
-import { IconCalendarEvent, IconClock } from '@tabler/icons-react'
+import { formatDate } from '@/template/utils/formatDate'
+import { readingTime } from '@/template/utils/readingTime'
+import { truncateString } from '@/template/utils/truncateString'
+import siteConfig from '@/config/site.config.json'
+import {
+  IconArrowUpRight,
+  IconBrandFacebook,
+  IconBrandLinkedin,
+  IconBrandReddit,
+  IconBrandTwitter,
+  IconCalendarEvent,
+  IconClock,
+} from '@tabler/icons-react'
 
 const Post = ({
   post: {
     slug,
     content,
-    frontMatter: { title, image, date, author, description, tags },
+    frontMatter: { title, image, date, author, tags },
   },
   authors,
-  postColumns,
 }) => {
+  let pageUrl = `${siteConfig.baseURL.replace(/\/$|$/, '/')}blog/${slug}`
   return (
     <section className="section-sm pb-0">
       <div className="container">
@@ -30,7 +39,7 @@ const Post = ({
                     href={`/author/${author.replace(/ /g, '-').toLowerCase()}`}
                     className="card-meta-author"
                   >
-                    {authors?.map((authorPage, i) =>
+                    {authors.map((authorPage, i) =>
                       author.replace(/ /g, '-').toLowerCase() === authorPage.authorSlug ? (
                         <span key={i}>
                           <Image
@@ -45,7 +54,7 @@ const Post = ({
                       ),
                     )}
                     <i className="d-inline-block ms-2 ps-1 fst-normal">
-                      by <span>{author}</span>
+                      {author === 'Knut Holm' ? 'napsal' : 'napsala'} <span>{author}</span>
                     </i>
                   </Link>
                 </li>
@@ -54,7 +63,7 @@ const Post = ({
                   <i className="me-2">
                     <IconClock size={18} />
                   </i>
-                  {/*<span>{readingTime(content)} min read</span>*/}
+                  <span>přečtete za {readingTime(JSON.stringify(content))} minut</span>
                 </li>
                 <li className="list-inline-item mt-2">—</li>
                 <li className="list-inline-item mt-2">
@@ -81,64 +90,53 @@ const Post = ({
           </div>
           <div className="col-lg-2 post-share-block order-1 order-lg-0 mt-5 mt-lg-0">
             <div className="position-sticky" style={{ top: 150 + 'px' }}>
-              <span className="d-inline-block mb-3 small">SHARE</span>
-              {/*<ul className="social-share icon-box">*/}
-              {/*  <li className="d-inline-block d-lg-block me-2 mb-2">*/}
-              {/*    <a*/}
-              {/*      href={`https://twitter.com/intent/tweet?text=${title}&url=${pageUrl}`}*/}
-              {/*      target="_blank"*/}
-              {/*      rel="noopener noreferrer"*/}
-              {/*    >*/}
-              {/*      <i>*/}
-              {/*        <IconBrandTwitter size={18} />*/}
-              {/*      </i>*/}
-              {/*    </a>*/}
-              {/*  </li>*/}
-              {/*  <li className="d-inline-block d-lg-block me-2 mb-2">*/}
-              {/*    <a*/}
-              {/*      href={`https://www.facebook.com/sharer.php?u=${pageUrl}&quote=${title}`}*/}
-              {/*      target="_blank"*/}
-              {/*      rel="noopener noreferrer"*/}
-              {/*    >*/}
-              {/*      <i>*/}
-              {/*        <IconBrandFacebook size={18} />*/}
-              {/*      </i>*/}
-              {/*    </a>*/}
-              {/*  </li>*/}
-              {/*  <li className="d-inline-block d-lg-block me-2 mb-2">*/}
-              {/*    <a*/}
-              {/*      href={`https://www.linkedin.com/sharing/share-offsite/?url=${pageUrl}`}*/}
-              {/*      target="_blank"*/}
-              {/*      rel="noopener noreferrer"*/}
-              {/*    >*/}
-              {/*      <i>*/}
-              {/*        <IconBrandLinkedin size={18} />*/}
-              {/*      </i>*/}
-              {/*    </a>*/}
-              {/*  </li>*/}
-              {/*  <li className="d-inline-block d-lg-block me-2 mb-2">*/}
-              {/*    <a*/}
-              {/*      href={`https://www.reddit.com/submit?url=${pageUrl}`}*/}
-              {/*      target="_blank"*/}
-              {/*      rel="noopener noreferrer"*/}
-              {/*    >*/}
-              {/*      <i>*/}
-              {/*        <IconBrandReddit size={18} />*/}
-              {/*      </i>*/}
-              {/*    </a>*/}
-              {/*  </li>*/}
-              {/*  <li className="d-inline-block d-lg-block me-2 mb-2">*/}
-              {/*    <a*/}
-              {/*      href={`https://www.pinterest.com/pin/create/button/?&text=${title}&url=${pageUrl}&description=${title}`}*/}
-              {/*      target="_blank"*/}
-              {/*      rel="noopener noreferrer"*/}
-              {/*    >*/}
-              {/*      <i>*/}
-              {/*        <IconBrandPinterest size={18} />*/}
-              {/*      </i>*/}
-              {/*    </a>*/}
-              {/*  </li>*/}
-              {/*</ul>*/}
+              <span className="d-inline-block mb-3 small">SDÍLET</span>
+              <ul className="social-share icon-box">
+                <li className="d-inline-block d-lg-block me-2 mb-2">
+                  <a
+                    href={`https://www.facebook.com/sharer.php?u=${pageUrl}&quote=${title}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i>
+                      <IconBrandFacebook size={18} />
+                    </i>
+                  </a>
+                </li>
+                <li className="d-inline-block d-lg-block me-2 mb-2">
+                  <a
+                    href={`https://twitter.com/intent/tweet?text=${title}&url=${pageUrl}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i>
+                      <IconBrandTwitter size={18} />
+                    </i>
+                  </a>
+                </li>
+                <li className="d-inline-block d-lg-block me-2 mb-2">
+                  <a
+                    href={`https://www.linkedin.com/sharing/share-offsite/?url=${pageUrl}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i>
+                      <IconBrandLinkedin size={18} />
+                    </i>
+                  </a>
+                </li>
+                <li className="d-inline-block d-lg-block me-2 mb-2">
+                  <a
+                    href={`https://www.reddit.com/submit?url=${pageUrl}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i>
+                      <IconBrandReddit size={18} />
+                    </i>
+                  </a>
+                </li>
+              </ul>
             </div>
           </div>
           <div className="col-lg-8 post-content-block order-0 order-lg-2">
@@ -146,8 +144,7 @@ const Post = ({
               <TinaMarkdown content={content} />
             </div>
             <ul className="post-meta-tag list-unstyled list-inline mt-5">
-              <li className="list-inline-item">Tags:</li>
-              {tags?.map((t, i) => (
+              {tags.map((t, i) => (
                 <li key={i} className="list-inline-item">
                   <Link
                     href={`/tags/${t.replace(/ /g, '-').toLowerCase()}`}
@@ -166,7 +163,7 @@ const Post = ({
             <div className="col-lg-10">
               <div className="d-block d-md-flex">
                 <Link href={`/author/${author.replace(/ /g, '-').toLowerCase()}`}>
-                  {authors?.map((authorPage, i) =>
+                  {authors.map((authorPage, i) =>
                     author.replace(/ /g, '-').toLowerCase() === authorPage.authorSlug ? (
                       <span key={i}>
                         <Image
@@ -193,7 +190,7 @@ const Post = ({
                       {author}
                     </Link>
                   </h3>
-                  {authors?.map((authorPage, i) =>
+                  {authors.map((authorPage, i) =>
                     author.replace(/ /g, '-').toLowerCase() === authorPage.authorSlug ? (
                       <div key={i}>
                         <TinaMarkdown content={truncateString(authorPage.authorContent, 150)} />
@@ -207,7 +204,10 @@ const Post = ({
                       href={`/author/${author.replace(/ /g, '-').toLowerCase()}`}
                       className="text-dark"
                     >
-                      See all posts by this author <i>{/*<IconArrowUpRight size={20} />*/}</i>
+                      {author === 'Knut Holm'
+                        ? 'Všechny články od tohoto autora'
+                        : 'Všechny články od této autorky'}
+                      <i>{<IconArrowUpRight size={20} />}</i>
                     </Link>
                   </div>
                 </div>
@@ -220,4 +220,4 @@ const Post = ({
   )
 }
 
-export default Post
+export { Post }

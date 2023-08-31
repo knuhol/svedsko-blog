@@ -3,26 +3,27 @@ import { defineConfig, defineSchema } from 'tinacms'
 const schema = defineSchema({
   collections: [
     {
-      label: 'Page Content',
-      name: 'page',
-      path: 'content/page',
-      format: 'mdx',
+      label: 'Author',
+      name: 'author',
+      path: 'content/author',
       fields: [
         {
           name: 'body',
-          label: 'Main Content',
+          label: 'About author',
           type: 'rich-text',
           isBody: true,
         },
-      ],
-      ui: {
-        router: ({ document }) => {
-          if (document._sys.filename === 'home') {
-            return `/`
-          }
-          return undefined
+        {
+          type: 'string',
+          label: 'Name',
+          name: 'name',
         },
-      },
+        {
+          type: 'string',
+          label: 'Image',
+          name: 'image',
+        },
+      ],
     },
     {
       label: 'Blog Posts',
@@ -30,12 +31,12 @@ const schema = defineSchema({
       path: 'content/post',
       fields: [
         {
-          type: 'datetime',
+          type: 'string',
           label: 'Title',
           name: 'title',
         },
         {
-          type: 'string',
+          type: 'datetime',
           label: 'Date',
           name: 'date',
         },

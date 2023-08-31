@@ -2,11 +2,10 @@ import { client } from "@/tina/__generated__/client"
 import { Home } from '@/components/Home'
 
 const HomePage = async () => {
-  const { data, query, variables } = await client.queries.page({
-    relativePath: 'home.mdx',
-  })
+  const posts = await client.queries.postConnection()
+  const authors = await client.queries.authorConnection()
 
-  return <Home data={data} query={query} variables={variables} />
+  return <Home posts={posts} authors={authors} />
 }
 
 export default HomePage

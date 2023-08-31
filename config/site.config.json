@@ -1,0 +1,15 @@
+{
+  "metaData": {
+    "title" : "O Švédsku a tak",
+    "description" : "Knut Holm píše blog (nejen) o svém odchodu do Švédska",
+    "author" : "Knut Holm",
+    "keyword" : "",
+    "ogImage" : ""
+  },
+  "baseURL" : "https://svedsko.blog",
+  "logo" : "/logo.png",
+  "logoText" : "O Švédsku a tak",
+  "favicon" : "",
+  "postPerPage" : 6,
+  "postColumns" : 2
+}

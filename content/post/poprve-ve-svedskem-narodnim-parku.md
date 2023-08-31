@@ -5,7 +5,7 @@ category: Turistika
 tags: národní park, příroda, Švédsko, Tyresta, turistika
 slug: poprve-ve-svedskem-narodnim-parku
 author: Knut Holm
-summary: O víkendu jsem se poprvé odvážil opustit hranice Stockholmu a vydal jsem se do jednoho z 29 národních parků Švédska. Jmenuje se _Tyresta_, je ze všech nejblíže Stockholmu a z města se tam dostanete MHD.
+summary: O víkendu jsem se poprvé odvážil opustit hranice Stockholmu a vydal jsem se do jednoho z 29 národních parků Švédska. Jmenuje se Tyresta, je ze všech nejblíže Stockholmu a z města se tam dostanete MHD.
 image: /images/tyresta_1.jpg
 ---
 

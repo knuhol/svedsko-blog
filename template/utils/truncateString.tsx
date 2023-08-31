@@ -1,3 +1,4 @@
+// TODO: Do we need this?
 export const truncateString = (str, max) => {
   if (str === undefined) {
     return ''
