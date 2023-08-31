@@ -1,57 +1,89 @@
-import { defineConfig, defineSchema } from "tinacms";
+import { defineConfig, defineSchema } from 'tinacms'
 
 const schema = defineSchema({
   collections: [
     {
-      label: "Page Content",
-      name: "page",
-      path: "content/page",
-      format: "mdx",
+      label: 'Page Content',
+      name: 'page',
+      path: 'content/page',
+      format: 'mdx',
       fields: [
         {
-          name: "body",
-          label: "Main Content",
-          type: "rich-text",
+          name: 'body',
+          label: 'Main Content',
+          type: 'rich-text',
           isBody: true,
         },
       ],
       ui: {
         router: ({ document }) => {
-          if (document._sys.filename === "home") {
-            return `/`;
+          if (document._sys.filename === 'home') {
+            return `/`
           }
-          return undefined;
+          return undefined
         },
       },
     },
     {
-      label: "Blog Posts",
-      name: "post",
-      path: "content/post",
+      label: 'Blog Posts',
+      name: 'post',
+      path: 'content/post',
       fields: [
         {
-          type: "string",
-          label: "Title",
-          name: "title",
+          type: 'datetime',
+          label: 'Title',
+          name: 'title',
         },
         {
-          type: "string",
-          label: "Blog Post Body",
-          name: "body",
+          type: 'string',
+          label: 'Date',
+          name: 'date',
+        },
+        {
+          type: 'string',
+          label: 'Category',
+          name: 'category',
+        },
+        {
+          type: 'string',
+          label: 'Tags',
+          name: 'tags',
+        },
+        {
+          type: 'string',
+          label: 'Slug',
+          name: 'slug',
+        },
+        {
+          type: 'string',
+          label: 'Author',
+          name: 'author',
+        },
+        {
+          type: 'string',
+          label: 'Summary',
+          name: 'summary',
+        },
+        {
+          type: 'string',
+          label: 'Image',
+          name: 'image',
+        },
+        {
+          type: 'rich-text',
+          label: 'Blog Post Body',
+          name: 'body',
           isBody: true,
-          ui: {
-            component: "textarea",
-          },
         },
       ],
       ui: {
         router: ({ document }) => {
-          return `/posts/${document._sys.filename}`;
+          return `/posts/${document._sys.filename}`
         },
       },
     },
   ],
-});
+})
 
 export const config = defineConfig({
   clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID,
@@ -68,15 +100,15 @@ export const config = defineConfig({
     // },
     // this is the config for the tina cloud media store
     tina: {
-      publicFolder: "public",
-      mediaRoot: "uploads",
+      publicFolder: 'public',
+      mediaRoot: 'uploads',
     },
   },
   build: {
-    publicFolder: "public", // The public asset folder for your framework
-    outputFolder: "admin", // within the public folder
+    publicFolder: 'public', // The public asset folder for your framework
+    outputFolder: 'admin', // within the public folder
   },
   schema,
-});
+})
 
-export default config;
+export default config

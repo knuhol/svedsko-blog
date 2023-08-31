@@ -1,5 +1,5 @@
-import { client } from '../../tina/__generated__/client'
-import { Page } from '../../components/Page'
+import { client } from "@/tina/__generated__/client"
+import { Page } from "@/components/Page"
 
 const PagePage = async ({ params }) => {
   const { data, query, variables } = await client.queries.page({

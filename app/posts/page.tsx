@@ -1,5 +1,5 @@
-import { client } from '../../tina/__generated__/client'
-import { Posts } from '../../components/Posts'
+import { client } from "@/tina/__generated__/client"
+import { Posts } from "@/components/Posts"
 
 const PostsPage = async () => {
   const { data, query, variables } = await client.queries.postConnection()

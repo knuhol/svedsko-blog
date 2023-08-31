@@ -1,5 +1,5 @@
-import { client } from '../../../tina/__generated__/client'
-import { Post } from '../../../components/Post'
+import { client } from "@/tina/__generated__/client"
+import { Post } from "@/components/Post"
 
 export const generateStaticParams = async () => {
   const { data } = await client.queries.postConnection()
@@ -13,6 +13,7 @@ const PostPage = async ({ params }) => {
   const { data, query, variables } = await client.queries.post({
     relativePath: params.slug + '.md',
   })
+
   return <Post data={data} query={query} variables={variables} />
 }
 
