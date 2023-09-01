@@ -66,8 +66,8 @@ const Header = () => {
                 <Link href="/" className="navbar-brand font-weight-bold d-flex mb-0">
                   <Image
                     className="img-fluid"
-                    width={110}
-                    height={35}
+                    width={200}
+                    height={53}
                     src={siteConfig.logo}
                     alt={siteConfig.logoText}
                     placeholder="blur"
