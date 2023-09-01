@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 const NotFound = () => (
   <section className="section-sm pb-0">
-    <div className="container" style={{ minHeight: 'calc(100vh - 335px)' }}>
+    <div className="container">
       <div className="row">
         <div className="col-12">
           <div className="text-center">

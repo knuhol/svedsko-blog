@@ -7,7 +7,7 @@ export const Layout = (props) => {
       <header>
         <Header />
       </header>
-      <main>{props.children}</main>
+      <main style={{ minHeight: 'calc(100vh - 235px)' }}>{props.children}</main>
       <footer>
         <Footer />
       </footer>

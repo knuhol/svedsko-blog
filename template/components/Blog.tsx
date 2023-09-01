@@ -14,7 +14,7 @@ interface Props {
 
 const Blog = ({ posts, authors, currentPage, numberOfPages }) => {
   return (
-    <>
+    <section>
       <PageHeaderBlock title="Všechny články" blogPage={true} />
       <div className="container">
         <div className="row gy-5 gx-4 g-xl-5">
@@ -29,7 +29,7 @@ const Blog = ({ posts, authors, currentPage, numberOfPages }) => {
           <Pagination currentPage={currentPage} numberOfPages={numberOfPages} />
         </div>
       </div>
-    </>
+    </section>
   )
 }
 

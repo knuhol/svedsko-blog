@@ -7,7 +7,6 @@ import { Breadcrumb } from '@/template/components/Breadcrumb'
 type Breadcrumbs = Array<{
   href: string
   label: string
-  isCurrent: boolean
 }>
 
 const PageHeaderBlock = ({ title, blogPage }) => {
@@ -26,7 +25,6 @@ const PageHeaderBlock = ({ title, blogPage }) => {
       return {
         href,
         label: path.charAt(0).toUpperCase() + path.slice(1),
-        isCurrent: index === pathArray.length - 1,
       }
     })
 
@@ -56,7 +54,7 @@ const PageHeaderBlock = ({ title, blogPage }) => {
               </h1>
 
               <Breadcrumb blogPage={blogPage}>
-                <BreadcrumbItem isCurrent={pathname === '/'} href="/">
+                <BreadcrumbItem href="/">
                   <i
                     className="d-inline-block text-dark"
                     style={{ transform: 'translateY(-' + 2 + 'px)' }}
@@ -85,7 +83,6 @@ const PageHeaderBlock = ({ title, blogPage }) => {
                     <BreadcrumbItem
                       key={breadcrumb.href}
                       href={breadcrumb.href}
-                      isCurrent={breadcrumb.isCurrent}
                     >
                       {breadcrumb.label}
                     </BreadcrumbItem>

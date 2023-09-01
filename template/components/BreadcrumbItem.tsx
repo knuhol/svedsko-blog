@@ -1,18 +1,18 @@
 import Link from 'next/link'
 import { type ReactNode } from 'react'
+import { usePathname } from 'next/navigation'
 
 interface Props {
   children: ReactNode | ReactNode[]
   href: string
-  isCurrent: boolean
 }
 
-const BreadcrumbItem = ({ children, href, isCurrent, ...props }: Props) => {
+const BreadcrumbItem = ({ children, href }: Props) => {
+  const pathname = usePathname()
+
   return (
-    <li className="d-inline ms-3" {...props}>
-      <Link href={href} passHref>
-        {children}
-      </Link>
+    <li className="d-inline ms-3">
+      {pathname.includes('/stranka') ? children : <Link href={href}>{children}</Link>}
     </li>
   )
 }

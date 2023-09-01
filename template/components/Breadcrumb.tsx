@@ -5,6 +5,7 @@ interface Props {
   blogPage: boolean
 }
 
+// TODO: Improve loading
 const Breadcrumb = ({ children, blogPage }: Props) => {
   const childrenArray = Children.toArray(children)
 
