@@ -15,6 +15,14 @@ import {
   IconCalendarEvent,
   IconClock,
 } from '@tabler/icons-react'
+import { TemplateAuthors, TemplatePost } from '@/types/template'
+import { richTextBodyToString } from '@/utils/richTextBodyToString'
+import { getAuthorByName } from '@/utils/getAuthorByName'
+
+interface Props {
+  post: TemplatePost
+  authors: TemplateAuthors
+}
 
 const Post = ({
   post: {
@@ -23,7 +31,7 @@ const Post = ({
     frontMatter: { title, image, date, author, tags },
   },
   authors,
-}) => {
+}: Props) => {
   let pageUrl = `${siteConfig.baseURL.replace(/\/$|$/, '/')}blog/${slug}`
   return (
     <section className="section-sm pb-0">
@@ -39,22 +47,23 @@ const Post = ({
                     href={`/author/${author.replace(/ /g, '-').toLowerCase()}`}
                     className="card-meta-author"
                   >
-                    {authors.map((authorPage, i) =>
-                      author.replace(/ /g, '-').toLowerCase() === authorPage.authorSlug ? (
+                    {authors.map((authorData, i) =>
+                      author === authorData.name ? (
                         <span key={i}>
-                          <Image
-                            src={authorPage.authorFrontMatter.image}
-                            alt={author}
-                            width="26"
-                            height="26"
-                          />
+                          <Image src={authorData.image} alt={author} width="26" height="26" />
                         </span>
                       ) : (
                         ''
                       ),
                     )}
                     <i className="d-inline-block ms-2 ps-1 fst-normal">
-                      {author === 'Knut Holm' ? 'napsal' : 'napsala'} <span>{author}</span>
+                      {getAuthorByName({
+                        authorName: author,
+                        authors,
+                      }).gender === 'male'
+                        ? 'napsal'
+                        : 'napsala'}{' '}
+                      <span>{author}</span>
                     </i>
                   </Link>
                 </li>
@@ -63,7 +72,7 @@ const Post = ({
                   <i className="me-2">
                     <IconClock size={18} />
                   </i>
-                  <span>přečtete za {readingTime(JSON.stringify(content))} minut</span>
+                  <span>přečtete za {readingTime(richTextBodyToString(content))} minut</span>
                 </li>
                 <li className="list-inline-item mt-2">—</li>
                 <li className="list-inline-item mt-2">
@@ -163,17 +172,17 @@ const Post = ({
             <div className="col-lg-10">
               <div className="d-block d-md-flex">
                 <Link href={`/author/${author.replace(/ /g, '-').toLowerCase()}`}>
-                  {authors.map((authorPage, i) =>
-                    author.replace(/ /g, '-').toLowerCase() === authorPage.authorSlug ? (
+                  {authors.map((authorData, i) =>
+                    author === authorData.name ? (
                       <span key={i}>
                         <Image
-                          src={authorPage.authorFrontMatter.image}
+                          src={authorData.image}
                           alt={author}
                           width="155"
                           height="155"
                           className="rounded mr-4 img-fluid"
                           placeholder="blur"
-                          blurDataURL={authorPage.authorFrontMatter.image}
+                          blurDataURL={authorData.image}
                         />
                       </span>
                     ) : (
@@ -190,11 +199,9 @@ const Post = ({
                       {author}
                     </Link>
                   </h3>
-                  {authors.map((authorPage, i) =>
-                    author.replace(/ /g, '-').toLowerCase() === authorPage.authorSlug ? (
-                      <div key={i}>
-                        <TinaMarkdown content={truncateString(authorPage.authorContent, 150)} />
-                      </div>
+                  {authors.map((authorData, i) =>
+                    author === authorData.name ? (
+                      <div key={i}>{truncateString(authorData.summary, 150)}</div>
                     ) : (
                       ''
                     ),
@@ -204,7 +211,10 @@ const Post = ({
                       href={`/author/${author.replace(/ /g, '-').toLowerCase()}`}
                       className="text-dark"
                     >
-                      {author === 'Knut Holm'
+                      {getAuthorByName({
+                        authorName: author,
+                        authors,
+                      }).gender === 'male'
                         ? 'Všechny články od tohoto autora'
                         : 'Všechny články od této autorky'}
                       <i>{<IconArrowUpRight size={20} />}</i>

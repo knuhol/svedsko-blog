@@ -6,21 +6,14 @@ import siteConfig from '@/config/site.config.json'
 
 import '@/template/styles/bootstrap.scss'
 import '@/template/styles/globals.scss'
+import { sharedOgMetadata } from '@/app/sharedOgMetadata'
 
 export const metadata: Metadata = {
   title: siteConfig.metaData.title,
   keywords: siteConfig.metaData.keyword,
   authors: { name: siteConfig.metaData.author }, // TODO: Add URL
   description: siteConfig.metaData.description,
-  openGraph: {
-    images: [siteConfig.metaData.ogImage],
-    url: siteConfig.baseURL,
-    title: siteConfig.metaData.title,
-    description: siteConfig.metaData.description,
-    siteName: siteConfig.metaData.title,
-    locale: 'cs_CZ',
-    type: 'website',
-  },
+  openGraph: { ...sharedOgMetadata },
 }
 
 // TODO: Optimise fonts
@@ -39,6 +32,8 @@ const RootLayout = ({ children }: { children: ReactNode }) => {
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
         <meta name="msapplication-TileColor" content="#ffffff" />
         <meta name="theme-color" content="#ffffff" />
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
       <body>
         <Providers>{children}</Providers>

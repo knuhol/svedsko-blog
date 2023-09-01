@@ -3,12 +3,13 @@ import type { Metadata, ResolvingMetadata } from 'next'
 import { client } from '@/tina/__generated__/client'
 import { Post } from '@/components/Post'
 import siteConfig from '@/config/site.config.json'
+import { sharedOgMetadata } from '@/app/sharedOgMetadata'
 
 export const generateStaticParams = async () => {
   const { data } = await client.queries.postConnection()
 
-  return data.postConnection.edges.map((x) => {
-    return { params: { slug: x.node._sys.filename } }
+  return data.postConnection.edges.map((edge) => {
+    return { params: { slug: edge.node._sys.filename } }
   })
 }
 
@@ -31,6 +32,7 @@ export const generateMetadata = async (
     description: data.post.summary,
     keywords: data.post.tags,
     openGraph: {
+      ...sharedOgMetadata,
       title: data.post.title,
       images: [data.post.image],
       url: `${siteConfig.baseURL}/${params.slug}`,
@@ -42,12 +44,13 @@ export const generateMetadata = async (
   }
 }
 
-const PostPage = async ({ params }) => {
-  const { data, query, variables } = await client.queries.post({
+const BlogPostPage = async ({ params }) => {
+  const post = await client.queries.post({
     relativePath: params.slug + '.md',
   })
+  const authors = await client.queries.authorConnection()
 
-  return <Post data={data} query={query} variables={variables} />
+  return <Post post={post} authors={authors} />
 }
 
-export default PostPage
+export default BlogPostPage

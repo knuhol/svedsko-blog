@@ -3,7 +3,6 @@ title: Když na Švédy přijde jaro
 date: 2018-04-14 23:02
 category: Život ve Švédsku
 tags: Švédsko, počasí, jaro, příroda, koupání, Hellasgården, WTF
-slug: kdyz-na-svedy-prijde-jaro
 author: Knut Holm
 summary: Počasí. Nesmrtelné téma všech small talků ve výtahu a vděčný icebreaker na první rande. Ve Švédsku jsou hovory o počasí ještě legendárnější než kdekoliv jinde, a to nejen kvůli velkému množství vtipů, které se na jeho účet pronášejí. Správný Švéd si na počasí stěžuje při každé příležitosti a je to naprosto jediné téma, u kterého snese kritiku na svou domovinu. Pojďme nyní nahlédnout pod pokličku tomu, jak seveřané reagují na změnu teplot a jak vypadá švédské jaro.
 image: /images/pocasi_8.jpg

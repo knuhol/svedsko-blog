@@ -5,23 +5,25 @@ import Link from 'next/link'
 
 import { Layout } from './Layout'
 
-const Posts = ({ query, variables, data }) => {
-  const { data: tinaData } = useTina({
-    query,
-    variables,
-    data,
-  })
-  const postsList = tinaData.postConnection.edges
-
+const Posts = ({ authors, posts, currentPage, numberOfPages }) => {
   return (
-    <Layout>
-      <h1>Posts</h1>
-      <div>
-        {postsList.map((post) => (
-          <div key={post.node.id}>
-            <Link href={`/posts/${post.node._sys.filename}`}>{post.node.title}</Link>
-          </div>
-        ))}
+    <Layout metaTitle="All Posts">
+      <PageHeaderBlock title="All posts" blogPage={true} />
+
+      <div className="container">
+        <div className="row gy-5 gx-4 g-xl-5">
+          {(
+              <div
+                key={i}
+                className={postConfig.postColumns == 3 ? 'col-lg-4 col-md-6' : 'col-lg-6'}
+              >
+                <Post post={post} authors={authors} postColumns={postConfig.postColumns} />
+              </div>
+            ),
+          )}
+
+          <Pagination currentPage={currentPage} numberOfPages={numberOfPages} />
+        </div>
       </div>
     </Layout>
   )

@@ -4,10 +4,18 @@ import { IconCalendarEvent, IconClock } from '@tabler/icons-react'
 
 import { formatDate } from '@/template/utils/formatDate'
 import { readingTime } from '@/template/utils/readingTime'
+import { getAuthorByName } from '@/utils/getAuthorByName'
+import { TemplateAuthors, TemplatePost } from '@/types/template'
+import {richTextBodyToString} from "@/utils/richTextBodyToString";
+
+interface Props {
+  authors: TemplateAuthors
+  postColumns: number
+  post: TemplatePost
+}
 
 // TODO: Number of tags
-// TODO: Rename this
-const PostVertical = ({
+const PostOverview = ({
   post: {
     slug,
     content,
@@ -15,8 +23,7 @@ const PostVertical = ({
   },
   authors,
   postColumns,
-}) => {
-  console.log(author.replace(/ /g, '-').toLowerCase(), authors)
+}: Props) => {
   return (
     <article
       className={`card post-card h-100 border-0 bg-transparent ${
@@ -24,7 +31,7 @@ const PostVertical = ({
       }`}
     >
       <div className="card-body">
-        <Link href={`/posts/${slug}`} className="d-block" title={title}>
+        <Link href={`/blog/${slug}`} className="d-block" title={title}>
           <div className="post-image position-relative">
             <Image
               className="rounded img-fluid"
@@ -50,16 +57,14 @@ const PostVertical = ({
             <i className="me-2">
               <IconClock size={18} />
             </i>
-            <span>přečtete za {readingTime(content)}</span>
+            <span>přečtete za {readingTime(richTextBodyToString(content))}</span>
           </li>
         </ul>
 
-        <Link href={`/posts/${slug}`} className="d-block" title={title}>
+        <Link href={`/blog/${slug}`} className="d-block" title={title}>
           <h3 className={`post-title mb-3 ${postColumns == 3 ? 'h4' : ''}`}>{title}</h3>
         </Link>
-        <p className={postColumns == 3 ? 'small' : ''}>
-          {description}
-        </p>
+        <p className={postColumns == 3 ? 'small' : ''}>{description}</p>
       </div>
       <div className="card-footer border-top-0 bg-transparent p-0">
         <ul className="card-meta list-inline">
@@ -70,27 +75,28 @@ const PostVertical = ({
               title={`Read all posts by - ${author}`}
             >
               {authors.map(
-                (authorPage, i) =>
-                  author === authorPage.name && (
+                (authorData, i) =>
+                  author === authorData.name && (
                     <span key={i}>
-                      <Image
-                        src={authorPage.image}
-                        alt={author}
-                        width="26"
-                        height="26"
-                      />
+                      <Image src={authorData.image} alt={author} width="26" height="26" />
                     </span>
                   ),
               )}
               <i className="d-inline-block ms-2 ps-1 fst-normal">
-                {author === 'Knut Holm' ? 'napsal' : 'napsala'} <span>{author.split(' ')[0]}</span>
+                {getAuthorByName({
+                  authorName: author,
+                  authors,
+                }).gender === 'male'
+                  ? 'napsal'
+                  : 'napsala'}{' '}
+                <span>{author.split(' ')[0]}</span>
               </i>
             </Link>
           </li>
           <li className="list-inline-item mt-2 text-dark">•</li>
           <li className="list-inline-item mt-2">
             <ul className="card-meta-tag list-inline">
-              {tags.slice(0,4).map((t, i) => (
+              {tags.slice(0, 4).map((t, i) => (
                 <li key={i} className="list-inline-item small">
                   <Link href={`/tags/${t.replace(/ /g, '-').toLowerCase()}`}>{t}</Link>
                 </li>
@@ -103,4 +109,4 @@ const PostVertical = ({
   )
 }
 
-export { PostVertical }
+export { PostOverview }

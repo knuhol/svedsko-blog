@@ -1,4 +1,4 @@
-import { client } from "@/tina/__generated__/client"
+import { client } from '@/tina/__generated__/client'
 import { Home } from '@/components/Home'
 
 const HomePage = async () => {

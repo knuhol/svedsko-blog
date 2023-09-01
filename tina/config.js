@@ -23,6 +23,16 @@ const schema = defineSchema({
           label: 'Image',
           name: 'image',
         },
+        {
+          type: 'string',
+          label: 'Gender',
+          name: 'gender',
+        },
+        {
+          type: 'string',
+          label: 'Summary',
+          name: 'summary',
+        },
       ],
     },
     {
@@ -52,11 +62,6 @@ const schema = defineSchema({
         },
         {
           type: 'string',
-          label: 'Slug',
-          name: 'slug',
-        },
-        {
-          type: 'string',
           label: 'Author',
           name: 'author',
         },
@@ -79,7 +84,7 @@ const schema = defineSchema({
       ],
       ui: {
         router: ({ document }) => {
-          return `/posts/${document._sys.filename}`
+          return `/blog/${document._sys.filename}`
         },
       },
     },

@@ -1,32 +1,42 @@
 'use client'
 
-import { useTina } from 'tinacms/dist/react'
 import { Post as TemplatePost } from '@/template/Components/Post'
+import { TinaAuthors, TinaPost } from '@/types/tina'
+import { richTextBodyToString } from '@/utils/richTextBodyToString'
+import { getGender } from '@/utils/getGender'
+import { Layout } from '@/components/Layout'
+import { useTina } from 'tinacms/dist/react'
 
-import { Layout } from './Layout'
+interface Props {
+  post: TinaPost
+  authors: TinaAuthors
+}
 
-const Post = ({ query, variables, data }) => {
-  const { data: tinaData } = useTina({
-    query,
-    variables,
-    data,
-  })
+const Post = ({ post, authors }: Props) => {
+  const { data: postData } = useTina(post)
 
   return (
     <Layout>
       <TemplatePost
         post={{
-          slug: data.post.slug,
+          slug: postData.post._sys.filename,
           frontMatter: {
-            title: `${data.post.title}`,
-            date: data.post.date,
-            author: data.post.author,
-            tags: data.post.tags.split(', '),
-            image: data.post.image,
+            title: `${postData.post.title}`,
+            date: postData.post.date,
+            author: postData.post.author,
+            tags: postData.post.tags.split(', '),
+            image: postData.post.image,
+            description: richTextBodyToString(postData.post.body),
           },
-          content: tinaData.post.body,
+          content: postData.post.body,
         }}
-        authors={[]} // TODO: Fix this
+        authors={authors.data.authorConnection.edges.map((author) => ({
+          name: author.node.name,
+          image: author.node.image,
+          gender: getGender(author.node.gender),
+          summary: author.node.summary,
+          content: author.node.body,
+        }))}
       />
     </Layout>
   )
