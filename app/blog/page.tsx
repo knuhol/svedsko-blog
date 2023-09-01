@@ -1,11 +1,15 @@
-import { client } from "@/tina/__generated__/client"
-import { Posts } from "@/components/Posts"
+import { client } from '@/tina/__generated__/client'
+import { Blog } from '@/components/Blog'
+import siteConfig from '@/config/site.config.json'
 
-// TODO: Transfer posts to blog
 const BlogPage = async () => {
-  const { data, query, variables } = await client.queries.postConnection()
+  const allPosts = await client.queries.postConnection({ sort: 'date', last: -1 })
+  const numberOfPages = Math.ceil(allPosts.data.postConnection.edges.length / siteConfig.postPerPage)
 
-  return <Posts data={data} query={query} variables={variables} />
+  const posts = await client.queries.postConnection({ sort: 'date',  last: siteConfig.postPerPage })
+  const authors = await client.queries.authorConnection()
+
+  return <Blog posts={posts.data.postConnection.edges} authors={authors} numberOfPages={numberOfPages} currentPage={1} />
 }
 
 export default BlogPage

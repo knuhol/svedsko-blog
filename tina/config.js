@@ -46,7 +46,7 @@ const schema = defineSchema({
           name: 'title',
         },
         {
-          type: 'datetime',
+          type: 'string',
           label: 'Date',
           name: 'date',
         },

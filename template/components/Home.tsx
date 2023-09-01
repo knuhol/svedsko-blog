@@ -1,6 +1,6 @@
-import { BannerBlock } from '@/template/Components/Banner'
+import { BannerBlock } from '@/template/components/Banner'
 import siteConfig from '@/config/site.config.json'
-import { PostOverview } from '@/template/Components/PostOverview'
+import { BlogPostOverview } from '@/template/components/BlogPostOverview'
 import Link from 'next/link'
 import { IconNewSection } from '@tabler/icons-react'
 import {TemplateAuthors, TemplatePosts} from "@/types/template";
@@ -23,9 +23,9 @@ const Home = ({ posts, authors }: Props) => {
           </div>
         </div>
         <div className="row gy-5 gx-4 g-xl-5">
-          {posts.map((post, i) => (
-            <div key={i} className={siteConfig.postColumns == 3 ? 'col-lg-4 col-md-6' : 'col-lg-6'}>
-              <PostOverview post={post} authors={authors} postColumns={siteConfig.postColumns} />
+          {posts.map((post) => (
+            <div key={post.slug} className={siteConfig.postColumns == 3 ? 'col-lg-4 col-md-6' : 'col-lg-6'}>
+              <BlogPostOverview post={post} authors={authors}  />
             </div>
           ))}
 

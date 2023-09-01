@@ -1,21 +1,21 @@
 'use client'
 
-import { useTina } from 'tinacms/dist/react'
-
-import { Layout } from '@/components/Layout'
-import { Home as HomeTemplate } from '@/template/components/Home'
-import { getTags } from '@/utils/getTags'
 import { TinaAuthors, TinaPosts } from '@/types/tina'
+import { Layout } from '@/components/Layout'
+import { Blog as BlogTemplate } from '@/template/components/Blog'
 import { getGender } from '@/utils/getGender'
+import { getTags } from '@/utils/getTags'
 
 interface Props {
-  posts: TinaPosts
+  posts: TinaPosts['data']['postConnection']['edges']
   authors: TinaAuthors
+  numberOfPages: number
+  currentPage: number
 }
 
-const Home = ({ posts, authors }: Props) => (
+const Blog = ({ posts, authors, numberOfPages, currentPage }: Props) => (
   <Layout>
-    <HomeTemplate
+    <BlogTemplate
       authors={authors.data.authorConnection.edges.map(({ node }) => ({
         image: node.image,
         name: node.name,
@@ -23,7 +23,7 @@ const Home = ({ posts, authors }: Props) => (
         summary: node.summary,
         content: node.body,
       }))}
-      posts={posts.data.postConnection.edges.map((post) => ({
+      posts={posts.map((post) => ({
         slug: post.node._sys.filename,
         content: post.node.body,
         frontMatter: {
@@ -35,8 +35,10 @@ const Home = ({ posts, authors }: Props) => (
           image: post.node.image,
         },
       }))}
+      currentPage={currentPage}
+      numberOfPages={numberOfPages}
     />
   </Layout>
 )
 
-export { Home }
+export { Blog }

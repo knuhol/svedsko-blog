@@ -24,7 +24,7 @@ interface Props {
   authors: TemplateAuthors
 }
 
-const Post = ({
+const BlogPost = ({
   post: {
     slug,
     content,
@@ -230,4 +230,4 @@ const Post = ({
   )
 }
 
-export { Post }
+export { BlogPost }

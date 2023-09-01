@@ -1,15 +1,17 @@
 import type { Metadata, ResolvingMetadata } from 'next'
+import { cache } from 'react'
 
 import { client } from '@/tina/__generated__/client'
-import { Post } from '@/components/Post'
+import { BlogPost } from '@/components/BlogPost'
 import siteConfig from '@/config/site.config.json'
 import { sharedOgMetadata } from '@/app/sharedOgMetadata'
+import { notFound } from 'next/navigation'
 
 export const generateStaticParams = async () => {
-  const { data } = await client.queries.postConnection()
+  const slugs = await getCachedSlugs()
 
-  return data.postConnection.edges.map((edge) => {
-    return { params: { slug: edge.node._sys.filename } }
+  return slugs.map((slug) => {
+    return { params: { slug } }
   })
 }
 
@@ -21,9 +23,13 @@ export const generateMetadata = async (
   { params }: MetadataProps,
   parent: ResolvingMetadata,
 ): Promise<Metadata> => {
-  const { data, query, variables } = await client.queries.post({
-    relativePath: params.slug + '.md',
-  })
+  const slugs = await getCachedSlugs()
+
+  if (!slugs.includes(params.slug)) {
+    notFound()
+  }
+
+  const { data } = await getCachedPost(params.slug)
 
   // TODO: Add more
   return {
@@ -45,12 +51,31 @@ export const generateMetadata = async (
 }
 
 const BlogPostPage = async ({ params }) => {
-  const post = await client.queries.post({
-    relativePath: params.slug + '.md',
-  })
+  const slugs = await getCachedSlugs()
+
+  if (!slugs.includes(params.slug)) {
+    notFound()
+  }
+
+  const post = await getCachedPost(params.slug)
   const authors = await client.queries.authorConnection()
 
-  return <Post post={post} authors={authors} />
+  return <BlogPost post={post} authors={authors} />
 }
+
+const getCachedPost = cache(
+  async (slug) =>
+    await client.queries.post({
+      relativePath: slug + '.md',
+    }),
+)
+
+const getCachedSlugs = cache(async () => {
+  const { data } = await client.queries.postConnection()
+
+  return data.postConnection.edges.map((edge) => {
+    return edge.node._sys.filename
+  })
+})
 
 export default BlogPostPage

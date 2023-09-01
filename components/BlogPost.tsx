@@ -1,6 +1,6 @@
 'use client'
 
-import { Post as TemplatePost } from '@/template/Components/Post'
+import { BlogPost as TemplatePost } from '@/template/components/BlogPost'
 import { TinaAuthors, TinaPost } from '@/types/tina'
 import { richTextBodyToString } from '@/utils/richTextBodyToString'
 import { getGender } from '@/utils/getGender'
@@ -12,7 +12,7 @@ interface Props {
   authors: TinaAuthors
 }
 
-const Post = ({ post, authors }: Props) => {
+const BlogPost = ({ post, authors }: Props) => {
   const { data: postData } = useTina(post)
 
   return (
@@ -42,4 +42,4 @@ const Post = ({ post, authors }: Props) => {
   )
 }
 
-export { Post }
+export { BlogPost }
