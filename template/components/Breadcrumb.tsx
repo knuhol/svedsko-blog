@@ -1,3 +1,5 @@
+// credits: https://themeforest.net/item/qurno-minimal-blog-nextjs-template/36625633
+
 import { Fragment, Children, type ReactNode } from 'react'
 
 interface Props {

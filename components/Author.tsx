@@ -1,0 +1,48 @@
+'use client'
+
+import { Layout } from '@/components/Layout'
+import { TinaAuthor, TinaPosts } from '@/types/tina'
+import { getGender } from '@/utils/getGender'
+import { Author as AuthorTemplate } from '@/template/components/Author'
+import { getTags } from '@/utils/getTags'
+import { useTina } from 'tinacms/dist/react'
+
+interface Props {
+  author: TinaAuthor
+  posts: TinaPosts
+}
+
+const Author = ({ author, posts }: Props) => {
+  const { data: authorData } = useTina(author)
+
+  return (
+    <Layout>
+      <AuthorTemplate
+        author={{
+          image: authorData.authors.image,
+          name: authorData.authors.name,
+          gender: getGender(authorData.authors.gender),
+          summary: authorData.authors.summary,
+          content: authorData.authors.body,
+          numberOfPosts: posts.data.postConnection.edges.filter(
+            (post) => post.node.author === authorData.authors.name,
+          ).length,
+        }}
+        posts={posts.data.postConnection.edges.map((post) => ({
+          slug: post.node._sys.filename,
+          content: post.node.body,
+          frontMatter: {
+            title: post.node.title,
+            description: post.node.summary,
+            tags: getTags(post.node.tags),
+            author: post.node.author,
+            date: post.node.date,
+            image: post.node.image,
+          },
+        }))}
+      />
+    </Layout>
+  )
+}
+
+export { Author }

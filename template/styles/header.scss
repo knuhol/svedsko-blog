@@ -1,3 +1,5 @@
+// credits: https://themeforest.net/item/qurno-minimal-blog-nextjs-template/36625633
+
 // start header style
 .header-height-fix {
   height: 116px;
@@ -8,6 +10,7 @@
     height: 105px;
   }
 }
+
 .header-nav {
   position: fixed;
   width: 100%;
@@ -17,7 +20,7 @@
   background-color: $body-background;
   padding: 50px 0 20px;
   transition: transform 0.4s cubic-bezier(0.2, 1, 0.2, 1),
-    padding 0.4s cubic-bezier(0.2, 1, 0.2, 1);
+  padding 0.4s cubic-bezier(0.2, 1, 0.2, 1);
   background-color: rgba($body-background, 0.9);
   backdrop-filter: blur(16px);
 
@@ -28,6 +31,7 @@
   &.header-nav-unpinned {
     transform: translateY(-100%);
   }
+
   &.header-sticky-top {
     box-shadow: 0 0 50px -30px rgba($color-primary, 0.5);
     padding: 20px 0;
@@ -36,6 +40,7 @@
   .navbar-brand {
     cursor: pointer;
     transition: 0.3s;
+
     &:hover {
       opacity: 0.8;
     }
@@ -84,10 +89,12 @@
       padding: 10px 20px !important;
       border-radius: 4px;
     }
+
     &:hover .nav-link {
       background-color: rgba($color-primary, 0.1);
       color: $dark !important;
     }
+
     @media (min-width: 991px) {
       &.dropdown .nav-link.dropdown-toggle {
         padding-right: 35px !important;
@@ -113,25 +120,30 @@
       transform: translate(-50%, -5px);
     }
   }
+
   .dropdown-menu {
     border: 0;
     padding: 12px 8px;
     margin-top: 7px;
   }
+
   .dropdown-menu[data-bs-popper] {
     left: 50%;
     margin-top: 7px;
   }
+
   .dropdown-item {
     font-size: 16px;
     padding: 7px 14px;
     border-radius: 4px;
   }
+
   .dropdown-item.active,
   .dropdown-item:active {
     color: $color-primary;
     background-color: transparent;
   }
+
   .dropdown-item:focus,
   .dropdown-item:hover {
     color: $color-primary;
@@ -150,10 +162,12 @@
       box-shadow: none;
     }
   }
+
   .navbar-toggler[aria-expanded="true"] {
     .d-none {
       display: inline !important;
     }
+
     .d-inline {
       display: none !important;
     }
@@ -183,13 +197,16 @@
     }
   }
 }
+
 .dark {
   header {
     background-color: rgba($body-background-dark, 0.9);
+
     &.header-sticky-top {
       box-shadow: 0 0 50px -30px rgba($color-primary, 0.3);
     }
   }
+
   .header-nav {
     .nav-link,
     .navbar-light .navbar-toggler,
@@ -200,24 +217,29 @@
 
   .search-toggle {
     color: $light;
+
     svg path {
       stroke: $light;
     }
   }
+
   .search-block {
     input {
       color: $white;
       background-color: transparent;
     }
   }
+
   #js-search-loader svg rect {
     fill: $darken !important;
   }
+
   .nav-item:hover .nav-link,
   .search-toggle:hover,
   .dropdown-menu {
     background-color: $darken;
   }
+
   .search-block {
     background-color: darken($darken, 2);
   }

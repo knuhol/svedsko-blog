@@ -1,3 +1,5 @@
+// credits: https://themeforest.net/item/qurno-minimal-blog-nextjs-template/36625633
+
 import { BannerBlock } from '@/template/components/Banner'
 import siteConfig from '@/config/site.config.json'
 import { BlogPostOverview } from '@/template/components/BlogPostOverview'

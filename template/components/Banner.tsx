@@ -1,3 +1,5 @@
+// credits: https://themeforest.net/item/qurno-minimal-blog-nextjs-template/36625633
+
 const BannerBlock = ({ text }) => {
   return (
     <section className="section overflow-hidden banner">

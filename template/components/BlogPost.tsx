@@ -1,3 +1,5 @@
+// credits: https://themeforest.net/item/qurno-minimal-blog-nextjs-template/36625633
+
 import Image from 'next/image'
 import Link from 'next/link'
 import { TinaMarkdown } from 'tinacms/dist/rich-text'
@@ -44,7 +46,7 @@ const BlogPost = ({
               <ul className="card-meta list-inline mb-2">
                 <li className="list-inline-item mt-2">
                   <Link
-                    href={`/author/${author.replace(/ /g, '-').toLowerCase()}`}
+                    href={`/autori/${author.replace(/ /g, '-').toLowerCase()}`}
                     className="card-meta-author"
                   >
                     {authors.map((authorData, i) =>
@@ -171,7 +173,7 @@ const BlogPost = ({
           <div className="row justify-content-center">
             <div className="col-lg-10">
               <div className="d-block d-md-flex">
-                <Link href={`/author/${author.replace(/ /g, '-').toLowerCase()}`}>
+                <Link href={`/autori/${author.replace(/ /g, '-').toLowerCase()}`}>
                   {authors.map((authorData, i) =>
                     author === authorData.name ? (
                       <span key={i}>
@@ -193,7 +195,7 @@ const BlogPost = ({
                 <div className="ms-0 ms-md-4 ps-0 ps-md-3 mt-4 mt-md-0">
                   <h3 className="h4 mb-3">
                     <Link
-                      href={`/author/${author.replace(/ /g, '-').toLowerCase()}`}
+                      href={`/autori/${author.replace(/ /g, '-').toLowerCase()}`}
                       className="text-dark"
                     >
                       {author}
@@ -208,7 +210,7 @@ const BlogPost = ({
                   )}
                   <div className="content">
                     <Link
-                      href={`/author/${author.replace(/ /g, '-').toLowerCase()}`}
+                      href={`/autori/${author.replace(/ /g, '-').toLowerCase()}`}
                       className="text-dark"
                     >
                       {getAuthorByName({

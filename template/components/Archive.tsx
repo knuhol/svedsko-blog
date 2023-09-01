@@ -1,12 +1,16 @@
+// credits: https://themeforest.net/item/qurno-minimal-blog-nextjs-template/36625633
+
 import { TemplatePosts } from '@/types/template'
 import { IconArchive } from '@tabler/icons-react'
 import Link from 'next/link'
-import { PageHeaderBlock } from '@/template/components/PageHeader'
+import { PageHeader } from '@/template/components/PageHeader'
+import { Fragment } from 'react'
 
 interface Props {
   posts: TemplatePosts
 }
 
+// TODO: Add authors?
 const Archive = ({ posts }) => {
   // formatDateByYear
   let formatDateByYear = (a) => {
@@ -33,31 +37,41 @@ const Archive = ({ posts }) => {
 
   return (
     <section>
-      <PageHeaderBlock title="Archiv článků" blogPage={false} />
+      <PageHeader title="Archiv článků" blogPage={false} />
       <div className="container">
         <div className="row">
-          <div className="col-lg-10 mx-auto">
+          <div className="col-12">
             {uniqueYear.map((unqYear) => (
               <div className="archive-block" key={unqYear.toString()}>
                 <h2>
                   <>
                     <i>
-                      <IconArchive size={80} />
+                      <div>
+                        <IconArchive size={80} />
+                      </div>
                     </i>
                     {unqYear}
                   </>
                 </h2>
-                {posts.map((post, i) =>
-                  formatDateByYear(post.frontMatter.date) === unqYear ? (
-                    <div key={i} className="archive-post-item mb-3">
-                      <span className="mx-0 d-inline-block" style={{ width: 120 + 'px' }}>
-                        {formatDateByMonth(post.frontMatter.date)}
-                      </span>
-                      <span>•</span>
-                      <Link href={`/blog/${post.slug}`}>{post.frontMatter.title}</Link>
-                    </div>
-                  ) : null,
-                )}
+                <div className="container g-0">
+                  {posts.map((post) =>
+                    formatDateByYear(post.frontMatter.date) === unqYear ? (
+                      <Fragment key={post.slug}>
+                        <div className="flex-row d-flex">
+                          <div className="d-flex" style={{ flex: '0 0 110px' }}>
+                            {formatDateByMonth(post.frontMatter.date)}
+                          </div>
+                          <div className="d-flex">
+                            <div className="d-inline" style={{ marginRight: 20 }}>
+                              •
+                            </div>
+                            <Link href={`/blog/${post.slug}`}>{post.frontMatter.title}</Link>
+                          </div>
+                        </div>
+                      </Fragment>
+                    ) : null,
+                  )}
+                </div>
               </div>
             ))}
           </div>

@@ -3,8 +3,8 @@ import { defineConfig, defineSchema } from 'tinacms'
 const schema = defineSchema({
   collections: [
     {
-      label: 'Author',
-      name: 'author',
+      label: 'Authors',
+      name: 'authors',
       path: 'content/author',
       fields: [
         {
@@ -34,6 +34,11 @@ const schema = defineSchema({
           name: 'summary',
         },
       ],
+      ui: {
+        router: ({ document }) => {
+          return `/autori/${document._sys.filename}`
+        },
+      },
     },
     {
       label: 'Blog Posts',

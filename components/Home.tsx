@@ -1,7 +1,5 @@
 'use client'
 
-import { useTina } from 'tinacms/dist/react'
-
 import { Layout } from '@/components/Layout'
 import { Home as HomeTemplate } from '@/template/components/Home'
 import { getTags } from '@/utils/getTags'
@@ -16,7 +14,7 @@ interface Props {
 const Home = ({ posts, authors }: Props) => (
   <Layout>
     <HomeTemplate
-      authors={authors.data.authorConnection.edges.map(({ node }) => ({
+      authors={authors.data.authorsConnection.edges.map(({ node }) => ({
         image: node.image,
         name: node.name,
         gender: getGender(node.gender),

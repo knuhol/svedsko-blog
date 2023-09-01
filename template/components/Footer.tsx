@@ -1,4 +1,5 @@
-import siteConfig from '@/config/site.config.json'
+// credits: https://themeforest.net/item/qurno-minimal-blog-nextjs-template/36625633
+
 import Link from 'next/link'
 
 const Footer = () => {

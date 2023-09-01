@@ -19,10 +19,7 @@ interface MetadataProps {
   params: { slug: string }
 }
 
-export const generateMetadata = async (
-  { params }: MetadataProps,
-  parent: ResolvingMetadata,
-): Promise<Metadata> => {
+export const generateMetadata = async ({ params }: MetadataProps): Promise<Metadata> => {
   const slugs = await getCachedSlugs()
 
   if (!slugs.includes(params.slug)) {
@@ -58,7 +55,7 @@ const BlogPostPage = async ({ params }) => {
   }
 
   const post = await getCachedPost(params.slug)
-  const authors = await client.queries.authorConnection()
+  const authors = await client.queries.authorsConnection()
 
   return <BlogPost post={post} authors={authors} />
 }

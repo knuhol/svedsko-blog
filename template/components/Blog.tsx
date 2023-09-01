@@ -1,9 +1,11 @@
+// credits: https://themeforest.net/item/qurno-minimal-blog-nextjs-template/36625633
+
 import { TemplateAuthors, TemplatePost } from '@/types/template'
 
 import siteConfig from '@/config/site.config.json'
 import { BlogPostOverview } from '@/template/components/BlogPostOverview'
 import { Pagination } from '@/template/components/Pagination'
-import { PageHeaderBlock } from '@/template/components/PageHeader'
+import { PageHeader } from '@/template/components/PageHeader'
 
 interface Props {
   posts: TemplatePost
@@ -15,7 +17,7 @@ interface Props {
 const Blog = ({ posts, authors, currentPage, numberOfPages }) => {
   return (
     <section>
-      <PageHeaderBlock title="Všechny články" blogPage={true} />
+      <PageHeader title="Všechny články" blogPage={true} />
       <div className="container">
         <div className="row gy-5 gx-4 g-xl-5">
           {posts.map((post) => (

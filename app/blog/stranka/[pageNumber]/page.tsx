@@ -17,6 +17,7 @@ export const generateStaticParams = async () => {
   })
 }
 
+// TODO: Metadata
 const BlogPage = async ({ params }) => {
   const allPosts = await getCachedPosts()
   const numberOfPages = Math.ceil(
@@ -31,7 +32,7 @@ const BlogPage = async ({ params }) => {
   const endIndex = startIndex + siteConfig.postPerPage
   const posts = allPosts.data.postConnection.edges.splice(startIndex, endIndex)
 
-  const authors = await client.queries.authorConnection()
+  const authors = await client.queries.authorsConnection()
 
   return (
     <Blog
@@ -43,6 +44,7 @@ const BlogPage = async ({ params }) => {
   )
 }
 
+// TODO: Is caching causing problems?
 const getCachedPosts = cache(
   async () => await client.queries.postConnection({ sort: 'date', last: -1 }),
 )

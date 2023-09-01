@@ -1,3 +1,5 @@
+// credits: https://themeforest.net/item/qurno-minimal-blog-nextjs-template/36625633
+
 import Image from 'next/image'
 import Link from 'next/link'
 import { IconCalendarEvent, IconClock } from '@tabler/icons-react'
@@ -68,7 +70,7 @@ const BlogPostOverview = ({
         <ul className="card-meta list-inline">
           <li className="list-inline-item mt-2">
             <Link
-              href={`/author/${author.replace(/ /g, '-').toLowerCase()}`}
+              href={`/autori/${author.replace(/ /g, '-').toLowerCase()}`}
               className="card-meta-author"
               title={`Read all posts by - ${author}`}
             >

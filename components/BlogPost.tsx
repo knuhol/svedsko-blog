@@ -30,7 +30,7 @@ const BlogPost = ({ post, authors }: Props) => {
           },
           content: postData.post.body,
         }}
-        authors={authors.data.authorConnection.edges.map((author) => ({
+        authors={authors.data.authorsConnection.edges.map((author) => ({
           name: author.node.name,
           image: author.node.image,
           gender: getGender(author.node.gender),

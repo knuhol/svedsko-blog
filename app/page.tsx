@@ -7,7 +7,7 @@ const HomePage = async () => {
     last: siteConfig.postPerPage,
     sort: 'date',
   })
-  const authors = await client.queries.authorConnection()
+  const authors = await client.queries.authorsConnection()
 
   return <Home posts={posts} authors={authors} />
 }

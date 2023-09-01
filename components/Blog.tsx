@@ -16,7 +16,7 @@ interface Props {
 const Blog = ({ posts, authors, numberOfPages, currentPage }: Props) => (
   <Layout>
     <BlogTemplate
-      authors={authors.data.authorConnection.edges.map(({ node }) => ({
+      authors={authors.data.authorsConnection.edges.map(({ node }) => ({
         image: node.image,
         name: node.name,
         gender: getGender(node.gender),

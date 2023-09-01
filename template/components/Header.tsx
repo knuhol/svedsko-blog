@@ -1,3 +1,5 @@
+// credits: https://themeforest.net/item/qurno-minimal-blog-nextjs-template/36625633
+
 import Menu from '@/config/menus.json'
 import siteConfig from '@/config/site.config.json'
 import { IconMenu2, IconX } from '@tabler/icons-react'

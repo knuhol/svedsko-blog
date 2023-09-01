@@ -1,3 +1,5 @@
+// credits: https://themeforest.net/item/qurno-minimal-blog-nextjs-template/36625633
+
 import { useEffect, useState } from 'react'
 import { usePathname } from 'next/navigation'
 
@@ -9,7 +11,17 @@ type Breadcrumbs = Array<{
   label: string
 }>
 
-const PageHeaderBlock = ({ title, blogPage }) => {
+const sanitizeBreadcrumbLabel = (string) => {
+  const capitalisedString = string
+    .split('-')
+    .map((word) => {
+      return word[0].toUpperCase() + word.substring(1)
+    })
+    .join(' ')
+  return capitalisedString.replace(/ri/g, 'ři')
+}
+
+const PageHeader = ({ title, blogPage = false }) => {
   const pathname = usePathname()
   const [breadcrumbs, setBreadcrumbs] = useState<Breadcrumbs | undefined>()
 
@@ -24,25 +36,13 @@ const PageHeaderBlock = ({ title, blogPage }) => {
       const href = '/' + pathArray.slice(0, index + 1).join('/')
       return {
         href,
-        label: path.charAt(0).toUpperCase() + path.slice(1),
+        label: sanitizeBreadcrumbLabel(path.charAt(0).toUpperCase() + path.slice(1)),
       }
     })
 
     setBreadcrumbs(breadcrumbs)
   }, [pathname])
 
-  // TODO: Fix this (Czech language)
-  const convertBreadcrumb = (string) => {
-    return (
-      string
-        .replace(/-/g, ' ')
-        .replace(/oe/g, 'ö')
-        .replace(/ae/g, 'ä')
-        .replace(/ue/g, 'ü')
-        .charAt(0)
-        .toUpperCase() + string.slice(1).replace(/-/g, ' ')
-    )
-  }
   return (
     <>
       <section className="section-sm">
@@ -50,7 +50,7 @@ const PageHeaderBlock = ({ title, blogPage }) => {
           <div className="row">
             <div className="col-lg-12 text-center">
               <h1 className="section-title h2 mb-3">
-                <span>{convertBreadcrumb(title)}</span>
+                <span>{title}</span>
               </h1>
 
               <Breadcrumb blogPage={blogPage}>
@@ -80,10 +80,7 @@ const PageHeaderBlock = ({ title, blogPage }) => {
                 </BreadcrumbItem>
                 {breadcrumbs &&
                   breadcrumbs.map((breadcrumb) => (
-                    <BreadcrumbItem
-                      key={breadcrumb.href}
-                      href={breadcrumb.href}
-                    >
+                    <BreadcrumbItem key={breadcrumb.href} href={breadcrumb.href}>
                       {breadcrumb.label}
                     </BreadcrumbItem>
                   ))}
@@ -96,4 +93,4 @@ const PageHeaderBlock = ({ title, blogPage }) => {
   )
 }
 
-export { PageHeaderBlock }
+export { PageHeader }
