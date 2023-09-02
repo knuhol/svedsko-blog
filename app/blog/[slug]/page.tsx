@@ -1,4 +1,4 @@
-import type { Metadata, ResolvingMetadata } from 'next'
+import type { Metadata } from 'next'
 import { cache } from 'react'
 
 import { client } from '@/tina/__generated__/client'
@@ -6,6 +6,22 @@ import { BlogPost } from '@/components/BlogPost'
 import siteConfig from '@/config/site.config.json'
 import { sharedOgMetadata } from '@/app/sharedOgMetadata'
 import { notFound } from 'next/navigation'
+import { createTagMaps } from '@/app/tagSlugs'
+
+const getCachedPost = cache(
+  async (slug) =>
+    await client.queries.post({
+      relativePath: slug + '.md',
+    }),
+)
+
+const getCachedSlugs = cache(async () => {
+  const { data } = await client.queries.postConnection()
+
+  return data.postConnection.edges.map((edge) => {
+    return edge.node._sys.filename
+  })
+})
 
 export const generateStaticParams = async () => {
   const slugs = await getCachedSlugs()
@@ -49,6 +65,7 @@ export const generateMetadata = async ({ params }: MetadataProps): Promise<Metad
 
 const BlogPostPage = async ({ params }) => {
   const slugs = await getCachedSlugs()
+  const { tagToSlugMap } = await createTagMaps()
 
   if (!slugs.includes(params.slug)) {
     notFound()
@@ -57,22 +74,7 @@ const BlogPostPage = async ({ params }) => {
   const post = await getCachedPost(params.slug)
   const authors = await client.queries.authorsConnection()
 
-  return <BlogPost post={post} authors={authors} />
+  return <BlogPost post={post} authors={authors} tagToSlugMap={tagToSlugMap} />
 }
-
-const getCachedPost = cache(
-  async (slug) =>
-    await client.queries.post({
-      relativePath: slug + '.md',
-    }),
-)
-
-const getCachedSlugs = cache(async () => {
-  const { data } = await client.queries.postConnection()
-
-  return data.postConnection.edges.map((edge) => {
-    return edge.node._sys.filename
-  })
-})
 
 export default BlogPostPage

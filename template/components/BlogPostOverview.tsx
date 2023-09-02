@@ -7,15 +7,20 @@ import { IconCalendarEvent, IconClock } from '@tabler/icons-react'
 import { formatDate } from '@/template/utils/formatDate'
 import { readingTime } from '@/template/utils/readingTime'
 import { getAuthorByName } from '@/utils/getAuthorByName'
-import { TemplateAuthors, TemplatePost } from '@/types/template'
+import type { TemplateAuthors, TemplatePost } from '@/types/template'
 import { richTextBodyToString } from '@/utils/richTextBodyToString'
 import siteConfig from '@/config/site.config.json'
+import type { TagMaps } from '@/app/tagSlugs'
+import { slugify } from '@/utils/slugify'
+import { hashTag } from '@/utils/hashTag'
 
 interface Props {
   authors: TemplateAuthors
   post: TemplatePost
+  tagToSlugMap: TagMaps['tagToSlugMap']
 }
 
+// TODO: Pass author slugs
 const BlogPostOverview = ({
   post: {
     slug,
@@ -23,6 +28,7 @@ const BlogPostOverview = ({
     frontMatter: { title, image, date, author, description, tags },
   },
   authors,
+  tagToSlugMap,
 }: Props) => {
   return (
     <article
@@ -70,7 +76,7 @@ const BlogPostOverview = ({
         <ul className="card-meta list-inline">
           <li className="list-inline-item mt-2">
             <Link
-              href={`/autori/${author.replace(/ /g, '-').toLowerCase()}`}
+              href={`/autori/${slugify(author)}`}
               className="card-meta-author"
               title={`Read all posts by - ${author}`}
             >
@@ -94,15 +100,17 @@ const BlogPostOverview = ({
             </Link>
           </li>
           <li className="list-inline-item mt-2 text-dark">•</li>
-          <li className="list-inline-item mt-2">
-            <ul className="card-meta-tag list-inline">
-              {tags.slice(0, siteConfig.tagsOverview).map((t, i) => (
-                <li key={i} className="list-inline-item small">
-                  <Link href={`/tags/${t.replace(/ /g, '-').toLowerCase()}`}>{t}</Link>
-                </li>
-              ))}
-            </ul>
-          </li>
+          {tags.map((tag) => (
+            <li
+              key={tagToSlugMap[tag]}
+              className={`list-inline-item small card-meta-tag ${
+                siteConfig.colorful && (hashTag(tag) === 1 ? 'odd' : 'even')
+              } mt-2`}
+              style={{ lineHeight: 2 }}
+            >
+              <Link href={`/tagy/${tagToSlugMap[tag]}`}>{tag}</Link>
+            </li>
+          ))}
         </ul>
       </div>
     </article>

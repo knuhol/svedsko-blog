@@ -5,14 +5,27 @@ import { usePathname } from 'next/navigation'
 
 import { BreadcrumbItem } from '@/template/components/BreadcrumbItem'
 import { Breadcrumb } from '@/template/components/Breadcrumb'
+import type { TagMaps } from '@/app/tagSlugs'
 
 type Breadcrumbs = Array<{
   href: string
   label: string
 }>
 
-const sanitizeBreadcrumbLabel = (string) => {
-  const capitalisedString = string
+// TODO: Do this better
+const sanitizeBreadcrumbLabel = ({
+  path,
+  slugToTagMap,
+}: {
+  path: string
+  slugToTagMap: TagMaps['slugToTagMap'] | undefined
+}) => {
+  if (slugToTagMap !== undefined && Object.keys(slugToTagMap).includes(path)) {
+    const tag = slugToTagMap[path]
+    return tag[0].toUpperCase() + tag.substring(1)
+  }
+
+  const capitalisedString = path
     .split('-')
     .map((word) => {
       return word[0].toUpperCase() + word.substring(1)
@@ -21,7 +34,13 @@ const sanitizeBreadcrumbLabel = (string) => {
   return capitalisedString.replace(/ri/g, 'ři')
 }
 
-const PageHeader = ({ title, blogPage = false }) => {
+interface Props {
+  title: string
+  blogPage?: boolean
+  slugToTagMap?: TagMaps['slugToTagMap']
+}
+
+const PageHeader = ({ title, blogPage = false, slugToTagMap }: Props) => {
   const pathname = usePathname()
   const [breadcrumbs, setBreadcrumbs] = useState<Breadcrumbs | undefined>()
 
@@ -36,7 +55,7 @@ const PageHeader = ({ title, blogPage = false }) => {
       const href = '/' + pathArray.slice(0, index + 1).join('/')
       return {
         href,
-        label: sanitizeBreadcrumbLabel(path.charAt(0).toUpperCase() + path.slice(1)),
+        label: sanitizeBreadcrumbLabel({ path, slugToTagMap }),
       }
     })
 

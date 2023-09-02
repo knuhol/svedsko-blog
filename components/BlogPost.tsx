@@ -1,18 +1,20 @@
 'use client'
 
 import { BlogPost as TemplatePost } from '@/template/components/BlogPost'
-import { TinaAuthors, TinaPost } from '@/types/tina'
+import type { TinaAuthors, TinaPost } from '@/types/tina'
 import { richTextBodyToString } from '@/utils/richTextBodyToString'
 import { getGender } from '@/utils/getGender'
 import { Layout } from '@/components/Layout'
 import { useTina } from 'tinacms/dist/react'
+import type { TagMaps } from '@/app/tagSlugs'
 
 interface Props {
   post: TinaPost
   authors: TinaAuthors
+  tagToSlugMap: TagMaps['tagToSlugMap']
 }
 
-const BlogPost = ({ post, authors }: Props) => {
+const BlogPost = ({ post, authors, tagToSlugMap }: Props) => {
   const { data: postData } = useTina(post)
 
   return (
@@ -37,6 +39,7 @@ const BlogPost = ({ post, authors }: Props) => {
           summary: author.node.summary,
           content: author.node.body,
         }))}
+        tagToSlugMap={tagToSlugMap}
       />
     </Layout>
   )

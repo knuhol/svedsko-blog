@@ -3,15 +3,17 @@
 import { Layout } from '@/components/Layout'
 import { Home as HomeTemplate } from '@/template/components/Home'
 import { getTags } from '@/utils/getTags'
-import { TinaAuthors, TinaPosts } from '@/types/tina'
+import type { TinaAuthors, TinaPosts } from '@/types/tina'
 import { getGender } from '@/utils/getGender'
+import type { TagMaps } from '@/app/tagSlugs'
 
 interface Props {
   posts: TinaPosts
   authors: TinaAuthors
+  tagToSlugMap: TagMaps['tagToSlugMap']
 }
 
-const Home = ({ posts, authors }: Props) => (
+const Home = ({ posts, authors, tagToSlugMap }: Props) => (
   <Layout>
     <HomeTemplate
       authors={authors.data.authorsConnection.edges.map(({ node }) => ({
@@ -33,6 +35,7 @@ const Home = ({ posts, authors }: Props) => (
           image: post.node.image,
         },
       }))}
+      tagToSlugMap={tagToSlugMap}
     />
   </Layout>
 )

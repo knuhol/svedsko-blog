@@ -1,18 +1,20 @@
 'use client'
 
 import { Layout } from '@/components/Layout'
-import { TinaAuthor, TinaPosts } from '@/types/tina'
+import type { TinaAuthor, TinaPosts } from '@/types/tina'
 import { getGender } from '@/utils/getGender'
 import { Author as AuthorTemplate } from '@/template/components/Author'
 import { getTags } from '@/utils/getTags'
 import { useTina } from 'tinacms/dist/react'
+import type { TagMaps } from '@/app/tagSlugs'
 
 interface Props {
   author: TinaAuthor
   posts: TinaPosts
+  tagToSlugMap: TagMaps['tagToSlugMap']
 }
 
-const Author = ({ author, posts }: Props) => {
+const Author = ({ author, posts, tagToSlugMap }: Props) => {
   const { data: authorData } = useTina(author)
 
   return (
@@ -40,6 +42,7 @@ const Author = ({ author, posts }: Props) => {
             image: post.node.image,
           },
         }))}
+        tagToSlugMap={tagToSlugMap}
       />
     </Layout>
   )

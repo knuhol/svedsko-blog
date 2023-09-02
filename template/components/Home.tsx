@@ -5,14 +5,16 @@ import siteConfig from '@/config/site.config.json'
 import { BlogPostOverview } from '@/template/components/BlogPostOverview'
 import Link from 'next/link'
 import { IconNewSection } from '@tabler/icons-react'
-import {TemplateAuthors, TemplatePosts} from "@/types/template";
+import type { TemplateAuthors, TemplatePosts } from '@/types/template'
+import type { TagMaps } from '@/app/tagSlugs'
 
 interface Props {
   posts: TemplatePosts
   authors: TemplateAuthors
+  tagToSlugMap: TagMaps['tagToSlugMap']
 }
 
-const Home = ({ posts, authors }: Props) => {
+const Home = ({ posts, authors, tagToSlugMap }: Props) => {
   return (
     <>
       <BannerBlock text={siteConfig.metaData.description} />
@@ -26,8 +28,11 @@ const Home = ({ posts, authors }: Props) => {
         </div>
         <div className="row gy-5 gx-4 g-xl-5">
           {posts.map((post) => (
-            <div key={post.slug} className={siteConfig.postColumns == 3 ? 'col-lg-4 col-md-6' : 'col-lg-6'}>
-              <BlogPostOverview post={post} authors={authors}  />
+            <div
+              key={post.slug}
+              className={siteConfig.postColumns == 3 ? 'col-lg-4 col-md-6' : 'col-lg-6'}
+            >
+              <BlogPostOverview post={post} authors={authors} tagToSlugMap={tagToSlugMap} />
             </div>
           ))}
 

@@ -1,10 +1,11 @@
 // credits: https://themeforest.net/item/qurno-minimal-blog-nextjs-template/36625633
 
-import { TemplatePosts } from '@/types/template'
+import type { TemplatePosts } from '@/types/template'
 import { IconArchive } from '@tabler/icons-react'
 import Link from 'next/link'
 import { PageHeader } from '@/template/components/PageHeader'
 import { Fragment } from 'react'
+import siteConfig from '@/config/site.config.json'
 
 interface Props {
   posts: TemplatePosts
@@ -42,7 +43,12 @@ const Archive = ({ posts }) => {
         <div className="row">
           <div className="col-12">
             {uniqueYear.map((unqYear) => (
-              <div className="archive-block" key={unqYear.toString()}>
+              <div
+                className={`archive-block ${
+                  siteConfig.colorful && (Number(unqYear) % 2 === 1 ? 'odd' : 'even')
+                }`}
+                key={unqYear.toString()}
+              >
                 <h2>
                   <>
                     <i>

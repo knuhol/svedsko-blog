@@ -1,19 +1,21 @@
 'use client'
 
-import { TinaAuthors, TinaPosts } from '@/types/tina'
+import type { TinaAuthors, TinaPosts } from '@/types/tina'
 import { Layout } from '@/components/Layout'
 import { Blog as BlogTemplate } from '@/template/components/Blog'
 import { getGender } from '@/utils/getGender'
 import { getTags } from '@/utils/getTags'
+import type { TagMaps } from '@/app/tagSlugs'
 
 interface Props {
   posts: TinaPosts['data']['postConnection']['edges']
   authors: TinaAuthors
   numberOfPages: number
   currentPage: number
+  tagToSlugMap: TagMaps['tagToSlugMap']
 }
 
-const Blog = ({ posts, authors, numberOfPages, currentPage }: Props) => (
+const Blog = ({ posts, authors, numberOfPages, currentPage, tagToSlugMap }: Props) => (
   <Layout>
     <BlogTemplate
       authors={authors.data.authorsConnection.edges.map(({ node }) => ({
@@ -37,6 +39,7 @@ const Blog = ({ posts, authors, numberOfPages, currentPage }: Props) => (
       }))}
       currentPage={currentPage}
       numberOfPages={numberOfPages}
+      tagToSlugMap={tagToSlugMap}
     />
   </Layout>
 )

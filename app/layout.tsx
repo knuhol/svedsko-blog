@@ -1,12 +1,12 @@
 import { type ReactNode } from 'react'
 import { Metadata } from 'next'
 
-import { Providers } from '@/app/providers'
+import { BootstrapProvider } from '@/contexts/BootstrapContext'
 import siteConfig from '@/config/site.config.json'
+import { sharedOgMetadata } from '@/app/sharedOgMetadata'
 
 import '@/template/styles/bootstrap.scss'
 import '@/template/styles/globals.scss'
-import { sharedOgMetadata } from '@/app/sharedOgMetadata'
 
 export const metadata: Metadata = {
   title: siteConfig.metaData.title,
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 }
 
 // TODO: Optimise fonts
-const RootLayout = ({ children }: { children: ReactNode }) => {
+const RootLayout = async ({ children }: { children: ReactNode }) => {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
@@ -36,7 +36,7 @@ const RootLayout = ({ children }: { children: ReactNode }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
       <body>
-        <Providers>{children}</Providers>
+        <BootstrapProvider>{children}</BootstrapProvider>
       </body>
     </html>
   )

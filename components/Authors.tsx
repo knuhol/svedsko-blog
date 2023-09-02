@@ -1,7 +1,7 @@
 'use client'
 
 import { Layout } from '@/components/Layout'
-import { TinaAuthors, TinaPosts } from '@/types/tina'
+import type { TinaAuthors, TinaPosts } from '@/types/tina'
 import { getGender } from '@/utils/getGender'
 import { Authors as AuthorsTemplate } from '@/template/components/Authors'
 

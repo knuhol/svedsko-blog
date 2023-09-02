@@ -202,7 +202,6 @@
 
     a {
       background-color: rgba($color-primary, 0.1);
-      color: $gray;
       padding: 6px 10px;
       border-radius: 2px;
       transition: 0.15s;
@@ -210,7 +209,29 @@
 
       &:hover {
         background-color: $color-primary;
-        color: $white !important;
+        color: $white;
+      }
+    }
+
+    &.even {
+      a {
+        background-color: $sweden-blue;
+        color: $sweden-yellow;
+
+        &:hover {
+          background-color: rgba($sweden-blue, 0.75);
+        }
+      }
+    }
+
+    &.odd {
+      a {
+        background-color: $sweden-yellow;
+        color: $sweden-blue;
+
+        &:hover {
+          background-color: rgba($sweden-yellow, 0.45);
+        }
       }
     }
   }
@@ -224,6 +245,64 @@
 
   .card-meta a {
     color: #c2c2c2;
+  }
+}
+
+// tag block
+.tag-block {
+  background-color: rgba($color-primary, 0.1);
+
+  span {
+    transition: all 0.3s;
+  }
+
+  &:hover {
+    background-color: rgba($color-primary, 1);
+    color: $white;
+
+    span {
+      color: $white;
+    }
+  }
+
+  &.is-hoverable:hover {
+    opacity: 1;
+  }
+
+  &.even {
+    background-color: $sweden-blue;
+    color: $sweden-yellow;
+
+    span {
+      color: $sweden-yellow;
+    }
+
+    &:hover {
+      background-color: rgba($sweden-blue, 0.75);
+      //color: $white;
+
+      span {
+        //color: $white;
+      }
+    }
+  }
+
+  &.odd {
+    background-color: $sweden-yellow;
+    color: $sweden-blue;
+
+    span {
+      color: $sweden-blue;
+    }
+
+    &:hover {
+      background-color: rgba($sweden-yellow, 0.45);
+      //color: $gray;
+
+      span {
+        //color: $gray;
+      }
+    }
   }
 }
 
@@ -251,15 +330,39 @@
 .post-meta-tag {
   a {
     display: inline-block;
-    background-color: #f7f8fa;
-    color: $gray;
+    background-color: $white;
+    color: $dark;
     padding: 6px 13px;
     font-size: 15px;
     @extend .rounded;
 
     &:hover {
-      background-color: transparent;
+      background-color: $white;
       color: $color-primary;
+    }
+  }
+
+  .list-inline-item {
+    &.even {
+      a {
+        background-color: $sweden-blue;
+        color: $sweden-yellow;
+
+        &:hover {
+          background-color: rgba($sweden-blue, 0.75);
+        }
+      }
+    }
+
+    &.odd {
+      a {
+        background-color: $sweden-yellow;
+        color: $sweden-blue;
+
+        &:hover {
+          background-color: rgba($sweden-yellow, 0.45);
+        }
+      }
     }
   }
 }
@@ -268,6 +371,30 @@
 .archive-block {
   &:not(:last-child) {
     margin-bottom: 40px;
+  }
+
+  &.even {
+    h2 {
+      i {
+        opacity: 0.1;
+
+        svg {
+          color: $sweden-blue;
+        }
+      }
+    }
+  }
+
+  &.odd {
+    h2 {
+      i {
+        opacity: 0.3;
+
+        svg {
+          color: $sweden-yellow;
+        }
+      }
+    }
   }
 
   h2 {
@@ -279,9 +406,14 @@
     i {
       position: absolute;
       font-size: 80px;
-      opacity: 0.05;
+      opacity: 0.1;
       top: -27px;
       left: -25px;
+      z-index: -1;
+
+      svg {
+        //color: $sweden-yellow;
+      }
     }
   }
 

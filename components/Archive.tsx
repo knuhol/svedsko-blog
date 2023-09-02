@@ -1,6 +1,6 @@
 'use client'
 
-import { TinaPosts } from '@/types/tina'
+import type { TinaPosts } from '@/types/tina'
 import { Layout } from '@/components/Layout'
 import { Archive as ArchiveTemplate } from '@/template/components/Archive'
 import { getTags } from '@/utils/getTags'

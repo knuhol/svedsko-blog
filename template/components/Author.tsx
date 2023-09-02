@@ -1,20 +1,22 @@
 // credits: https://themeforest.net/item/qurno-minimal-blog-nextjs-template/36625633
 
-import { TemplateAuthor, TemplatePosts } from '@/types/template'
+import type { TemplateAuthor, TemplatePosts } from '@/types/template'
 import Image from 'next/image'
 import { TinaMarkdown } from 'tinacms/dist/rich-text'
 import { BlogPostOverview } from '@/template/components/BlogPostOverview'
 import siteConfig from '@/config/site.config.json'
 import { getNumberOfPostsText } from '@/utils/getNumberOfPostsText'
-import {PageHeader} from "@/template/components/PageHeader";
+import { PageHeader } from '@/template/components/PageHeader'
+import type { TagMaps } from '@/app/tagSlugs'
 
 interface Props {
   author: TemplateAuthor & { numberOfPosts: number }
   posts: TemplatePosts
+  tagToSlugMap: TagMaps['tagToSlugMap']
 }
 
 // TODO: Add pagination?
-const Author = ({ author, posts }: Props) => {
+const Author = ({ author, posts, tagToSlugMap }: Props) => {
   return (
     <>
       <section className="page-header section-sm pb-0">
@@ -61,7 +63,7 @@ const Author = ({ author, posts }: Props) => {
                   key={post.slug}
                   className={siteConfig.postColumns == 3 ? 'col-lg-4 col-md-6' : 'col-lg-6'}
                 >
-                  <BlogPostOverview post={post} authors={[author]} />
+                  <BlogPostOverview post={post} authors={[author]} tagToSlugMap={tagToSlugMap} />
                 </div>
               ),
           )}

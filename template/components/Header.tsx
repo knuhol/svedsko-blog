@@ -1,12 +1,13 @@
 // credits: https://themeforest.net/item/qurno-minimal-blog-nextjs-template/36625633
 
-import Menu from '@/config/menus.json'
-import siteConfig from '@/config/site.config.json'
 import { IconMenu2, IconX } from '@tabler/icons-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect } from 'react'
 import { usePathname } from 'next/navigation'
+
+import Menu from '@/config/menus.json'
+import siteConfig from '@/config/site.config.json'
 
 const Header = () => {
   const pathname = usePathname()

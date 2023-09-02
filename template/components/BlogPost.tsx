@@ -17,15 +17,20 @@ import {
   IconCalendarEvent,
   IconClock,
 } from '@tabler/icons-react'
-import { TemplateAuthors, TemplatePost } from '@/types/template'
+import type { TemplateAuthors, TemplatePost } from '@/types/template'
 import { richTextBodyToString } from '@/utils/richTextBodyToString'
 import { getAuthorByName } from '@/utils/getAuthorByName'
+import type { TagMaps } from '@/app/tagSlugs'
+import { slugify } from '@/utils/slugify'
+import { hashTag } from '@/utils/hashTag'
 
 interface Props {
   post: TemplatePost
   authors: TemplateAuthors
+  tagToSlugMap: TagMaps['tagToSlugMap']
 }
 
+// TODO: Pass author slugs
 const BlogPost = ({
   post: {
     slug,
@@ -33,6 +38,7 @@ const BlogPost = ({
     frontMatter: { title, image, date, author, tags },
   },
   authors,
+  tagToSlugMap,
 }: Props) => {
   let pageUrl = `${siteConfig.baseURL.replace(/\/$|$/, '/')}blog/${slug}`
   return (
@@ -45,10 +51,7 @@ const BlogPost = ({
 
               <ul className="card-meta list-inline mb-2">
                 <li className="list-inline-item mt-2">
-                  <Link
-                    href={`/autori/${author.replace(/ /g, '-').toLowerCase()}`}
-                    className="card-meta-author"
-                  >
+                  <Link href={`/autori/${slugify(author)}`} className="card-meta-author">
                     {authors.map((authorData, i) =>
                       author === authorData.name ? (
                         <span key={i}>
@@ -155,14 +158,14 @@ const BlogPost = ({
               <TinaMarkdown content={content} />
             </div>
             <ul className="post-meta-tag list-unstyled list-inline mt-5">
-              {tags.map((t, i) => (
-                <li key={i} className="list-inline-item">
-                  <Link
-                    href={`/tags/${t.replace(/ /g, '-').toLowerCase()}`}
-                    className="bg-white text-dark"
-                  >
-                    {t}
-                  </Link>
+              {tags.map((tag) => (
+                <li
+                  key={tagToSlugMap[tag]}
+                  className={`list-inline-item ${
+                    siteConfig.colorful && (hashTag(tag) === 1 ? 'odd' : 'even')
+                  }`}
+                >
+                  <Link href={`/tags/${tagToSlugMap[tag]}`}>{tag}</Link>
                 </li>
               ))}
             </ul>
@@ -173,7 +176,7 @@ const BlogPost = ({
           <div className="row justify-content-center">
             <div className="col-lg-10">
               <div className="d-block d-md-flex">
-                <Link href={`/autori/${author.replace(/ /g, '-').toLowerCase()}`}>
+                <Link href={`/autori/${slugify(author)}`}>
                   {authors.map((authorData, i) =>
                     author === authorData.name ? (
                       <span key={i}>
@@ -194,10 +197,7 @@ const BlogPost = ({
                 </Link>
                 <div className="ms-0 ms-md-4 ps-0 ps-md-3 mt-4 mt-md-0">
                   <h3 className="h4 mb-3">
-                    <Link
-                      href={`/autori/${author.replace(/ /g, '-').toLowerCase()}`}
-                      className="text-dark"
-                    >
+                    <Link href={`/autori/${slugify(author)}`} className="text-dark">
                       {author}
                     </Link>
                   </h3>
@@ -209,10 +209,7 @@ const BlogPost = ({
                     ),
                   )}
                   <div className="content">
-                    <Link
-                      href={`/autori/${author.replace(/ /g, '-').toLowerCase()}`}
-                      className="text-dark"
-                    >
+                    <Link href={`/autori/${slugify(author)}`} className="text-dark">
                       {getAuthorByName({
                         authorName: author,
                         authors,

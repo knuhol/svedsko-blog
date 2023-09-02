@@ -1,24 +1,23 @@
 // credits: https://themeforest.net/item/qurno-minimal-blog-nextjs-template/36625633
 
-import type { TemplateAuthors, TemplatePost } from '@/types/template'
+import { PageHeader } from '@/template/components/PageHeader'
 import siteConfig from '@/config/site.config.json'
 import { BlogPostOverview } from '@/template/components/BlogPostOverview'
-import { Pagination } from '@/template/components/Pagination'
-import { PageHeader } from '@/template/components/PageHeader'
+import type { TemplateAuthors, TemplatePost } from '@/types/template'
 import type { TagMaps } from '@/app/tagSlugs'
 
 interface Props {
+  title: string
   posts: TemplatePost
   authors: TemplateAuthors
-  currentPage: number
-  numberOfPages: number
   tagToSlugMap: TagMaps['tagToSlugMap']
+  slugToTagMap?: TagMaps['slugToTagMap']
 }
 
-const Blog = ({ posts, authors, currentPage, numberOfPages, tagToSlugMap }) => {
+const Posts = ({ title, posts, authors, tagToSlugMap, slugToTagMap }) => {
   return (
     <section>
-      <PageHeader title="Všechny články" blogPage />
+      <PageHeader title={title} slugToTagMap={slugToTagMap} />
       <div className="container">
         <div className="row gy-5 gx-4 g-xl-5">
           {posts.map((post) => (
@@ -29,11 +28,10 @@ const Blog = ({ posts, authors, currentPage, numberOfPages, tagToSlugMap }) => {
               <BlogPostOverview post={post} authors={authors} tagToSlugMap={tagToSlugMap} />
             </div>
           ))}
-          <Pagination currentPage={currentPage} numberOfPages={numberOfPages} />
         </div>
       </div>
     </section>
   )
 }
 
-export { Blog }
+export { Posts }
