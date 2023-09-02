@@ -10,6 +10,7 @@ export type TemplatePosts = Array<{
     author: string
     date: string
     image: string
+    category: string
   }
 }>
 export type TemplateAuthors = Array<{

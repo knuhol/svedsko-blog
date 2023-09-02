@@ -7,6 +7,7 @@ import siteConfig from '@/config/site.config.json'
 import { sharedOgMetadata } from '@/app/sharedOgMetadata'
 import { notFound } from 'next/navigation'
 import { createTagMaps } from '@/app/tagSlugs'
+import { createCategoryMaps } from '@/app/categorySlugs'
 
 const getCachedPost = cache(
   async (slug) =>
@@ -66,6 +67,7 @@ export const generateMetadata = async ({ params }: MetadataProps): Promise<Metad
 const BlogPostPage = async ({ params }) => {
   const slugs = await getCachedSlugs()
   const { tagToSlugMap } = await createTagMaps()
+  const { categoryToSlugMap } = await createCategoryMaps()
 
   if (!slugs.includes(params.slug)) {
     notFound()
@@ -74,7 +76,14 @@ const BlogPostPage = async ({ params }) => {
   const post = await getCachedPost(params.slug)
   const authors = await client.queries.authorsConnection()
 
-  return <BlogPost post={post} authors={authors} tagToSlugMap={tagToSlugMap} />
+  return (
+    <BlogPost
+      post={post}
+      authors={authors}
+      tagToSlugMap={tagToSlugMap}
+      categoryToSlugMap={categoryToSlugMap}
+    />
+  )
 }
 
 export default BlogPostPage

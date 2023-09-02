@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { IconCalendarEvent, IconClock } from '@tabler/icons-react'
+import { IconCalendarEvent, IconClock, IconColorSwatch } from '@tabler/icons-react'
 
 import { formatDate } from '@/template/utils/formatDate'
 import { readingTime } from '@/template/utils/readingTime'
@@ -12,12 +12,14 @@ import { richTextBodyToString } from '@/utils/richTextBodyToString'
 import siteConfig from '@/config/site.config.json'
 import type { TagMaps } from '@/app/tagSlugs'
 import { slugify } from '@/utils/slugify'
-import { hashTag } from '@/utils/hashTag'
+import { hashString } from '@/utils/hashString'
+import type { CategoryMaps } from '@/app/categorySlugs'
 
 interface Props {
   authors: TemplateAuthors
   post: TemplatePost
   tagToSlugMap: TagMaps['tagToSlugMap']
+  categoryToSlugMap: CategoryMaps['categoryToSlugMap']
 }
 
 // TODO: Pass author slugs
@@ -25,10 +27,11 @@ const BlogPostOverview = ({
   post: {
     slug,
     content,
-    frontMatter: { title, image, date, author, description, tags },
+    frontMatter: { title, image, date, author, description, tags, category },
   },
   authors,
   tagToSlugMap,
+  categoryToSlugMap,
 }: Props) => {
   return (
     <article
@@ -63,7 +66,16 @@ const BlogPostOverview = ({
             <i className="me-2">
               <IconClock size={18} />
             </i>
-            <span>přečtete za {readingTime(richTextBodyToString(content))}</span>
+            <span>{readingTime(richTextBodyToString(content))}</span>
+          </li>
+          <li className="list-inline-item mt-2">—</li>
+          <li className="list-inline-item mt-2">
+            <Link href={`/kategorie/${categoryToSlugMap[category]}`} className="card-meta-category">
+              <i className="me-2">
+                <IconColorSwatch size={18} />
+              </i>
+              <span>{category}</span>
+            </Link>
           </li>
         </ul>
 
@@ -78,7 +90,7 @@ const BlogPostOverview = ({
             <Link
               href={`/autori/${slugify(author)}`}
               className="card-meta-author"
-              title={`Read all posts by - ${author}`}
+              title={`Přečíst všechny články od ${author}`}
             >
               {authors.map(
                 (authorData, i) =>
@@ -104,7 +116,7 @@ const BlogPostOverview = ({
             <li
               key={tagToSlugMap[tag]}
               className={`list-inline-item small card-meta-tag ${
-                siteConfig.colorful && (hashTag(tag) === 1 ? 'odd' : 'even')
+                siteConfig.colorful && (hashString(tag) === 1 ? 'odd' : 'even')
               } mt-2`}
               style={{ lineHeight: 2 }}
             >

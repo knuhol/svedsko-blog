@@ -51,7 +51,7 @@ const schema = defineSchema({
           name: 'title',
         },
         {
-          type: 'string',
+          type: 'datetime',
           label: 'Date',
           name: 'date',
         },

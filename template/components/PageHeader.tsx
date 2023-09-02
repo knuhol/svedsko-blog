@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation'
 import { BreadcrumbItem } from '@/template/components/BreadcrumbItem'
 import { Breadcrumb } from '@/template/components/Breadcrumb'
 import type { TagMaps } from '@/app/tagSlugs'
+import type { CategoryMaps } from '@/app/categorySlugs'
 
 type Breadcrumbs = Array<{
   href: string
@@ -16,12 +17,19 @@ type Breadcrumbs = Array<{
 const sanitizeBreadcrumbLabel = ({
   path,
   slugToTagMap,
+  slugToCategoryMap,
 }: {
   path: string
   slugToTagMap: TagMaps['slugToTagMap'] | undefined
+  slugToCategoryMap: CategoryMaps['slugToCategoryMap'] | undefined
 }) => {
   if (slugToTagMap !== undefined && Object.keys(slugToTagMap).includes(path)) {
     const tag = slugToTagMap[path]
+    return tag[0].toUpperCase() + tag.substring(1)
+  }
+
+  if (slugToCategoryMap !== undefined && Object.keys(slugToCategoryMap).includes(path)) {
+    const tag = slugToCategoryMap[path]
     return tag[0].toUpperCase() + tag.substring(1)
   }
 
@@ -31,16 +39,17 @@ const sanitizeBreadcrumbLabel = ({
       return word[0].toUpperCase() + word.substring(1)
     })
     .join(' ')
-  return capitalisedString.replace(/ri/g, 'ři')
+  return capitalisedString.replace('Autori', 'Autoři')
 }
 
 interface Props {
   title: string
   blogPage?: boolean
   slugToTagMap?: TagMaps['slugToTagMap']
+  slugToCategoryMap?: CategoryMaps['slugToCategoryMap']
 }
 
-const PageHeader = ({ title, blogPage = false, slugToTagMap }: Props) => {
+const PageHeader = ({ title, blogPage = false, slugToTagMap, slugToCategoryMap }: Props) => {
   const pathname = usePathname()
   const [breadcrumbs, setBreadcrumbs] = useState<Breadcrumbs | undefined>()
 
@@ -55,7 +64,7 @@ const PageHeader = ({ title, blogPage = false, slugToTagMap }: Props) => {
       const href = '/' + pathArray.slice(0, index + 1).join('/')
       return {
         href,
-        label: sanitizeBreadcrumbLabel({ path, slugToTagMap }),
+        label: sanitizeBreadcrumbLabel({ path, slugToTagMap, slugToCategoryMap }),
       }
     })
 

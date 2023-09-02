@@ -6,16 +6,25 @@ import { BlogPostOverview } from '@/template/components/BlogPostOverview'
 import { Pagination } from '@/template/components/Pagination'
 import { PageHeader } from '@/template/components/PageHeader'
 import type { TagMaps } from '@/app/tagSlugs'
+import type { CategoryMaps } from '@/app/categorySlugs'
 
 interface Props {
-  posts: TemplatePost
+  posts: TemplatePost[]
   authors: TemplateAuthors
   currentPage: number
   numberOfPages: number
   tagToSlugMap: TagMaps['tagToSlugMap']
+  categoryToSlugMap: CategoryMaps['categoryToSlugMap']
 }
 
-const Blog = ({ posts, authors, currentPage, numberOfPages, tagToSlugMap }) => {
+const Blog = ({
+  posts,
+  authors,
+  currentPage,
+  numberOfPages,
+  tagToSlugMap,
+  categoryToSlugMap,
+}: Props) => {
   return (
     <section>
       <PageHeader title="Všechny články" blogPage />
@@ -26,7 +35,12 @@ const Blog = ({ posts, authors, currentPage, numberOfPages, tagToSlugMap }) => {
               key={post.slug}
               className={siteConfig.postColumns == 3 ? 'col-lg-4 col-md-6' : 'col-lg-6'}
             >
-              <BlogPostOverview post={post} authors={authors} tagToSlugMap={tagToSlugMap} />
+              <BlogPostOverview
+                post={post}
+                authors={authors}
+                tagToSlugMap={tagToSlugMap}
+                categoryToSlugMap={categoryToSlugMap}
+              />
             </div>
           ))}
           <Pagination currentPage={currentPage} numberOfPages={numberOfPages} />

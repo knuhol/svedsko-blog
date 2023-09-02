@@ -10,15 +10,22 @@ import type { CategoryMaps } from '@/app/categorySlugs'
 
 interface Props {
   posts: TinaPosts['data']['postConnection']['edges']
-  tag: string
+  category: string
   authors: TinaAuthors
-  slugToTagMap: TagMaps['slugToTagMap']
+  slugToCategoryMap: CategoryMaps['slugToCategoryMap']
   tagToSlugMap: TagMaps['tagToSlugMap']
   categoryToSlugMap: CategoryMaps['categoryToSlugMap']
 }
 
-const Tag = ({ posts, tag, authors, tagToSlugMap, slugToTagMap, categoryToSlugMap }: Props) => {
-  const title = tag[0].toUpperCase() + tag.substring(1)
+const Category = ({
+  posts,
+  category,
+  authors,
+  tagToSlugMap,
+  slugToCategoryMap,
+  categoryToSlugMap,
+}: Props) => {
+  const title = category[0].toUpperCase() + category.substring(1)
 
   return (
     <Layout>
@@ -44,7 +51,7 @@ const Tag = ({ posts, tag, authors, tagToSlugMap, slugToTagMap, categoryToSlugMa
           summary: node.summary,
           content: node.body,
         }))}
-        slugToTagMap={slugToTagMap}
+        slugToCategoryMap={slugToCategoryMap}
         tagToSlugMap={tagToSlugMap}
         categoryToSlugMap={categoryToSlugMap}
       />
@@ -52,4 +59,4 @@ const Tag = ({ posts, tag, authors, tagToSlugMap, slugToTagMap, categoryToSlugMa
   )
 }
 
-export { Tag }
+export { Category }

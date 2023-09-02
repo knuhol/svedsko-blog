@@ -5,6 +5,7 @@ import { client } from '@/tina/__generated__/client'
 import { Blog } from '@/components/Blog'
 import siteConfig from '@/config/site.config.json'
 import { createTagMaps } from '@/app/tagSlugs'
+import { createCategoryMaps } from '@/app/categorySlugs'
 
 export const generateStaticParams = async () => {
   const allPosts = await getCachedPosts()
@@ -35,6 +36,7 @@ const BlogPage = async ({ params }) => {
 
   const authors = await client.queries.authorsConnection()
   const { tagToSlugMap } = await createTagMaps()
+  const { categoryToSlugMap } = await createCategoryMaps()
 
   return (
     <Blog
@@ -43,6 +45,7 @@ const BlogPage = async ({ params }) => {
       numberOfPages={numberOfPages}
       currentPage={Number(params.pageNumber)}
       tagToSlugMap={tagToSlugMap}
+      categoryToSlugMap={categoryToSlugMap}
     />
   )
 }

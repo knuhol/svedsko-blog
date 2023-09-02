@@ -6,14 +6,16 @@ import { getTags } from '@/utils/getTags'
 import type { TinaAuthors, TinaPosts } from '@/types/tina'
 import { getGender } from '@/utils/getGender'
 import type { TagMaps } from '@/app/tagSlugs'
+import type { CategoryMaps } from '@/app/categorySlugs'
 
 interface Props {
   posts: TinaPosts
   authors: TinaAuthors
   tagToSlugMap: TagMaps['tagToSlugMap']
+  categoryToSlugMap: CategoryMaps['categoryToSlugMap']
 }
 
-const Home = ({ posts, authors, tagToSlugMap }: Props) => (
+const Home = ({ posts, authors, tagToSlugMap, categoryToSlugMap }: Props) => (
   <Layout>
     <HomeTemplate
       authors={authors.data.authorsConnection.edges.map(({ node }) => ({
@@ -33,9 +35,11 @@ const Home = ({ posts, authors, tagToSlugMap }: Props) => (
           author: post.node.author,
           date: post.node.date,
           image: post.node.image,
+          category: post.node.category,
         },
       }))}
       tagToSlugMap={tagToSlugMap}
+      categoryToSlugMap={categoryToSlugMap}
     />
   </Layout>
 )

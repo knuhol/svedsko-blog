@@ -16,18 +16,21 @@ import {
   IconBrandTwitter,
   IconCalendarEvent,
   IconClock,
+  IconColorSwatch,
 } from '@tabler/icons-react'
 import type { TemplateAuthors, TemplatePost } from '@/types/template'
 import { richTextBodyToString } from '@/utils/richTextBodyToString'
 import { getAuthorByName } from '@/utils/getAuthorByName'
 import type { TagMaps } from '@/app/tagSlugs'
 import { slugify } from '@/utils/slugify'
-import { hashTag } from '@/utils/hashTag'
+import { hashString } from '@/utils/hashString'
+import type { CategoryMaps } from '@/app/categorySlugs'
 
 interface Props {
   post: TemplatePost
   authors: TemplateAuthors
   tagToSlugMap: TagMaps['tagToSlugMap']
+  categoryToSlugMap: CategoryMaps['categoryToSlugMap']
 }
 
 // TODO: Pass author slugs
@@ -35,10 +38,11 @@ const BlogPost = ({
   post: {
     slug,
     content,
-    frontMatter: { title, image, date, author, tags },
+    frontMatter: { title, image, date, author, tags, category },
   },
   authors,
   tagToSlugMap,
+  categoryToSlugMap,
 }: Props) => {
   let pageUrl = `${siteConfig.baseURL.replace(/\/$|$/, '/')}blog/${slug}`
   return (
@@ -77,7 +81,7 @@ const BlogPost = ({
                   <i className="me-2">
                     <IconClock size={18} />
                   </i>
-                  <span>přečtete za {readingTime(richTextBodyToString(content))} minut</span>
+                  <span>přečtete za {readingTime(richTextBodyToString(content))}</span>
                 </li>
                 <li className="list-inline-item mt-2">—</li>
                 <li className="list-inline-item mt-2">
@@ -85,6 +89,18 @@ const BlogPost = ({
                     <IconCalendarEvent size={18} />
                   </i>
                   <span>{formatDate(date)}</span>
+                </li>
+                <li className="list-inline-item mt-2">—</li>
+                <li className="list-inline-item mt-2">
+                  <Link
+                    href={`/kategorie/${categoryToSlugMap[category]}`}
+                    className="card-meta-category"
+                  >
+                    <i className="me-2">
+                      <IconColorSwatch size={18} />
+                    </i>
+                    <span>{category}</span>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -162,7 +178,7 @@ const BlogPost = ({
                 <li
                   key={tagToSlugMap[tag]}
                   className={`list-inline-item ${
-                    siteConfig.colorful && (hashTag(tag) === 1 ? 'odd' : 'even')
+                    siteConfig.colorful && (hashString(tag) === 1 ? 'odd' : 'even')
                   }`}
                 >
                   <Link href={`/tags/${tagToSlugMap[tag]}`}>{tag}</Link>

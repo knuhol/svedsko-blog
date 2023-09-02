@@ -5,12 +5,10 @@ import { cache } from 'react'
 import { client } from '@/tina/__generated__/client'
 import { getTags } from '@/utils/getTags'
 import { slugify } from '@/utils/slugify'
+import { flipObject } from '@/utils/flipObject'
 
 const getTagsWithPostsCount = cache(async () => {
-  const posts = await client.queries.postConnection({
-    last: -1,
-    sort: 'date',
-  })
+  const posts = await client.queries.postConnection()
 
   const allTags = posts.data.postConnection.edges.map(({ node }) => getTags(node.tags)).flat()
   const uniqueTags = [...new Set(allTags)]
@@ -24,9 +22,6 @@ const getTagsWithPostsCount = cache(async () => {
     {},
   )
 })
-
-const flipObject = (data) =>
-  Object.fromEntries(Object.entries(data).map(([key, value]) => [value, key]))
 
 // TODO: Better types?
 const createTagMaps = async () => {

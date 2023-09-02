@@ -40,6 +40,7 @@ const Author = ({ author, posts, tagToSlugMap }: Props) => {
             author: post.node.author,
             date: post.node.date,
             image: post.node.image,
+            category: post.node.category,
           },
         }))}
         tagToSlugMap={tagToSlugMap}

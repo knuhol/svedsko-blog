@@ -17,8 +17,7 @@ const NotFound = () => (
               style={{ width: 300, height: 'auto' }}
               src="/404.svg"
               alt="404"
-              placeholder="blur"
-              blurDataURL="/404.svg"
+              placeholder="empty"
             />
             <p className="mb-4 mt-4">
               Bohužel, tato stránka neexistuje. Zadali jste správnou adresu?

@@ -1,6 +1,6 @@
 ---
 title: Poprvé ve švédském národním parku
-date: 2018-02-26 21:45
+date: 2018-02-26
 category: Turistika
 tags: národní park, příroda, Švédsko, Tyresta, turistika
 author: Knut Holm

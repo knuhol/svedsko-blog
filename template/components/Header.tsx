@@ -75,8 +75,7 @@ const Header = () => {
                     style={{ width: 200, height: 'auto' }}
                     src={siteConfig.logo}
                     alt={siteConfig.logoText}
-                    placeholder="blur"
-                    blurDataURL={siteConfig.logo}
+                    placeholder="empty"
                   />
                 </Link>
 

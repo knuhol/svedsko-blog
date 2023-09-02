@@ -4,6 +4,7 @@ import { createTagMaps } from '@/app/tagSlugs'
 import { client } from '@/tina/__generated__/client'
 import { Tag } from '@/components/Tag'
 import { getTags } from '@/utils/getTags'
+import { createCategoryMaps } from '@/app/categorySlugs'
 
 export const generateStaticParams = async () => {
   const { slugToTagMap } = await createTagMaps()
@@ -26,6 +27,7 @@ const TagPage = async ({ params }) => {
     sort: 'date',
   })
   const authors = await client.queries.authorsConnection()
+  const { categoryToSlugMap } = await createCategoryMaps()
 
   return (
     <Tag
@@ -36,6 +38,7 @@ const TagPage = async ({ params }) => {
       tag={slugToTagMap[params.slug]}
       tagToSlugMap={tagToSlugMap}
       slugToTagMap={slugToTagMap}
+      categoryToSlugMap={categoryToSlugMap}
     />
   )
 }

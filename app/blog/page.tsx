@@ -2,6 +2,7 @@ import { client } from '@/tina/__generated__/client'
 import { Blog } from '@/components/Blog'
 import siteConfig from '@/config/site.config.json'
 import { createTagMaps } from '@/app/tagSlugs'
+import { createCategoryMaps } from '@/app/categorySlugs'
 
 // TODO: Metadata
 const BlogPage = async () => {
@@ -13,6 +14,7 @@ const BlogPage = async () => {
   const posts = await client.queries.postConnection({ sort: 'date', last: siteConfig.postPerPage })
   const authors = await client.queries.authorsConnection()
   const { tagToSlugMap } = await createTagMaps()
+  const { categoryToSlugMap } = await createCategoryMaps()
 
   return (
     <Blog
@@ -21,6 +23,7 @@ const BlogPage = async () => {
       numberOfPages={numberOfPages}
       currentPage={1}
       tagToSlugMap={tagToSlugMap}
+      categoryToSlugMap={categoryToSlugMap}
     />
   )
 }
