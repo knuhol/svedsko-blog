@@ -4,7 +4,6 @@ import { cache } from 'react'
 
 import { client } from '@/tina/__generated__/client'
 import { slugify } from '@/utils/slugify'
-import { flipObject } from '@/utils/flipObject'
 
 // TODO: Create together with tags to save fetches
 const getCategoriesWithPostsCount = cache(async () => {
@@ -26,16 +25,17 @@ const getCategoriesWithPostsCount = cache(async () => {
 // TODO: Better types?
 const createCategoryMaps = async () => {
   const categoriesWithPostsCountMap: { [key: string]: string } = await getCategoriesWithPostsCount()
-  const categoryToSlugMap: { [key: string]: string } = Object.keys(categoriesWithPostsCountMap).reduce(
-    (result, tag) => ({
+  const slugToCategoryMap: { [key: string]: string } = Object.keys(
+    categoriesWithPostsCountMap,
+  ).reduce(
+    (result, cat) => ({
       ...result,
-      [tag]: slugify(tag),
+      [slugify(cat)]: cat,
     }),
     {},
   )
-  const slugToCategoryMap: { [key: string]: string } = flipObject(categoryToSlugMap)
 
-  return { categoriesWithPostsCountMap, categoryToSlugMap, slugToCategoryMap }
+  return { categoriesWithPostsCountMap, slugToCategoryMap }
 }
 
 export type CategoryMaps = Awaited<ReturnType<typeof createCategoryMaps>>

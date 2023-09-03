@@ -21,16 +21,12 @@ import {
 import type { TemplateAuthors, TemplatePost } from '@/types/template'
 import { richTextBodyToString } from '@/utils/richTextBodyToString'
 import { getAuthorByName } from '@/utils/getAuthorByName'
-import type { TagMaps } from '@/app/tagSlugs'
 import { slugify } from '@/utils/slugify'
 import { hashString } from '@/utils/hashString'
-import type { CategoryMaps } from '@/app/categorySlugs'
 
 interface Props {
   post: TemplatePost
   authors: TemplateAuthors
-  tagToSlugMap: TagMaps['tagToSlugMap']
-  categoryToSlugMap: CategoryMaps['categoryToSlugMap']
 }
 
 // TODO: Pass author slugs
@@ -38,11 +34,9 @@ const BlogPost = ({
   post: {
     slug,
     content,
-    frontMatter: { title, image, date, author, tags, category },
+    frontMatter: { title, date, author, tags, category },
   },
   authors,
-  tagToSlugMap,
-  categoryToSlugMap,
 }: Props) => {
   let pageUrl = `${siteConfig.baseURL.replace(/\/$|$/, '/')}blog/${slug}`
   return (
@@ -93,7 +87,7 @@ const BlogPost = ({
                 <li className="list-inline-item mt-2">—</li>
                 <li className="list-inline-item mt-2">
                   <Link
-                    href={`/kategorie/${categoryToSlugMap[category]}`}
+                    href={`/kategorie/${slugify(category)}`}
                     className="card-meta-category"
                   >
                     <i className="me-2">
@@ -105,19 +99,7 @@ const BlogPost = ({
               </ul>
             </div>
           </div>
-          <div className="col-lg-12">
-            <div className="mb-5 text-center post-deatils-image">
-              <Image
-                className="rounded img-fluid"
-                src={image}
-                alt={title}
-                width={`1120`}
-                height={`595`}
-                placeholder="blur"
-                blurDataURL={image}
-              />
-            </div>
-          </div>
+          <div className="col-lg-12"></div>
           <div className="col-lg-2 post-share-block order-1 order-lg-0 mt-5 mt-lg-0">
             <div className="position-sticky" style={{ top: 150 + 'px' }}>
               <span className="d-inline-block mb-3 small">SDÍLET</span>
@@ -176,12 +158,12 @@ const BlogPost = ({
             <ul className="post-meta-tag list-unstyled list-inline mt-5">
               {tags.map((tag) => (
                 <li
-                  key={tagToSlugMap[tag]}
+                  key={slugify(tag)}
                   className={`list-inline-item ${
                     siteConfig.colorful && (hashString(tag) === 1 ? 'odd' : 'even')
                   }`}
                 >
-                  <Link href={`/tags/${tagToSlugMap[tag]}`}>{tag}</Link>
+                  <Link href={`/tags/${slugify(tag)}`}>{tag}</Link>
                 </li>
               ))}
             </ul>

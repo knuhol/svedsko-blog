@@ -10,19 +10,16 @@ import { getAuthorByName } from '@/utils/getAuthorByName'
 import type { TemplateAuthors, TemplatePost } from '@/types/template'
 import { richTextBodyToString } from '@/utils/richTextBodyToString'
 import siteConfig from '@/config/site.config.json'
-import type { TagMaps } from '@/app/tagSlugs'
 import { slugify } from '@/utils/slugify'
 import { hashString } from '@/utils/hashString'
-import type { CategoryMaps } from '@/app/categorySlugs'
+import { truncateString } from '@/template/utils/truncateString'
 
 interface Props {
   authors: TemplateAuthors
   post: TemplatePost
-  tagToSlugMap: TagMaps['tagToSlugMap']
-  categoryToSlugMap: CategoryMaps['categoryToSlugMap']
 }
 
-// TODO: Pass author slugs
+// TODO: Pictures in Safari
 const BlogPostOverview = ({
   post: {
     slug,
@@ -30,8 +27,6 @@ const BlogPostOverview = ({
     frontMatter: { title, image, date, author, description, tags, category },
   },
   authors,
-  tagToSlugMap,
-  categoryToSlugMap,
 }: Props) => {
   return (
     <article
@@ -70,7 +65,7 @@ const BlogPostOverview = ({
           </li>
           <li className="list-inline-item mt-2">—</li>
           <li className="list-inline-item mt-2">
-            <Link href={`/kategorie/${categoryToSlugMap[category]}`} className="card-meta-category">
+            <Link href={`/kategorie/${slugify(category)}`} className="card-meta-category">
               <i className="me-2">
                 <IconColorSwatch size={18} />
               </i>
@@ -82,7 +77,9 @@ const BlogPostOverview = ({
         <Link href={`/blog/${slug}`} className="d-block" title={title}>
           <h3 className={`post-title mb-3 ${siteConfig.postColumns == 3 ? 'h4' : ''}`}>{title}</h3>
         </Link>
-        <p className={siteConfig.postColumns == 3 ? 'small' : ''}>{description}</p>
+        <p className={siteConfig.postColumns == 3 ? 'small' : ''}>
+          {truncateString(description, siteConfig.postColumns == 3 ? 90 : 150)}
+        </p>
       </div>
       <div className="card-footer border-top-0 bg-transparent p-0">
         <ul className="card-meta list-inline">
@@ -114,13 +111,13 @@ const BlogPostOverview = ({
           <li className="list-inline-item mt-2 text-dark">•</li>
           {tags.map((tag) => (
             <li
-              key={tagToSlugMap[tag]}
+              key={slugify(tag)}
               className={`list-inline-item small card-meta-tag ${
                 siteConfig.colorful && (hashString(tag) === 1 ? 'odd' : 'even')
               } mt-2`}
               style={{ lineHeight: 2 }}
             >
-              <Link href={`/tagy/${tagToSlugMap[tag]}`}>{tag}</Link>
+              <Link href={`/tagy/${slugify(tag)}`}>{tag}</Link>
             </li>
           ))}
         </ul>

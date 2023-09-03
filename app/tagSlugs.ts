@@ -5,7 +5,6 @@ import { cache } from 'react'
 import { client } from '@/tina/__generated__/client'
 import { getTags } from '@/utils/getTags'
 import { slugify } from '@/utils/slugify'
-import { flipObject } from '@/utils/flipObject'
 
 const getTagsWithPostsCount = cache(async () => {
   const posts = await client.queries.postConnection()
@@ -26,16 +25,15 @@ const getTagsWithPostsCount = cache(async () => {
 // TODO: Better types?
 const createTagMaps = async () => {
   const tagsWithPostsCountMap: { [key: string]: string } = await getTagsWithPostsCount()
-  const tagToSlugMap: { [key: string]: string } = Object.keys(tagsWithPostsCountMap).reduce(
+  const slugToTagMap: { [key: string]: string } = Object.keys(tagsWithPostsCountMap).reduce(
     (result, tag) => ({
       ...result,
-      [tag]: slugify(tag),
+      [slugify(tag)]: tag,
     }),
     {},
   )
-  const slugToTagMap: { [key: string]: string } = flipObject(tagToSlugMap)
 
-  return { tagsWithPostsCountMap, tagToSlugMap, slugToTagMap }
+  return { tagsWithPostsCountMap, slugToTagMap }
 }
 
 export type TagMaps = Awaited<ReturnType<typeof createTagMaps>>

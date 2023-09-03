@@ -6,15 +6,13 @@ import { getGender } from '@/utils/getGender'
 import { Author as AuthorTemplate } from '@/template/components/Author'
 import { getTags } from '@/utils/getTags'
 import { useTina } from 'tinacms/dist/react'
-import type { TagMaps } from '@/app/tagSlugs'
 
 interface Props {
   author: TinaAuthor
   posts: TinaPosts
-  tagToSlugMap: TagMaps['tagToSlugMap']
 }
 
-const Author = ({ author, posts, tagToSlugMap }: Props) => {
+const Author = ({ author, posts }: Props) => {
   const { data: authorData } = useTina(author)
 
   return (
@@ -43,7 +41,6 @@ const Author = ({ author, posts, tagToSlugMap }: Props) => {
             category: post.node.category,
           },
         }))}
-        tagToSlugMap={tagToSlugMap}
       />
     </Layout>
   )

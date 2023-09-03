@@ -5,26 +5,15 @@ import { Layout } from '@/components/Layout'
 import { Blog as BlogTemplate } from '@/template/components/Blog'
 import { getGender } from '@/utils/getGender'
 import { getTags } from '@/utils/getTags'
-import type { TagMaps } from '@/app/tagSlugs'
-import type { CategoryMaps } from '@/app/categorySlugs'
 
 interface Props {
   posts: TinaPosts['data']['postConnection']['edges']
   authors: TinaAuthors
   numberOfPages: number
   currentPage: number
-  tagToSlugMap: TagMaps['tagToSlugMap']
-  categoryToSlugMap: CategoryMaps['categoryToSlugMap']
 }
 
-const Blog = ({
-  posts,
-  authors,
-  numberOfPages,
-  currentPage,
-  tagToSlugMap,
-  categoryToSlugMap,
-}: Props) => (
+const Blog = ({ posts, authors, numberOfPages, currentPage }: Props) => (
   <Layout>
     <BlogTemplate
       authors={authors.data.authorsConnection.edges.map(({ node }) => ({
@@ -49,8 +38,6 @@ const Blog = ({
       }))}
       currentPage={currentPage}
       numberOfPages={numberOfPages}
-      tagToSlugMap={tagToSlugMap}
-      categoryToSlugMap={categoryToSlugMap}
     />
   </Layout>
 )

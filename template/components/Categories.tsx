@@ -8,13 +8,13 @@ import { hashString } from '@/utils/hashString'
 import siteConfig from '@/config/site.config.json'
 import type { CategoryMaps } from '@/app/categorySlugs'
 import { getTotalPostsText } from '@/utils/getTotalPostsText'
+import { slugify } from '@/utils/slugify'
 
 interface Props {
-  categoryToSlugMap: CategoryMaps['categoryToSlugMap']
   categoriesWithPostsCountMap: CategoryMaps['categoriesWithPostsCountMap']
 }
 
-const Categories = ({ categoryToSlugMap, categoriesWithPostsCountMap }: Props) => {
+const Categories = ({ categoriesWithPostsCountMap }: Props) => {
   return (
     <section>
       <PageHeader title="Všechny kategorie" />
@@ -24,9 +24,9 @@ const Categories = ({ categoryToSlugMap, categoriesWithPostsCountMap }: Props) =
           {Object.entries(categoriesWithPostsCountMap)
             .sort(([cat1], [cat2]) => cat1.localeCompare(cat2))
             .map(([cat, postsCount]) => (
-              <div key={categoryToSlugMap[cat]} className="col-lg-4 col-md-6">
+              <div key={slugify(cat)} className="col-lg-4 col-md-6">
                 <Link
-                  href={`/kategorie/${categoryToSlugMap[cat]}`}
+                  href={`/kategorie/${slugify(cat)}`}
                   className={`p-4 rounded d-block is-hoverable tag-block ${
                     siteConfig.colorful && (hashString(cat) === 1 ? 'odd' : 'even')
                   }`}

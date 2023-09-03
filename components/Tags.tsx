@@ -5,13 +5,12 @@ import { Tags as TagsTemplate } from '@/template/components/Tags'
 import { Layout } from '@/components/Layout'
 
 interface Props {
-  tagToSlugMap: TagMaps['tagToSlugMap']
   tagsWithPostsCountMap: TagMaps['tagsWithPostsCountMap']
 }
 
-const Tags = ({ tagToSlugMap, tagsWithPostsCountMap }: Props) => (
+const Tags = ({ tagsWithPostsCountMap }: Props) => (
   <Layout>
-    <TagsTemplate tagsWithPostsCountMap={tagsWithPostsCountMap} tagToSlugMap={tagToSlugMap} />
+    <TagsTemplate tagsWithPostsCountMap={tagsWithPostsCountMap} />
   </Layout>
 )
 

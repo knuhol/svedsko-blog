@@ -3,7 +3,6 @@ import { notFound } from 'next/navigation'
 import { client } from '@/tina/__generated__/client'
 import { Category } from '@/components/Category'
 import { createCategoryMaps } from '@/app/categorySlugs'
-import { createTagMaps } from '@/app/tagSlugs'
 
 export const generateStaticParams = async () => {
   const { slugToCategoryMap } = await createCategoryMaps()
@@ -15,7 +14,7 @@ export const generateStaticParams = async () => {
 
 // TODO: Metadata
 const CategoryPage = async ({ params }) => {
-  const { slugToCategoryMap, categoryToSlugMap } = await createCategoryMaps()
+  const { slugToCategoryMap } = await createCategoryMaps()
 
   if (!Object.keys(slugToCategoryMap).includes(params.slug)) {
     notFound()
@@ -26,7 +25,6 @@ const CategoryPage = async ({ params }) => {
     sort: 'date',
   })
   const authors = await client.queries.authorsConnection()
-  const { tagToSlugMap } = await createTagMaps()
 
   return (
     <Category
@@ -35,9 +33,7 @@ const CategoryPage = async ({ params }) => {
         ({ node }) => node.category === slugToCategoryMap[params.slug],
       )}
       category={slugToCategoryMap[params.slug]}
-      tagToSlugMap={tagToSlugMap}
       slugToCategoryMap={slugToCategoryMap}
-      categoryToSlugMap={categoryToSlugMap}
     />
   )
 }

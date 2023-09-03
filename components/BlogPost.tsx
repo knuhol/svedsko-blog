@@ -6,17 +6,13 @@ import { richTextBodyToString } from '@/utils/richTextBodyToString'
 import { getGender } from '@/utils/getGender'
 import { Layout } from '@/components/Layout'
 import { useTina } from 'tinacms/dist/react'
-import type { TagMaps } from '@/app/tagSlugs'
-import type { CategoryMaps } from '@/app/categorySlugs'
 
 interface Props {
   post: TinaPost
   authors: TinaAuthors
-  tagToSlugMap: TagMaps['tagToSlugMap']
-  categoryToSlugMap: CategoryMaps['categoryToSlugMap']
 }
 
-const BlogPost = ({ post, authors, tagToSlugMap, categoryToSlugMap }: Props) => {
+const BlogPost = ({ post, authors }: Props) => {
   const { data: postData } = useTina(post)
 
   return (
@@ -42,8 +38,6 @@ const BlogPost = ({ post, authors, tagToSlugMap, categoryToSlugMap }: Props) => 
           summary: author.node.summary,
           content: author.node.body,
         }))}
-        tagToSlugMap={tagToSlugMap}
-        categoryToSlugMap={categoryToSlugMap}
       />
     </Layout>
   )

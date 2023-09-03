@@ -13,17 +13,13 @@ interface Props {
   category: string
   authors: TinaAuthors
   slugToCategoryMap: CategoryMaps['slugToCategoryMap']
-  tagToSlugMap: TagMaps['tagToSlugMap']
-  categoryToSlugMap: CategoryMaps['categoryToSlugMap']
 }
 
 const Category = ({
   posts,
   category,
   authors,
-  tagToSlugMap,
   slugToCategoryMap,
-  categoryToSlugMap,
 }: Props) => {
   const title = category[0].toUpperCase() + category.substring(1)
 
@@ -52,8 +48,6 @@ const Category = ({
           content: node.body,
         }))}
         slugToCategoryMap={slugToCategoryMap}
-        tagToSlugMap={tagToSlugMap}
-        categoryToSlugMap={categoryToSlugMap}
       />
     </Layout>
   )

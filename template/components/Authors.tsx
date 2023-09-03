@@ -10,6 +10,7 @@ interface Props {
   authors: Array<TemplateAuthor & { numberOfPosts: number; slug: string }>
 }
 
+// TODO: Add content to authors
 const Authors = ({ authors }: Props) => {
   return (
     <section>

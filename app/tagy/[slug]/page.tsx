@@ -4,7 +4,6 @@ import { createTagMaps } from '@/app/tagSlugs'
 import { client } from '@/tina/__generated__/client'
 import { Tag } from '@/components/Tag'
 import { getTags } from '@/utils/getTags'
-import { createCategoryMaps } from '@/app/categorySlugs'
 
 export const generateStaticParams = async () => {
   const { slugToTagMap } = await createTagMaps()
@@ -16,7 +15,7 @@ export const generateStaticParams = async () => {
 
 // TODO: Metadata
 const TagPage = async ({ params }) => {
-  const { slugToTagMap, tagToSlugMap } = await createTagMaps()
+  const { slugToTagMap } = await createTagMaps()
 
   if (!Object.keys(slugToTagMap).includes(params.slug)) {
     notFound()
@@ -27,7 +26,6 @@ const TagPage = async ({ params }) => {
     sort: 'date',
   })
   const authors = await client.queries.authorsConnection()
-  const { categoryToSlugMap } = await createCategoryMaps()
 
   return (
     <Tag
@@ -36,9 +34,7 @@ const TagPage = async ({ params }) => {
         getTags(node.tags).includes(slugToTagMap[params.slug]),
       )}
       tag={slugToTagMap[params.slug]}
-      tagToSlugMap={tagToSlugMap}
       slugToTagMap={slugToTagMap}
-      categoryToSlugMap={categoryToSlugMap}
     />
   )
 }

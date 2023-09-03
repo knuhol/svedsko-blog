@@ -3,14 +3,9 @@ import { createCategoryMaps } from '@/app/categorySlugs'
 
 // TODO: Metadata
 const CategoriesPage = async () => {
-  const { categoryToSlugMap, categoriesWithPostsCountMap } = await createCategoryMaps()
+  const { categoriesWithPostsCountMap } = await createCategoryMaps()
 
-  return (
-    <Categories
-      categoryToSlugMap={categoryToSlugMap}
-      categoriesWithPostsCountMap={categoriesWithPostsCountMap}
-    />
-  )
+  return <Categories categoriesWithPostsCountMap={categoriesWithPostsCountMap} />
 }
 
 export default CategoriesPage

@@ -3,7 +3,6 @@ import { cache } from 'react'
 import { client } from '@/tina/__generated__/client'
 import { notFound } from 'next/navigation'
 import { Author } from '@/components/Author'
-import { createTagMaps } from '@/app/tagSlugs'
 
 const getCachedAuthor = cache(
   async (slug) =>
@@ -41,9 +40,8 @@ const AuthorPage = async ({ params }) => {
     last: -1,
     sort: 'date',
   })
-  const { tagToSlugMap } = await createTagMaps()
 
-  return <Author author={author} posts={posts} tagToSlugMap={tagToSlugMap} />
+  return <Author author={author} posts={posts} />
 }
 
 export default AuthorPage

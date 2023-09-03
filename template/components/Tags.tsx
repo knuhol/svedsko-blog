@@ -8,13 +8,13 @@ import { PageHeader } from '@/template/components/PageHeader'
 import { hashString } from '@/utils/hashString'
 import siteConfig from '@/config/site.config.json'
 import { getTotalPostsText } from '@/utils/getTotalPostsText'
+import { slugify } from '@/utils/slugify'
 
 interface Props {
-  tagToSlugMap: TagMaps['tagToSlugMap']
   tagsWithPostsCountMap: TagMaps['tagsWithPostsCountMap']
 }
 
-const Tags = ({ tagToSlugMap, tagsWithPostsCountMap }: Props) => {
+const Tags = ({ tagsWithPostsCountMap }: Props) => {
   return (
     <section>
       <PageHeader title="Všechny tagy" />
@@ -24,9 +24,9 @@ const Tags = ({ tagToSlugMap, tagsWithPostsCountMap }: Props) => {
           {Object.entries(tagsWithPostsCountMap)
             .sort(([tag1], [tag2]) => tag1.localeCompare(tag2))
             .map(([tag, postsCount]) => (
-              <div key={tagToSlugMap[tag]} className="col-lg-4 col-md-6">
+              <div key={slugify(tag)} className="col-lg-4 col-md-6">
                 <Link
-                  href={`/tagy/${tagToSlugMap[tag]}`}
+                  href={`/tagy/${slugify(tag)}`}
                   className={`p-4 rounded d-block is-hoverable tag-block ${
                     siteConfig.colorful && (hashString(tag) === 1 ? 'odd' : 'even')
                   }`}

@@ -6,18 +6,15 @@ import { Posts } from '@/template/components/Posts'
 import { getTags } from '@/utils/getTags'
 import { TagMaps } from '@/app/tagSlugs'
 import { getGender } from '@/utils/getGender'
-import type { CategoryMaps } from '@/app/categorySlugs'
 
 interface Props {
   posts: TinaPosts['data']['postConnection']['edges']
   tag: string
   authors: TinaAuthors
   slugToTagMap: TagMaps['slugToTagMap']
-  tagToSlugMap: TagMaps['tagToSlugMap']
-  categoryToSlugMap: CategoryMaps['categoryToSlugMap']
 }
 
-const Tag = ({ posts, tag, authors, tagToSlugMap, slugToTagMap, categoryToSlugMap }: Props) => {
+const Tag = ({ posts, tag, authors, slugToTagMap }: Props) => {
   const title = tag[0].toUpperCase() + tag.substring(1)
 
   return (
@@ -45,8 +42,6 @@ const Tag = ({ posts, tag, authors, tagToSlugMap, slugToTagMap, categoryToSlugMa
           content: node.body,
         }))}
         slugToTagMap={slugToTagMap}
-        tagToSlugMap={tagToSlugMap}
-        categoryToSlugMap={categoryToSlugMap}
       />
     </Layout>
   )

@@ -3,9 +3,9 @@ import { Tags } from '@/components/Tags'
 
 // TODO: Metadata
 const TagsPage = async () => {
-  const { tagToSlugMap, tagsWithPostsCountMap } = await createTagMaps()
+  const { tagsWithPostsCountMap } = await createTagMaps()
 
-  return <Tags tagToSlugMap={tagToSlugMap} tagsWithPostsCountMap={tagsWithPostsCountMap} />
+  return <Tags tagsWithPostsCountMap={tagsWithPostsCountMap} />
 }
 
 export default TagsPage

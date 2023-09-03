@@ -11,21 +11,11 @@ interface Props {
   title: string
   posts: TemplatePost[]
   authors: TemplateAuthors
-  tagToSlugMap: TagMaps['tagToSlugMap']
   slugToTagMap?: TagMaps['slugToTagMap']
-  categoryToSlugMap: CategoryMaps['categoryToSlugMap']
-  slugToCategoryMap: CategoryMaps['slugToCategoryMap']
+  slugToCategoryMap?: CategoryMaps['slugToCategoryMap']
 }
 
-const Posts = ({
-  title,
-  posts,
-  authors,
-  tagToSlugMap,
-  slugToTagMap,
-  categoryToSlugMap,
-  slugToCategoryMap,
-}: Props) => {
+const Posts = ({ title, posts, authors, slugToTagMap, slugToCategoryMap }: Props) => {
   return (
     <section>
       <PageHeader title={title} slugToTagMap={slugToTagMap} slugToCategoryMap={slugToCategoryMap} />
@@ -36,12 +26,7 @@ const Posts = ({
               key={post.slug}
               className={siteConfig.postColumns == 3 ? 'col-lg-4 col-md-6' : 'col-lg-6'}
             >
-              <BlogPostOverview
-                post={post}
-                authors={authors}
-                tagToSlugMap={tagToSlugMap}
-                categoryToSlugMap={categoryToSlugMap}
-              />
+              <BlogPostOverview post={post} authors={authors} />
             </div>
           ))}
         </div>

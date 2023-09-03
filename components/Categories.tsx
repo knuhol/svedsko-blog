@@ -5,16 +5,12 @@ import { Layout } from '@/components/Layout'
 import type { CategoryMaps } from '@/app/categorySlugs'
 
 interface Props {
-  categoryToSlugMap: CategoryMaps['categoryToSlugMap']
   categoriesWithPostsCountMap: CategoryMaps['categoriesWithPostsCountMap']
 }
 
-const Categories = ({ categoryToSlugMap, categoriesWithPostsCountMap }: Props) => (
+const Categories = ({ categoriesWithPostsCountMap }: Props) => (
   <Layout>
-    <CategoriesTemplate
-      categoriesWithPostsCountMap={categoriesWithPostsCountMap}
-      categoryToSlugMap={categoryToSlugMap}
-    />
+    <CategoriesTemplate categoriesWithPostsCountMap={categoriesWithPostsCountMap} />
   </Layout>
 )
 

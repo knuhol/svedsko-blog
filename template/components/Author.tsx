@@ -7,16 +7,14 @@ import { BlogPostOverview } from '@/template/components/BlogPostOverview'
 import siteConfig from '@/config/site.config.json'
 import { getNumberOfPostsText } from '@/utils/getNumberOfPostsText'
 import { PageHeader } from '@/template/components/PageHeader'
-import type { TagMaps } from '@/app/tagSlugs'
 
 interface Props {
   author: TemplateAuthor & { numberOfPosts: number }
   posts: TemplatePosts
-  tagToSlugMap: TagMaps['tagToSlugMap']
 }
 
 // TODO: Add pagination?
-const Author = ({ author, posts, tagToSlugMap }: Props) => {
+const Author = ({ author, posts }: Props) => {
   return (
     <>
       <section className="page-header section-sm pb-0">
@@ -63,7 +61,7 @@ const Author = ({ author, posts, tagToSlugMap }: Props) => {
                   key={post.slug}
                   className={siteConfig.postColumns == 3 ? 'col-lg-4 col-md-6' : 'col-lg-6'}
                 >
-                  <BlogPostOverview post={post} authors={[author]} tagToSlugMap={tagToSlugMap} />
+                  <BlogPostOverview post={post} authors={[author]} />
                 </div>
               ),
           )}

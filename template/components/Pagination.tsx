@@ -7,6 +7,7 @@ interface Props {
   numberOfPages: number
 }
 
+// TODO: Display on mobile?
 const Pagination = ({ currentPage, numberOfPages }: Props) => {
   const isFirst = currentPage === 1
   const isLast = currentPage === numberOfPages
@@ -24,13 +25,17 @@ const Pagination = ({ currentPage, numberOfPages }: Props) => {
                 className="page-link rounded w-auto px-4"
                 aria-label="Pagination Arrow"
               >
-                Prev
+                {`<`}
               </Link>
             </li>
 
             {Array.from({ length: numberOfPages }, (_, i) => (
               <li key={i} className={`page-item ${i == currentPage - 1 ? 'active' : ''}`}>
-                <Link href={`/blog/stranka/${i + 1}`} key={`page-${i}`} className="page-link rounded">
+                <Link
+                  href={`/blog/stranka/${i + 1}`}
+                  key={`page-${i}`}
+                  className="page-link rounded"
+                >
                   {i + 1}
                 </Link>
               </li>
@@ -42,7 +47,7 @@ const Pagination = ({ currentPage, numberOfPages }: Props) => {
                 className="page-link rounded w-auto px-4"
                 aria-label="Pagination Arrow"
               >
-                Next
+                {`>`}
               </Link>
             </li>
           </ul>
