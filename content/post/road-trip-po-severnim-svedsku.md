@@ -44,7 +44,7 @@ Oběd vaříme v lesíku u trati na plynovém vařiči a noc trávíme v chatce 
 
 ### Åre
 
-V sobotu ráno najíždíme na silnici __E45__, která se později stává ikonou celé této dovolené. V motorestu [Petterssons Kiosk & Bar HB](https://hogdalsbygden.se/petterssons-kiosk-bar-hb/) obědváme perfektní řízek, v _Östersundu_ kupujeme ledničku do auta a poté odbočujeme na silnici __E14__, protože se chceme zastavit v _Åre_.
+V sobotu ráno najíždíme na silnici __E45__, která se později stává ikonou celé této dovolené. V motorestu [Petterssons Kiosk & Bar HB](https://hogdalsbygden.se/petterssons-kiosk-bar-hb/) obědváme perfektní řízek, v _Östersundu_ kupujeme ledničku do auta a poté odbočujeme na silnici __E14__, protože se chceme zastavit v _Åre_.
 
 ![Vodopád Tännforsen](/uploads/posts/road-trip/road_trip_3.jpg)
 *Vodopád Tännforsen*
@@ -73,7 +73,7 @@ Den zakončujeme v hospůdce [Parkvillan](http://www.parkvillan.se/), kam se sta
 
 Noc trávíme ve stejném hotelu jako tu předchozí, pobyt nás stojí dohromady __1603 SEK__.
 
-V pondělí se probouzíme do hodně upršeného počasí, ale protože máme z předešlého večera zarezervovanou prohlídku v dole [Fröå gruva](http://www.froagruva.se/), nechceme ji rušit a dobře děláme - dostává se nám perfektního zážitku s místopisu znalou průvodkyní, která velmi ochotně mluví pomaleji a zřetelně, takže si výklad ve švédštině i prohlídku samotnou naplno užíváme.
+V pondělí se probouzíme do hodně upršeného počasí, ale protože máme z předešlého večera zarezervovanou prohlídku v dole [Fröå gruva](http://www.froagruva.se/), nechceme ji rušit a dobře děláme - dostává se nám perfektního zážitku s místopisu znalou průvodkyní, která velmi ochotně mluví pomaleji a zřetelně, takže si výklad ve švédštině i prohlídku samotnou naplno užíváme.
 
 ![Recepce dolu Fröå gruva](/uploads/posts/road-trip/road_trip_8.jpg)
 *Naše průvodkyně vedle recepce dolu Fröå gruva*
@@ -203,7 +203,7 @@ Cestou do _Haparandy_ pršet nepřestává a provádíme náš první pokus nav�
 ![Snus outlet v Haparandě](/uploads/posts/road-trip/road_trip_26.jpg)
 *Snus outlet v Haparandě*
 
-_Haparanda_ je město ležící přímo na švédsko-finské hranici. Jejím středem protéká řeka _Torneälven_, která město rozděluje na švédskou _Haparandu_ a finské _Torneå_. Do Finska ale nemůžeme, tak se stavujeme alespoň na záchodě v nejsevernější IKEA na světě a dáváme si skvělou večeři v [River Restaurant](https://www.facebook.com/riverrestauranthaparanda/). Od stolu se smutně díváme na druhý břeh do Finska a je nám jasné, že se sem musíme vrátit, až budou hranice znovu otevřené.
+_Haparanda_ je město ležící přímo na švédsko-finské hranici. Jejím středem protéká řeka _Torneälven_, která město rozděluje na švédskou _Haparandu_ a finské _Torneå_. Do Finska ale nemůžeme, tak se stavujeme alespoň na záchodě v nejsevernější IKEA na světě a dáváme si skvělou večeři v [River Restaurant](https://www.facebook.com/riverrestauranthaparanda/). Od stolu se smutně díváme na druhý břeh do Finska a je nám jasné, že se sem musíme vrátit, až budou hranice znovu otevřené.
 
 ![Pohled z restaurace River Restaurant před řeku Torneälven do Finska](/uploads/posts/road-trip/road_trip_27.jpg)
 *Pohled z restaurace River Restaurant před řeku Torneälven do Finska*

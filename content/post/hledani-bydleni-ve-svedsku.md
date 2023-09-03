@@ -8,7 +8,7 @@ summary: Jak jsem již nastínil ve svém poměrně dávném článku, situace s
 image: '/no-picture.svg'
 ---
 
-Jak jsem již nastínil ve svém [poměrně dávném článku](https://svedsko.blog/jednu-relokaci-prosim.html#jednu-relokaci-prosim), situace s bydlením ve Švédsku je dost složitá a sehnat byt ve Stockholmu dá docela práci. Přestože jsem se tedy dnes původně chystal napsat článek o našem stěhování a o životě na ostrově, nakonec jsem se zamotal do tohoto tématu a vyprodukoval úplně jiný článek. Nuže, tady je (a o ostrově příště, slibuju).
+Jak jsem již nastínil ve svém [poměrně dávném článku](/blog/jednu-relokaci-prosim), situace s bydlením ve Švédsku je dost složitá a sehnat byt ve Stockholmu dá docela práci. Přestože jsem se tedy dnes původně chystal napsat článek o našem stěhování a o životě na ostrově, nakonec jsem se zamotal do tohoto tématu a vyprodukoval úplně jiný článek. Nuže, tady je (a o ostrově příště, slibuju).
 
 ## Proč jsme se vlastně stěhovali
 

@@ -10,7 +10,7 @@ image: /uploads/posts/kocouri/kocouri_1.jpg
 
 Logistická stránka věci nám na samotném začátku plánování stěhování připadala až jako ten nejmenší problém a v porovnání s hledáním práce nebo s hledáním bytu jako naprostá prkotina. Čím více se ale termín blížil, tím více rostla nutnost začít řešit i toto. Musím říct, že kdybychom se nestěhovali spolu s kocoury, nábytkem, autem a plachetnicí, navíc do vybaveného bytu, prkotina by to skutečně byla. Stačilo by sednout na letadlo a odletět do Stockholmu. Takto před námi bylo a je ještě spousta zařizování. Dnes to bude krátký náhled do toho, jak plánujeme stěhovat kocoury.
 
-Jsem hrozně rád, že [už mámě spolu s našimi chlupáči kde bydlet](pohadka-o-nove-adrese.html#pohadka-o-nove-adrese). Teď je tam musíme ještě nějak dostat. Pokud chcete cestovat se zvířetem, musíte kromě logistické stránky věci vyřešit ještě stránku právní.
+Jsem hrozně rád, že [už mámě spolu s našimi chlupáči kde bydlet](/blog/pohadka-o-nove-adrese). Teď je tam musíme ještě nějak dostat. Pokud chcete cestovat se zvířetem, musíte kromě logistické stránky věci vyřešit ještě stránku právní.
 
 ## Právní náležitosti
 

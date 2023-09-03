@@ -12,7 +12,7 @@ Když vezmu v úvahu všechny ty zvěsti o tom, jak je ve Stockholmu složité n
 
 ## Než začneme hledat
 
-O tom, jak jsme si najali [relokační agenturu](jednu-relokaci-prosim.html#jednu-relokaci-prosim) (dále RA), jsem psal poměrně nedávno. Tehdy mě ohledně hledání nového bytu provázela akorát víra, že se svěřujeme do rukou profesionálů a že snad budeme mít od ledna kde bydlet. Nedělal jsem si moc velké iluze o tom, že si budeme mít z čeho vybírat, přesto s námi RA prošla naše požadavky, které jsme si nakonec stanovili na tyto:
+O tom, jak jsme si najali [relokační agenturu](/blog/jednu-relokaci-prosim) (dále RA), jsem psal poměrně nedávno. Tehdy mě ohledně hledání nového bytu provázela akorát víra, že se svěřujeme do rukou profesionálů a že snad budeme mít od ledna kde bydlet. Nedělal jsem si moc velké iluze o tom, že si budeme mít z čeho vybírat, přesto s námi RA prošla naše požadavky, které jsme si nakonec stanovili na tyto:
 
 * preferujeme bydlení na okraji města blízko přírody před bydlením v centru
 * dojezdová vzdálenost do centra by pomocí MHD neměla činit více, než jednu hodinu jízdy

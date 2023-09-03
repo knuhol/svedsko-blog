@@ -77,7 +77,7 @@ const BlogPostOverview = ({
           <h3 className={`post-title mb-3 ${siteConfig.postColumns == 3 ? 'h4' : ''}`}>{title}</h3>
         </Link>
         <p className={siteConfig.postColumns == 3 ? 'small' : ''}>
-          {truncateString(description, siteConfig.postColumns == 3 ? 90 : 150)}
+          {truncateString(description, siteConfig.postColumns == 3 ? 90 : 300)}
         </p>
       </div>
       <div className="card-footer border-top-0 bg-transparent p-0">

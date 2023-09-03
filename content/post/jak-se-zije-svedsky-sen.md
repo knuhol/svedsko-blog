@@ -10,7 +10,7 @@ image: /uploads/posts/dum/dum_8.jpg
 
 Malý, útulný, dřevěný domek někde na venkově, natřený načerveno - naprostá švédská klasika, kterou zná snad každý, kdo alespoň letmo někdy zaslechl o Dětech z Bullerbynu. Typičtější švédské bydlení zkrátka neexistuje. Tato dodnes velmi oblíbená a poptávaná forma bydlení je pomyslnou metou pro splnění si jakéhosi švédského snu. Nám se podařilo takové bydlení sehnat spíše omylem, přesto jsme z něj však nadšení stejně jako všichni ostatní, kteří o něm již dlouhá léta básní a sní. A jak se tedy žije takový švédský sen? Dovíte se v tomto článku.
 
-Nutno podotknout, že náš dům se nachází na ostrově _Tynningö_ (čte se [_týnyngó_]) a život na ostrově jako takový má svá nemalá specifika. V tomto článku se chci však soustředit pouze na popis bydlení samotného, takže pokud vás zajímá, jak se žije na ostrově, [pokračujte zde](ostrovan-tvrdy-chleba-ma.html#ostrovan-tvrdy-chleba-ma). Rovněž jsem již před nějakou dobou napsal [článek o tom, jak se ve Švédsku bydlení hledá](hledani-bydleni-ve-svedsku.html#hledani-bydleni-ve-svedsku) - a na ten nyní trochu navážu. 
+Nutno podotknout, že náš dům se nachází na ostrově _Tynningö_ (čte se [_týnyngó_]) a život na ostrově jako takový má svá nemalá specifika. V tomto článku se chci však soustředit pouze na popis bydlení samotného, takže pokud vás zajímá, jak se žije na ostrově, [pokračujte zde](/blog/ostrovan-tvrdy-chleba-ma). Rovněž jsem již před nějakou dobou napsal [článek o tom, jak se ve Švédsku bydlení hledá](/blog/hledani-bydleni-ve-svedsku) - a na ten nyní trochu navážu. 
 
 ## Kde se vzal nápad bydlet v domku na ostrově
 
