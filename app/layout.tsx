@@ -1,5 +1,6 @@
 import { type ReactNode } from 'react'
 import { Metadata } from 'next'
+import { Crete_Round, Work_Sans } from 'next/font/google'
 
 import { BootstrapProvider } from '@/contexts/BootstrapContext'
 import siteConfig from '@/config/site.config.json'
@@ -16,15 +17,23 @@ export const metadata: Metadata = {
   openGraph: { ...sharedOgMetadata },
 }
 
-// TODO: Optimise fonts
+const creteRound = Crete_Round({
+  weight: ['400'],
+  subsets: ['latin', 'latin-ext'],
+  display: 'swap',
+  variable: '--font-crete-round'
+})
+const workSans = Work_Sans({
+  weight: ['500', '600'],
+  subsets: ['latin', 'latin-ext'],
+  display: 'swap',
+  variable: '--font-work-sans'
+})
+
 const RootLayout = async ({ children }: { children: ReactNode }) => {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className={`${creteRound.variable} ${workSans.variable}`} suppressHydrationWarning>
       <head>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Crete+Round&family=Work+Sans:wght@500;600&display=swap"
-          rel="stylesheet"
-        />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />

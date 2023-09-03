@@ -41,10 +41,9 @@ const BlogPostOverview = ({
               className="rounded img-fluid"
               src={image}
               alt={title}
-              width={`650`}
-              height={`335`}
-              placeholder="blur"
-              blurDataURL={image}
+              width="650"
+              height="335"
+              placeholder="empty"
             />
           </div>
         </Link>

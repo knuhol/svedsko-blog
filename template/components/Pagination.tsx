@@ -15,7 +15,7 @@ const Pagination = ({ currentPage, numberOfPages }: Props) => {
   const ITEM_WIDTH = 70
   const MIN_SUPPORTED_WIDTH = 290
 
-  const [maxWidth, setMaxWidth] = useState(window.screen.availWidth)
+  const [maxWidth, setMaxWidth] = useState(MIN_SUPPORTED_WIDTH)
   const [areArrowsVisible, setAreArrowsVisible] = useState(false)
   const [visiblePages, setVisiblePages] = useState(0)
   const [prevPartLength, setPrevPartLength] = useState(0)

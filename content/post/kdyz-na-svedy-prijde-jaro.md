@@ -2,7 +2,7 @@
 title: Když na Švédy přijde jaro
 date: 2018-04-14
 category: Život ve Švédsku
-tags: Švédsko, počasí, jaro, příroda, koupání, Hellasgården, WTF
+tags: Švédsko, Stockholm, příroda, životní styl, zajímavosti
 author: Knut Holm
 summary: >-
   Počasí. Nesmrtelné téma všech small talků ve výtahu a vděčný icebreaker na

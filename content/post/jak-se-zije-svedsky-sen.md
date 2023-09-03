@@ -2,7 +2,7 @@
 title: Jak se žije švédský sen
 date: 2019-09-30
 category: Život ve Švédsku
-tags: dům, ostrov, Tynningö, stěhování, bydlení, hledání, nájem
+tags: Švédsko, Stockholm, bydlení, ostrov, stěhování
 author: Knut Holm
 summary: Malý, útulný, dřevěný domek někde na venkově, natřený načerveno - naprostá švédská klasika, kterou zná snad každý, kdo alespoň letmo někdy zaslechl o Dětech z Bullerbynu. Typičtější švédské bydlení zkrátka neexistuje. Tato dodnes velmi oblíbená a poptávaná forma bydlení je pomyslnou metou pro splnění si jakéhosi švédského snu. Nám se podařilo takové bydlení sehnat spíše omylem, přesto jsme z něj však nadšení stejně jako všichni ostatní, kteří o něm již dlouhá léta básní a sní. A jak se tedy žije takový švédský sen? Dovíte se v tomto článku.
 image: /uploads/posts/dum/dum_8.jpg

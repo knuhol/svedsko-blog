@@ -2,7 +2,7 @@
 title: Ostrovan tvrdý chleba má
 date: 2019-10-01
 category: Život ve Švédsku
-tags: ostrov, souostroví, Tynningö, Stockholm, bydlení, přívoz, molo, loď, Vaxholmsbolaget, SL
+tags: Švédsko, Stockholm, bydlení, ostrov, lodě
 author: Knut Holm
 summary: Typický švédský domek s prostornou terasou a velkou zahradou, písečná pláž dvě minuty od domu, parkování lodě pod nosem, nejbližší potápěčská lokalita pět minut autem, dojíždění do práce lodí, venkovský život 30 km od Stockholmu. Zní to hrozně romanticky, dokud k tomu ovšem nedodám, že na ostrově není žádný obchod ani restaurace a hlavně - taky žádný most. Člověk je zcela odkázán na lodní dopravu a rozmary počasí na Baltském moři. Přidejte k tomu, že se na ostrov mezi půlnocí a šestou ráno nedá bez vlastní lodi vůbec dostat, že přívoz jezdí dvakrát za hodinu, že z koncertu musíte domu vodním taxíkem a vyjde vám, že toto není bydlení pro každého. Tak schválně, převažují u vás klady nebo zápory ostrovního života?
 image: /uploads/posts/ostrov/ostrov_6.jpg

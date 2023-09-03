@@ -2,7 +2,7 @@
 title: 7 zajímavostí o švédských volbách
 date: 2018-10-17
 category: Život ve Švédsku
-tags: volby, politika, parlament, Riksdag, röstkort, kommun, landsting, talman
+tags: Švédsko, volby, politika, zajímavosti
 author: Tereza Holm
 summary: Z nějakého důvodu se švédské volby dostaly do hledáčku českých médií a v den voleb se tak staly tématem číslo jedna nejen pouze ve Švédsku, ale i v ČR. Pokud jste tedy zrovna sledovali televizi nebo otevřeli internetové zprávy, zjistili jste, že ve Švédsku se konají nějaké volby – a to je asi tak všechno, protože vyšší informační hodnotu ony zprávy nepřinesly. Já volby ve Švédsku tenhle rok zažila na vlastní kůži a hodila si svůj hlas do volební urny – no, tedy skoro (později pochopíte proč). Nebudu tu rozebírat švédský volební ani politický systém, spíše bych ráda vypíchla věci, které mě osobně zaujaly a které se od českých voleb liší.
 image: /uploads/posts/volby/volby_3.jpg

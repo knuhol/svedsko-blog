@@ -2,7 +2,7 @@
 title: Hledání bydlení ve Švédsku
 date: 2019-07-15
 category: Život ve Švédsku
-tags: byt, nemovitost, hledání, bydlení, nájem, hypotéka
+tags: Švédsko, bydlení
 author: Knut Holm
 summary: Jak jsem již nastínil ve svém poměrně dávném článku, situace s bydlením ve Švédsku je dost složitá a sehnat byt ve Stockholmu dá docela práci. Přestože jsem se tedy dnes původně chystal napsat článek o našem stěhování a o životě na ostrově, nakonec jsem se zamotal do tohoto tématu a vyprodukoval úplně jiný článek. Nuže, tady je (a o ostrově příště, slibuju).
 image: '/no-picture.svg'

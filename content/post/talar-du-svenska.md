@@ -2,7 +2,7 @@
 title: Talar du svenska?
 date: 2018-04-06T21:18:00.000Z
 category: Život ve Švédsku
-tags: 'švédština, angličtina, Švédsko, jazyky, SFI'
+tags: švédština, Švédsko, životní styl
 author: Knut Holm
 summary: >-
   Asi už každý z vás slyšel moudré rady kamarádů o tom, ať se klidně vypraví do

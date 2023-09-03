@@ -2,7 +2,7 @@
 title: Odjezd a příjezd
 date: 2018-01-13
 category: Odjezd z ČR
-tags: stěhování, odjezd, příjezd, cesta, dodávka, trajekt
+tags: stěhování, auta, lodě, Švédsko, Česko
 author: Knut Holm
 summary: Představte si, že se stěhujete přes tisíc kilometrů daleko. Všechno máte naplánované do nejmenších detailů a už z vás pomalu začíná opadat stres spojený s organizováním toho všeho. Zbývá ještě dát auto do servisu na běžnou kontrolu a to poslední, co chcete v tuto chvíli slyšet je, že vaše auto je ve skutečnosti nepojízdný vrak. Jenže přesně toto se nám stalo.
 image: /uploads/posts/cesta/cesta_1.jpg

@@ -1,8 +1,8 @@
 // credits: https://themeforest.net/item/qurno-minimal-blog-nextjs-template/36625633
 
 // style variables
-$font-primary: "Crete Round", serif;
-$font-secondary: "Work Sans", sans-serif;
+$font-primary: var(--font-crete-round), serif;
+$font-secondary: var(--font-work-sans), sans-serif;
 $h1: 64px;
 $h1-lg: 52px;
 $h1-md: 42px;

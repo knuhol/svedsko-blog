@@ -2,7 +2,7 @@
 title: Moje cesta za změnou profese aneb z učitelky softwarovým testerem
 date: 2019-03-31
 category: Život ve Švédsku
-tags: práce ve Švédsku, práce, pracovní pohovory, kariéra, profese, změna profese, učitelka, vikarie, Java, tester
+tags: Švédsko, práce
 author: Tereza Holm
 summary: Cesta za mojí prací ve Švédsku probíhala v podstatě totožně jako [náš příjezd sem](odjezd-a-prijezd.html#odjezd-a-prijezd) – na začátku stál geniální a detailní plán, který se ale hned v úvodu příšerně pokazil a následovala jedna improvizace za druhou – a nakonec to vlastně všechno dopadlo nad očekávání dobře.
 image: '/no-picture.svg'

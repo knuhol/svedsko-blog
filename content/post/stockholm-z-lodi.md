@@ -2,7 +2,7 @@
 title: Stockholm z lodi
 date: 2018-06-05
 category: Tipy pro turisty
-tags: loď, souostroví, Stockholm, SL, Strömma, Vaxholmsbolaget, Viking Line, Vasa, HMS af Chapman
+tags: lodě, Stockholm, Švédsko, turistika
 author: Knut Holm
 summary: „Každá pátá rodina má svou vlastní loď.“ Tato obyčejná věta z nádherného dokumentu _[Švédsko, kouzlo severu](https://www.youtube.com/watch?v=0GQf15qLD_o)_ mi v podstatě změnila život, protože odstartovala mou vášeň a lásku k severskému království. Lodě miluji, a přestože dokáži jen stěží popsat slovy pocity, které mám, když jsem na palubě, pokusím se vám tímto článkem zjednodušit cestu k vašemu vlastnímu zážitku a pomoci vám objevovat Stockholm trochu netradičně – z lodi.
 image: /uploads/posts/szlodi/szlodi_19.jpg

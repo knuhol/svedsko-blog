@@ -2,7 +2,7 @@
 title: Pan a paní Holm
 date: 2018-07-11
 category: Odjezd z ČR
-tags: příjmení, úřady, doklady, legislativa
+tags:  úřady, doklady, Česko
 author: Knut Holm
 summary: Vždycky jsme chtěli mít stejné přijmení. V ČR jsme to tehdy řešit nechtěli, protože nám to připadalo zbytečné, když jsme věděli, že stejně chceme pryč a jména si budeme měnit oba dva na místní. Najednou jsme stáli na švédském úřadě a přihlašovali si trvalý pobyt. Stačilo pár kliknutí na klávesnici a už jsme byli ve švédském registru obyvatel. No jo, ale co teď s těmi jmény? Asi správně tušíte, že kdyby to bylo také tak jednoduché, nepíšu o tom tento článek.
 image: '/no-picture.svg'
