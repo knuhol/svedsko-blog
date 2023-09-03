@@ -1,12 +1,26 @@
-import { client } from '../tina/__generated__/client'
-import { Home } from '../components/Home'
+import { client } from '@/tina/__generated__/client'
+import { Home } from '@/components/Home'
+import siteConfig from '@/config/site.config.json'
+import { createTagMaps } from '@/app/tagSlugs'
+import { createCategoryMaps } from '@/app/categorySlugs'
 
 const HomePage = async () => {
-  const { data, query, variables } = await client.queries.page({
-    relativePath: 'home.mdx',
+  const posts = await client.queries.postConnection({
+    last: siteConfig.postPerPage,
+    sort: 'date',
   })
+  const authors = await client.queries.authorsConnection()
+  const { tagToSlugMap } = await createTagMaps()
+  const { categoryToSlugMap } = await createCategoryMaps()
 
-  return <Home data={data} query={query} variables={variables} />
+  return (
+    <Home
+      posts={posts}
+      authors={authors}
+      tagToSlugMap={tagToSlugMap}
+      categoryToSlugMap={categoryToSlugMap}
+    />
+  )
 }
 
 export default HomePage

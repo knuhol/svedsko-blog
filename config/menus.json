@@ -1,0 +1,24 @@
+{
+  "mainMenu": [
+    {
+      "name": "Domů",
+      "link": "/"
+    },
+    {
+      "name": "Archiv",
+      "link": "/blog/archiv"
+    },
+    {
+      "name": "Kategorie",
+      "link": "/kategorie"
+    },
+    {
+      "name": "Tagy",
+      "link": "/tagy"
+    },
+    {
+      "name": "Autoři",
+      "link": "/autori"
+    }
+  ]
+}

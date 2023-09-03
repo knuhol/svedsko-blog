@@ -1,24 +1,16 @@
-import Link from 'next/link'
-import Head from 'next/head'
+import { Header } from '@/template/components/Header'
+import { Footer } from '@/template/components/Footer'
 
 export const Layout = (props) => {
   return (
-    <div
-      style={{
-        margin: '3rem',
-      }}
-    >
-      <Head>
-        <title>Tina App</title>
-        <meta name="description" content="A TinaCMS Application" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <>
       <header>
-        <Link href="/">Home</Link>
-        {' | '}
-        <Link href="/posts">Posts</Link>
+        <Header />
       </header>
-      <main>{props.children}</main>
-    </div>
+      <main style={{ minHeight: 'calc(100vh - 235px)' }}>{props.children}</main>
+      <footer>
+        <Footer />
+      </footer>
+    </>
   )
 }
