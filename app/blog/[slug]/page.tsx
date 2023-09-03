@@ -60,6 +60,7 @@ export const generateMetadata = async ({ params }: MetadataProps): Promise<Metad
       publishedTime: data.post.date,
       tags: data.post.tags.split(', '),
       section: data.post.category,
+      description: data.post.summary
     },
   }
 }
