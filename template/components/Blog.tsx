@@ -27,9 +27,9 @@ const Blog = ({ posts, authors, currentPage, numberOfPages }: Props) => {
               <BlogPostOverview post={post} authors={authors} />
             </div>
           ))}
-          <Pagination currentPage={currentPage} numberOfPages={numberOfPages} />
         </div>
       </div>
+      <Pagination currentPage={currentPage} numberOfPages={numberOfPages} />
     </section>
   )
 }

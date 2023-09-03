@@ -155,11 +155,11 @@ const BlogPost = ({
             <div className="content">
               <TinaMarkdown content={content} />
             </div>
-            <ul className="post-meta-tag list-unstyled list-inline mt-5">
+            <ul className="post-meta-tag list-unstyled list-inline mt-3">
               {tags.map((tag) => (
                 <li
                   key={slugify(tag)}
-                  className={`list-inline-item ${
+                  className={`list-inline-item mt-2 ${
                     siteConfig.colorful && (hashString(tag) === 1 ? 'odd' : 'even')
                   }`}
                 >
