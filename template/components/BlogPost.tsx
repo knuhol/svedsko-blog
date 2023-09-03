@@ -159,7 +159,7 @@ const BlogPost = ({
                     siteConfig.colorful && (hashString(tag) === 1 ? 'odd' : 'even')
                   }`}
                 >
-                  <Link href={`/tags/${slugify(tag)}`}>{tag}</Link>
+                  <Link href={`/tagy/${slugify(tag)}`}>{tag}</Link>
                 </li>
               ))}
             </ul>
