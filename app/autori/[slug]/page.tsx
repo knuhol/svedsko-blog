@@ -3,6 +3,9 @@ import { cache } from 'react'
 import { client } from '@/tina/__generated__/client'
 import { notFound } from 'next/navigation'
 import { Author } from '@/components/Author'
+import {Metadata} from "next";
+import {createTagMaps} from "@/app/tagSlugs";
+import siteConfig from "@/config/site.config.json";
 
 const getCachedAuthor = cache(
   async (slug) =>
@@ -27,7 +30,20 @@ export const generateStaticParams = async () => {
   })
 }
 
-// TODO: Metadata
+export const generateMetadata = async ({ params }): Promise<Metadata> => {
+  const slugs = await getCachedSlugs()
+
+  if (!slugs.includes(params.slug)) {
+    notFound()
+  }
+
+  const author = await getCachedAuthor(params.slug)
+
+  return {
+    title: `${siteConfig.metaData.title} – ${author.data.authors.name}`,
+  }
+}
+
 const AuthorPage = async ({ params }) => {
   const slugs = await getCachedSlugs()
 

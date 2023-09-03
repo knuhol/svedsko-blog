@@ -10,7 +10,6 @@ interface Props {
   authors: Array<TemplateAuthor & { numberOfPosts: number; slug: string }>
 }
 
-// TODO: Add content to authors
 const Authors = ({ authors }: Props) => {
   return (
     <section>
@@ -27,8 +26,7 @@ const Authors = ({ authors }: Props) => {
                   alt={author.name}
                   width="150"
                   height="150"
-                  placeholder="blur"
-                  blurDataURL={author.image}
+                  placeholder="empty"
                 />
               </div>
               <h4 className="text-dark mt-4 mb-1">{author.name}</h4>

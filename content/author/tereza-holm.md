@@ -2,7 +2,12 @@
 name: Tereza Holm
 image: /uploads/authors/tereza-holm.jpg
 gender: female
-summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+summary: Java programátorka s vášní pro jízdu na koni, žijící šestým rokem ve Švédsku.
+facebook: ''
+linkedin: 'https://www.linkedin.com/in/tereza-holm/'
+github: 'https://github.com/terhol'
+stackoverflow: ''
+web: ''
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget ex pellentesque tellus cursus porttitor. Donec eget ante sit amet augue rhoncus pellentesque vel at erat.
+Java programátorka s vášní pro jízdu na koni, žijící šestým rokem ve Švédsku.

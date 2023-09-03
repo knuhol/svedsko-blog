@@ -3,6 +3,8 @@ import { notFound } from 'next/navigation'
 import { client } from '@/tina/__generated__/client'
 import { Category } from '@/components/Category'
 import { createCategoryMaps } from '@/app/categorySlugs'
+import { Metadata } from 'next'
+import siteConfig from '@/config/site.config.json'
 
 export const generateStaticParams = async () => {
   const { slugToCategoryMap } = await createCategoryMaps()
@@ -12,7 +14,20 @@ export const generateStaticParams = async () => {
   })
 }
 
-// TODO: Metadata
+export const generateMetadata = async ({ params }): Promise<Metadata> => {
+  const { slugToCategoryMap } = await createCategoryMaps()
+
+  if (!Object.keys(slugToCategoryMap).includes(params.slug)) {
+    notFound()
+  }
+
+  const category = slugToCategoryMap[params.slug]
+
+  return {
+    title: `${siteConfig.metaData.title} – ${category[0].toUpperCase() + category.substring(1)}`,
+  }
+}
+
 const CategoryPage = async ({ params }) => {
   const { slugToCategoryMap } = await createCategoryMaps()
 

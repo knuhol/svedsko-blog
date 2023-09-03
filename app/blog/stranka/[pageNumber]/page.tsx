@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation'
 import { cache } from 'react'
+import type { Metadata } from 'next'
 
 import { client } from '@/tina/__generated__/client'
 import { Blog } from '@/components/Blog'
@@ -17,7 +18,10 @@ export const generateStaticParams = async () => {
   })
 }
 
-// TODO: Metadata
+export const metadata: Metadata = {
+  title: `${siteConfig.metaData.title} – Blog`,
+}
+
 const BlogPage = async ({ params }) => {
   const allPosts = await getCachedPosts()
   const numberOfPages = Math.ceil(

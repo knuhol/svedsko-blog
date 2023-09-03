@@ -3,13 +3,13 @@
     "title": "O Švédsku a tak",
     "description": "Knut Holm píše blog (nejen) o svém odchodu do Švédska",
     "author": "Knut Holm",
-    "keyword": "",
-    "ogImage": ""
+    "authorWeb": "https://knuhol.tech",
+    "keyword": "Švédsko, Stockholm, blog, turistika, příroda, životní styl, bydlení, stěhování, zahraničí",
+    "ogImage": "/og-fallback.png"
   },
   "baseURL": "https://svedsko.blog",
   "logo": "/logo-final.svg",
   "logoText": "O Švédsku a tak",
-  "favicon": "",
   "postPerPage": 6,
   "postColumns": 2,
   "colorful": true

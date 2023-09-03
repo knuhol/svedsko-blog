@@ -8,6 +8,7 @@ const sharedOgMetadata = {
   siteName: siteConfig.metaData.title,
   locale: 'cs_CZ',
   type: 'website',
+  tags: [siteConfig.metaData.keyword]
 }
 
 export { sharedOgMetadata }

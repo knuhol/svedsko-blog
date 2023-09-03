@@ -6,17 +6,13 @@ import { BlogPostOverview } from '@/template/components/BlogPostOverview'
 import Link from 'next/link'
 import { IconNewSection } from '@tabler/icons-react'
 import type { TemplateAuthors, TemplatePosts } from '@/types/template'
-import type { TagMaps } from '@/app/tagSlugs'
-import type { CategoryMaps } from '@/app/categorySlugs'
 
 interface Props {
   posts: TemplatePosts
   authors: TemplateAuthors
-  tagToSlugMap: TagMaps['tagToSlugMap']
-  categoryToSlugMap: CategoryMaps['categoryToSlugMap']
 }
 
-const Home = ({ posts, authors, tagToSlugMap, categoryToSlugMap }: Props) => {
+const Home = ({ posts, authors }: Props) => {
   return (
     <>
       <BannerBlock text={siteConfig.metaData.description} />
@@ -34,12 +30,7 @@ const Home = ({ posts, authors, tagToSlugMap, categoryToSlugMap }: Props) => {
               key={post.slug}
               className={siteConfig.postColumns == 3 ? 'col-lg-4 col-md-6' : 'col-lg-6'}
             >
-              <BlogPostOverview
-                post={post}
-                authors={authors}
-                tagToSlugMap={tagToSlugMap}
-                categoryToSlugMap={categoryToSlugMap}
-              />
+              <BlogPostOverview post={post} authors={authors} />
             </div>
           ))}
 

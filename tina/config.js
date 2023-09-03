@@ -33,6 +33,31 @@ const schema = defineSchema({
           label: 'Summary',
           name: 'summary',
         },
+        {
+          type: 'string',
+          label: 'Facebook',
+          name: 'facebook',
+        },
+        {
+          type: 'string',
+          label: 'LinkedIn',
+          name: 'linkedin',
+        },
+        {
+          type: 'string',
+          label: 'GitHub',
+          name: 'github',
+        },
+        {
+          type: 'string',
+          label: 'StackOverflow',
+          name: 'stackoverflow',
+        },
+        {
+          type: 'string',
+          label: 'Web',
+          name: 'web',
+        },
       ],
       ui: {
         router: ({ document }) => {

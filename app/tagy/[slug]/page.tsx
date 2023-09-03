@@ -1,9 +1,11 @@
 import { notFound } from 'next/navigation'
+import type { Metadata } from 'next'
 
 import { createTagMaps } from '@/app/tagSlugs'
 import { client } from '@/tina/__generated__/client'
 import { Tag } from '@/components/Tag'
 import { getTags } from '@/utils/getTags'
+import siteConfig from '@/config/site.config.json'
 
 export const generateStaticParams = async () => {
   const { slugToTagMap } = await createTagMaps()
@@ -13,7 +15,20 @@ export const generateStaticParams = async () => {
   })
 }
 
-// TODO: Metadata
+export const generateMetadata = async ({ params }): Promise<Metadata> => {
+  const { slugToTagMap } = await createTagMaps()
+
+  if (!Object.keys(slugToTagMap).includes(params.slug)) {
+    notFound()
+  }
+
+  const tag = slugToTagMap[params.slug]
+
+  return {
+    title: `${siteConfig.metaData.title} – ${tag[0].toUpperCase() + tag.substring(1)}`,
+  }
+}
+
 const TagPage = async ({ params }) => {
   const { slugToTagMap } = await createTagMaps()
 

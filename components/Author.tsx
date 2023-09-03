@@ -27,6 +27,11 @@ const Author = ({ author, posts }: Props) => {
           numberOfPosts: posts.data.postConnection.edges.filter(
             (post) => post.node.author === authorData.authors.name,
           ).length,
+          facebook: authorData.authors.facebook,
+          linkedIn: authorData.authors.linkedin,
+          gitHub: authorData.authors.github,
+          stackOverflow: authorData.authors.stackoverflow,
+          web: authorData.authors.web,
         }}
         posts={posts.data.postConnection.edges.map((post) => ({
           slug: post.node._sys.filename,

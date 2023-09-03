@@ -29,7 +29,6 @@ interface Props {
   authors: TemplateAuthors
 }
 
-// TODO: Pass author slugs
 const BlogPost = ({
   post: {
     slug,
@@ -86,10 +85,7 @@ const BlogPost = ({
                 </li>
                 <li className="list-inline-item mt-2">—</li>
                 <li className="list-inline-item mt-2">
-                  <Link
-                    href={`/kategorie/${slugify(category)}`}
-                    className="card-meta-category"
-                  >
+                  <Link href={`/kategorie/${slugify(category)}`} className="card-meta-category">
                     <i className="me-2">
                       <IconColorSwatch size={18} />
                     </i>
@@ -104,50 +100,50 @@ const BlogPost = ({
             <div className="position-sticky" style={{ top: 150 + 'px' }}>
               <span className="d-inline-block mb-3 small">SDÍLET</span>
               <ul className="social-share icon-box">
-                <li className="d-inline-block d-lg-block me-2 mb-2">
-                  <a
-                    href={`https://www.facebook.com/sharer.php?u=${pageUrl}&quote=${title}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                <Link
+                  href={`https://www.facebook.com/sharer.php?u=${pageUrl}&quote=${title}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <li className="d-inline-block d-lg-block me-2 mb-2">
                     <i>
                       <IconBrandFacebook size={18} />
                     </i>
-                  </a>
-                </li>
-                <li className="d-inline-block d-lg-block me-2 mb-2">
-                  <a
-                    href={`https://twitter.com/intent/tweet?text=${title}&url=${pageUrl}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                  </li>
+                </Link>
+                <Link
+                  href={`https://twitter.com/intent/tweet?text=${title}&url=${pageUrl}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <li className="d-inline-block d-lg-block me-2 mb-2">
                     <i>
                       <IconBrandTwitter size={18} />
                     </i>
-                  </a>
-                </li>
-                <li className="d-inline-block d-lg-block me-2 mb-2">
-                  <a
-                    href={`https://www.linkedin.com/sharing/share-offsite/?url=${pageUrl}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                  </li>
+                </Link>
+                <Link
+                  href={`https://www.linkedin.com/sharing/share-offsite/?url=${pageUrl}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <li className="d-inline-block d-lg-block me-2 mb-2">
                     <i>
                       <IconBrandLinkedin size={18} />
                     </i>
-                  </a>
-                </li>
-                <li className="d-inline-block d-lg-block me-2 mb-2">
-                  <a
-                    href={`https://www.reddit.com/submit?url=${pageUrl}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                  </li>
+                </Link>
+                <Link
+                  href={`https://www.reddit.com/submit?url=${pageUrl}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <li className="d-inline-block d-lg-block me-2 mb-2">
                     <i>
                       <IconBrandReddit size={18} />
                     </i>
-                  </a>
-                </li>
+                  </li>
+                </Link>
               </ul>
             </div>
           </div>
@@ -184,8 +180,7 @@ const BlogPost = ({
                           width="155"
                           height="155"
                           className="rounded mr-4 img-fluid"
-                          placeholder="blur"
-                          blurDataURL={authorData.image}
+                          placeholder="empty"
                         />
                       </span>
                     ) : (

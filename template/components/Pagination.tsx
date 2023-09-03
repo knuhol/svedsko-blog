@@ -10,7 +10,6 @@ interface Props {
   numberOfPages: number
 }
 
-// TODO: Display on mobile?
 const Pagination = ({ currentPage, numberOfPages }: Props) => {
   const ITEM_WIDTH = 70
   const MIN_SUPPORTED_WIDTH = 290

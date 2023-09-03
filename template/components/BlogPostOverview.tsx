@@ -19,7 +19,6 @@ interface Props {
   post: TemplatePost
 }
 
-// TODO: Pictures in Safari
 const BlogPostOverview = ({
   post: {
     slug,

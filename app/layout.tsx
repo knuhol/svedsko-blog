@@ -13,7 +13,7 @@ import '@/template/styles/globals.scss'
 export const metadata: Metadata = {
   title: siteConfig.metaData.title,
   keywords: siteConfig.metaData.keyword,
-  authors: { name: siteConfig.metaData.author }, // TODO: Add URL
+  authors: { name: siteConfig.metaData.author, url: siteConfig.metaData.authorWeb },
   description: siteConfig.metaData.description,
   openGraph: { ...sharedOgMetadata },
 }

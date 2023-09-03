@@ -6,6 +6,7 @@ import { BlogPost } from '@/components/BlogPost'
 import siteConfig from '@/config/site.config.json'
 import { sharedOgMetadata } from '@/app/sharedOgMetadata'
 import { notFound } from 'next/navigation'
+import { slugify } from '@/utils/slugify'
 
 const getCachedPost = cache(
   async (slug) =>
@@ -43,21 +44,22 @@ export const generateMetadata = async ({ params }: MetadataProps): Promise<Metad
 
   const { data } = await getCachedPost(params.slug)
 
-  // TODO: Add more
   return {
     title: `${siteConfig.metaData.title} – ${data.post.title}`,
-    authors: { name: data.post.author }, // TODO: Add URL
+    authors: { name: data.post.author, url: `/autori/${slugify(data.post.author)}` },
     description: data.post.summary,
     keywords: data.post.tags,
     openGraph: {
       ...sharedOgMetadata,
       title: data.post.title,
-      images: [data.post.image],
+      images: [
+        data.post.image === '/no-picture.svg' ? siteConfig.metaData.ogImage : data.post.image,
+      ],
       url: `${siteConfig.baseURL}/${params.slug}`,
       type: 'article',
       publishedTime: data.post.date,
       tags: data.post.tags.split(', '),
-      // TODO: Section?
+      section: data.post.category,
     },
   }
 }
@@ -72,12 +74,7 @@ const BlogPostPage = async ({ params }) => {
   const post = await getCachedPost(params.slug)
   const authors = await client.queries.authorsConnection()
 
-  return (
-    <BlogPost
-      post={post}
-      authors={authors}
-    />
-  )
+  return <BlogPost post={post} authors={authors} />
 }
 
 export default BlogPostPage
