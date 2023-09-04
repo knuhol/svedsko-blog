@@ -7,7 +7,6 @@ import { BootstrapProvider } from '@/providers/BootstrapProvider'
 import siteConfig from '@/config/site.config.json'
 import { sharedOgMetadata } from '@/app/sharedOgMetadata'
 
-import '@/template/styles/bootstrap.scss'
 import '@/template/styles/globals.scss'
 
 export const metadata: Metadata = {
