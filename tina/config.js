@@ -207,11 +207,6 @@ const schema = defineSchema({
           type: 'image',
           label: 'Image',
           name: 'image',
-          ui: {
-            parse: (media) => `/uploads/${media.filename}`,
-            uploadDir: () => '/public/uploads/',
-            previewSrc: (fullSrc) => fullSrc.replace('/public', ''),
-          }
         },
         {
           type: 'rich-text',
