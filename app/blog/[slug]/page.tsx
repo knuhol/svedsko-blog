@@ -55,7 +55,7 @@ export const generateMetadata = async ({ params }: MetadataProps): Promise<Metad
       images: [
         data.post.image === '/no-picture.svg' ? siteConfig.metaData.ogImage : data.post.image,
       ],
-      url: `${siteConfig.baseURL}/${params.slug}`,
+      url: `${siteConfig.baseURL}/blog/${params.slug}`,
       type: 'article',
       publishedTime: data.post.date,
       tags: data.post.tags.split(', '),
