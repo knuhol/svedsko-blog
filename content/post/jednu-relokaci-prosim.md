@@ -9,7 +9,7 @@ tags:
   - úřady
 author: Knut Holm
 summary: Úřady v ČR, úřady ve Švédsku, hledání bytu, přihlášení energií, zřizování internetu, otevření bankovního účtu, přepis auta a lodě, mezinárodní pasy pro kocoury a spousta dalších formalit - z toho by se jeden zbláznil. Naštěstí ale existují společnosti, které se živí tím, že to všechno udělají za vás. Kde je najít, jak fungují a kolik si řeknou za svoji práci? Tak přesně o tom je tento článek.
-image: '/no-picture.svg'
+image: '/uploads/no-picture.svg'
 ---
 
 Úřady v ČR, úřady ve Švédsku, hledání bytu, přihlášení energií, zřizování internetu, otevření bankovního účtu, přepis auta a lodě, mezinárodní pasy pro kocoury a spousta dalších formalit - z toho by se jeden zbláznil. Naštěstí ale existují společnosti, které se živí tím, že to všechno udělají za vás. Kde je najít, jak fungují a kolik si řeknou za svoji práci? Tak přesně o tom je tento článek.

@@ -8,7 +8,7 @@ tags:
   - zajímavosti
 author: Knut Holm
 summary: Přestože jsem přečetl nespočet článků, knih, blogů a příspěvků na diskuzních fórech o Švédsku a životě v této zemi, našlo se několik věcí, o kterých se běžně v médiích nedočtete a které mě po příjezdu překvapily. Tak schválně, kolik jste toho znali vy a co vás nejvíce překvapilo? :-)
-image: '/no-picture.svg'
+image: '/uploads/no-picture.svg'
 ---
 
 Přestože jsem přečetl nespočet článků, knih, blogů a příspěvků na diskuzních fórech o Švédsku a životě v této zemi, našlo se několik věcí, o kterých se běžně v médiích nedočtete a které mě po příjezdu překvapily. Tak schválně, kolik jste toho znali vy a co vás nejvíce překvapilo? :-)

@@ -7,7 +7,7 @@ tags:
   - převody
 author: Knut Holm
 summary: Nejen při stěhování do zahraničí narazíte dříve nebo později na nutnost převádět peníze na účty vedené v jiné měně, než je koruna česká, případně opačně. Přestože si dnes za tuto službu již mnohé banky neúčtují absurdní poplatky tak, jak tomu bylo dříve, je to pro nás, jakožto pro zákazníky, pořád docela drahá sranda. V tomto článku se podíváme na to, proč tomu tak je, a také jak můžete na převodech ušetřit nemálo peněz.
-image: '/no-picture.svg'
+image: '/uploads/no-picture.svg'
 ---
 
 Nejen při stěhování do zahraničí narazíte dříve nebo později na nutnost převádět peníze na účty vedené v jiné měně, než je koruna česká, případně opačně. Přestože si dnes za tuto službu již mnohé banky neúčtují absurdní poplatky tak, jak tomu bylo dříve, je to pro nás, jakožto pro zákazníky, pořád docela drahá sranda. V tomto článku se podíváme na to, proč tomu tak je, a také jak můžete na převodech ušetřit nemálo peněz.
