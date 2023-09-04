@@ -2,7 +2,6 @@
 
 import { Layout } from '@/components/Layout'
 import { Home as HomeTemplate } from '@/template/components/Home'
-import { getTags } from '@/utils/getTags'
 import type { TinaAuthors, TinaPosts } from '@/types/tina'
 import { getGender } from '@/utils/getGender'
 
@@ -27,7 +26,7 @@ const Home = ({ posts, authors }: Props) => (
         frontMatter: {
           title: post.node.title,
           description: post.node.summary,
-          tags: getTags(post.node.tags),
+          tags: post.node.tags,
           author: post.node.author,
           date: post.node.date,
           image: post.node.image,

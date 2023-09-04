@@ -24,7 +24,7 @@ const BlogPost = ({ post, authors }: Props) => {
             title: `${postData.post.title}`,
             date: postData.post.date,
             author: postData.post.author,
-            tags: postData.post.tags.split(', '),
+            tags: postData.post.tags,
             image: postData.post.image,
             description: richTextBodyToString(postData.post.body),
             category: postData.post.category,

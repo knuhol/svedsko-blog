@@ -1,8 +1,12 @@
 ---
 title: Jednu relokaci, prosím!
-date: 2017-10-26
+date: 2017-10-26 15:35
 category: Odjezd z ČR
-tags: Švédsko, bydlení, relokace, úřady
+tags:
+  - Švédsko
+  - bydlení
+  - relokace
+  - úřady
 author: Knut Holm
 summary: Úřady v ČR, úřady ve Švédsku, hledání bytu, přihlášení energií, zřizování internetu, otevření bankovního účtu, přepis auta a lodě, mezinárodní pasy pro kocoury a spousta dalších formalit - z toho by se jeden zbláznil. Naštěstí ale existují společnosti, které se živí tím, že to všechno udělají za vás. Kde je najít, jak fungují a kolik si řeknou za svoji práci? Tak přesně o tom je tento článek.
 image: '/no-picture.svg'

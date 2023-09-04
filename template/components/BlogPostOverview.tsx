@@ -107,7 +107,7 @@ const BlogPostOverview = ({
             </Link>
           </li>
           <li className="list-inline-item mt-2 text-dark">•</li>
-          {tags.map((tag) => (
+          {tags?.map((tag) => (
             <li
               key={slugify(tag)}
               className={`list-inline-item small card-meta-tag ${
