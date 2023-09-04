@@ -27,7 +27,7 @@ Vlastnictví lodě je pro některé obyvatele zdroj zábavy, pro jiné nepostrad
 
 Pokud je Švédsko zemí pro provoz lodí naprosto typickou, pak mu jde jeho hlavní město příkladem. Stockholm, kterému se často přezdívá *Kráska na vodě* nebo *Benátky severu*, nedostal svá přízviska náhodou – rozkládá se na čtrnácti ostrovech, a tak vás zcela přirozeně přitahuje na palubu.
 
-A není to pouze Stockholm sám, ale také jeho souostroví, které je zároveň největším souostrovím celého Švédska. Kolem hlavního města se rozprostírá na 24 tisíc ostrovů a ostrůvků, z nichž většina je obydlených a tedy posetých nádhernými typicky červenými domečky. Život na ostrově má svá specifika, přičemž tím nejzásadnějším samozřejmě je, že pokud pomineme těch několik málo ostrovů, které jsou spojené s pevninou mosty nebo na kterých se nacházejí heliporty, dopravu tam zajišťují výhradně lodě. Většina lidí žijících na ostrovech tedy vlastní loď a naopak nevlastní auto, protože na většině ostrovů je provoz aut zakázán. Naopak na ty ostrovy, kde se auta provozovat smí, se velmi pohodlně dostanete přívozem, kterému se švédsky říká *linfärja*.
+A není to pouze Stockholm sám, ale také jeho souostroví, které je zároveň největším souostrovím celého Švédska. Kolem hlavního města se rozprostírá na 24 tisíc ostrovů a ostrůvků, z nichž většina je obydlených a tedy posetých nádhernými typicky červenými domečky. Život na ostrově má svá specifika, přičemž tím nejzásadnějším samozřejmě je, že pokud pomineme těch několik málo ostrovů, které jsou spojené s pevninou mosty nebo na kterých se nacházejí heliporty, dopravu tam zajišťují výhradně lodě. Většina lidí žijících na ostrovech tedy vlastní loď a naopak nevlastní auto, protože na většině ostrovů je provoz aut zakázán. Naopak na ty ostrovy, kde se auta provozovat smí, se velmi pohodlně dostanete přívozem, kterému se švédsky říká *färja*.
 
 ![Chalupa na ostrově s vlastní lodí](/uploads/posts/szlodi/szlodi_17.jpg)
 *Pokud bydlíte na ostrově, je vlastnictví lodě nutností*
@@ -100,10 +100,10 @@ Návod k použití lodí je až na platbu totožný s SL loďmi, a to včetně s
 
 ### Ostrovy neobsluhuje pouze společnost Vaxholmsbolaget
 
-Pokud nevíte, kam vyrazit jako první, doporučuji zvolit právě ostrov Vaxholm. Hned po připlutí si všimnete obrovské pevnosti *Vaxholm Kastell*, o které zanedlouho zjistíte, že se nachází na samostatném ostrově, přestože ji máte takřka na dosah ruky. Velice záhy se tak setkáte s dalším lodním dopravcem Färjerederiet spadající pod *Trafikverket*, což je švédský dopravní úřad, který mimo jiné například i vydává řidičské průkazy. Tento dopravce provozuje přívozy, tzv. *linfärja*, po celém Švédsku. Informace o lince na ostrov s pevností naleznete [zde](https://www.trafikverket.se/farjerederiet/farjeleder/Farjeleder-i-Stockholm213/kastelletleden/).
+Pokud nevíte, kam vyrazit jako první, doporučuji zvolit právě ostrov Vaxholm. Hned po připlutí si všimnete obrovské pevnosti *Vaxholm Kastell*, o které zanedlouho zjistíte, že se nachází na samostatném ostrově, přestože ji máte takřka na dosah ruky. Velice záhy se tak setkáte s dalším lodním dopravcem Färjerederiet spadající pod *Trafikverket*, což je švédský dopravní úřad, který mimo jiné například i vydává řidičské průkazy. Tento dopravce provozuje přívozy, tzv. *färja*, po celém Švédsku. Informace o lince na ostrov s pevností naleznete [zde](https://www.trafikverket.se/farjerederiet/farjeleder/Farjeleder-i-Stockholm213/kastelletleden/).
 
 ![Přívoz z Vaxholmu na Badholmen](/uploads/posts/szlodi/szlodi_3.jpg)
-*Přívoz (švédsky linfärja) z Vaxholmu na Badholmen jezdí v sezóně každých 15 minut*
+*Přívoz (švédsky färja) z Vaxholmu na Badholmen jezdí v sezóně každých 15 minut*
 
 Vaxholm je ostrovem velice populárním a plavby na něj realizuje celá řada společností, mimo jiné i již v tomto článku zmiňovaná společnost Strömma.
 
