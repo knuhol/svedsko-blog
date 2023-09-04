@@ -1,6 +1,6 @@
 ---
 title: 7 zajímavostí o švédských volbách
-date: 2018-10-17
+date: 2018-10-17 20:13
 category: Život ve Švédsku
 tags: Švédsko, volby, politika, zajímavosti
 author: Tereza Holm

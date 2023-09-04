@@ -8,30 +8,64 @@ const schema = defineSchema({
       path: 'content/author',
       fields: [
         {
-          name: 'body',
-          label: 'About author',
-          type: 'rich-text',
-          isBody: true,
-        },
-        {
           type: 'string',
           label: 'Name',
           name: 'name',
+          ui: {
+            validate: (value) => {
+              if (value === undefined || value.length === 0) {
+                return 'This field is mandatory'
+              }
+            },
+          }
         },
         {
-          type: 'string',
+          type: 'image',
           label: 'Image',
           name: 'image',
+          ui: {
+            validate: (value) => {
+              if (value === undefined || value.length === 0) {
+                return 'This field is mandatory'
+              }
+            },
+          }
+        },
+        {
+          type: 'datetime',
+          label: 'Last update',
+          name: 'lastUpdate',
+          ui: {
+            component: 'date',
+            dateFormat: 'YYYY-MM-DD',
+            timeFormat: 'HH:mm',
+          },
         },
         {
           type: 'string',
           label: 'Gender',
           name: 'gender',
+          ui: {
+            component: 'select',
+            options: ['male', 'female'],
+            validate: (value) => {
+              if (value === undefined || value.length === 0) {
+                return 'This field is mandatory'
+              }
+            },
+          },
         },
         {
           type: 'string',
           label: 'Summary',
           name: 'summary',
+          ui: {
+            validate: (value) => {
+              if (value === undefined || value.length === 0) {
+                return 'This field is mandatory'
+              }
+            },
+          }
         },
         {
           type: 'string',
@@ -58,11 +92,25 @@ const schema = defineSchema({
           label: 'Web',
           name: 'web',
         },
+        {
+          name: 'body',
+          label: 'About author',
+          type: 'rich-text',
+          isBody: true,
+          ui: {
+            validate: (value) => {
+              if (value === undefined || value.length === 0) {
+                return 'This field is mandatory'
+              }
+            },
+          }
+        },
       ],
       ui: {
         router: ({ document }) => {
           return `/autori/${document._sys.filename}`
         },
+        beforeSubmit: ({ values }) => ({ ...values, lastUpdate: new Date().toISOString() }),
       },
     },
     {
@@ -74,34 +122,83 @@ const schema = defineSchema({
           type: 'string',
           label: 'Title',
           name: 'title',
+          ui: {
+            validate: (value) => {
+              if (value === undefined || value.length === 0) {
+                return 'This field is mandatory'
+              }
+            },
+          },
         },
         {
           type: 'datetime',
           label: 'Date',
           name: 'date',
+          ui: {
+            component: 'date',
+            dateFormat: 'YYYY-MM-DD',
+            timeFormat: 'HH:mm',
+          },
+        },
+        {
+          type: 'datetime',
+          label: 'Last update',
+          name: 'lastUpdate',
+          ui: {
+            component: 'date',
+            dateFormat: 'YYYY-MM-DD',
+            timeFormat: 'HH:mm',
+          },
         },
         {
           type: 'string',
           label: 'Category',
           name: 'category',
+          validate: (value) => {
+            if (value === undefined || value.length === 0) {
+              return 'This field is mandatory'
+            }
+          },
         },
         {
           type: 'string',
           label: 'Tags',
-          name: 'tags',
+          name: 'tags', // TODO: Convert to list
+          validate: (value) => {
+            if (value === undefined || value.length === 0) {
+              return 'This field is mandatory'
+            }
+          },
         },
         {
           type: 'string',
           label: 'Author',
           name: 'author',
+          ui: {
+            component: 'select',
+            options: ['Knut Holm', 'Tereza Holm'],
+            validate: (value) => {
+              if (value === undefined || value.length === 0) {
+                return 'This field is mandatory'
+              }
+            },
+          },
         },
         {
           type: 'string',
           label: 'Summary',
           name: 'summary',
+          ui: {
+            component: 'textarea',
+            validate: (value) => {
+              if (value === undefined || value.length === 0) {
+                return 'This field is mandatory'
+              }
+            },
+          },
         },
         {
-          type: 'string',
+          type: 'image',
           label: 'Image',
           name: 'image',
         },
@@ -110,12 +207,32 @@ const schema = defineSchema({
           label: 'Blog Post Body',
           name: 'body',
           isBody: true,
+          ui: {
+            validate: (value) => {
+              if (value === undefined || value.length === 0) {
+                return 'This field is mandatory'
+              }
+            },
+          }
         },
       ],
       ui: {
         router: ({ document }) => {
           return `/blog/${document._sys.filename}`
         },
+        beforeSubmit: ({ values, form }) =>
+          form.crudType === 'create'
+            ? {
+                ...values,
+                date: new Date().toISOString(),
+                lastUpdate: new Date().toISOString(),
+                image: values.image === undefined ? '/no-picture.svg' : values.image,
+              }
+            : {
+                ...values,
+                lastUpdate: new Date().toISOString(),
+                image: values.image === undefined ? '/no-picture.svg' : values.image,
+              },
       },
     },
   ],

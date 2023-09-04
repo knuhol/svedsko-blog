@@ -1,6 +1,6 @@
 ---
 title: Moje cesta za změnou profese aneb z učitelky softwarovým testerem
-date: 2019-03-31T00:00:00.000Z
+date: 2019-03-31 21:55
 category: Život ve Švédsku
 tags: 'Švédsko, práce'
 author: Tereza Holm

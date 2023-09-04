@@ -1,6 +1,6 @@
 ---
 title: Road trip po severním Švédsku
-date: 2020-07-21
+date: 2020-07-21 19:32
 category: Turistika
 tags: národní park, příroda, Švédsko, turistika, auta, sever 
 author: Knut Holm

@@ -1,6 +1,6 @@
 ---
 title: Stockholm z lodi
-date: 2018-06-05T00:00:00.000Z
+date: 2018-06-05 21:13
 category: Tipy pro turisty
 tags: 'lodě, Stockholm, Švédsko, turistika'
 author: Knut Holm

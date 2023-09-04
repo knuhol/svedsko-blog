@@ -1,6 +1,6 @@
 ---
 title: Pohádka o tom, kterak jsme k nové adrese přišli
-date: 2017-11-07
+date: 2017-11-07 09:51
 category: Odjezd z ČR
 tags: bydlení, relokace, Švédsko, Stockholm, stěhování
 author: Knut Holm

@@ -1,6 +1,6 @@
 ---
 title: 10 věcí, které jsem o Švédsku nevěděl a které mě překvapily
-date: 2018-01-21
+date: 2018-01-21 19:08
 category: Život ve Švédsku
 tags: Švédsko, životní styl, zajímavosti
 author: Knut Holm

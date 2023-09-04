@@ -1,6 +1,6 @@
 ---
 title: Poprvé ve švédském národním parku
-date: 2018-02-26
+date: 2018-02-26 21:45
 category: Turistika
 tags: příroda, Švédsko, turistika, národní park
 author: Knut Holm

@@ -1,6 +1,6 @@
 ---
 title: Měsíc výpovědí
-date: 2017-10-17
+date: 2017-10-17 13:59
 category: Odjezd z ČR
 tags: Česko, práce, výpověď, úřady
 slug: mesic-vypovedi

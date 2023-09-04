@@ -1,6 +1,6 @@
 ---
 title: Mňau, já jedu taky
-date: 2017-11-28
+date: 2017-11-28 11:38
 category: Odjezd z ČR
 tags: stěhování, kocouři, auta, lodě, Česko, úřady
 author: Knut Holm

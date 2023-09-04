@@ -1,6 +1,6 @@
 ---
 title: Když na Švédy přijde jaro
-date: 2018-04-14
+date: 2018-04-14 23:02
 category: Život ve Švédsku
 tags: Švédsko, Stockholm, příroda, životní styl, zajímavosti
 author: Knut Holm

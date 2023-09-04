@@ -1,6 +1,6 @@
 ---
 title: Ostrovan tvrdý chleba má
-date: 2019-10-01T00:00:00.000Z
+date: 2019-10-01 20:48
 category: Život ve Švédsku
 tags: 'Švédsko, Stockholm, bydlení, ostrov, lodě'
 author: Knut Holm

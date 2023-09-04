@@ -1,6 +1,6 @@
 ---
 title: Jak ušetřit na převodu peněz do zahraničí
-date: 2017-12-12
+date: 2017-12-12 13:09
 category: Služby
 tags: platby, převody
 author: Knut Holm

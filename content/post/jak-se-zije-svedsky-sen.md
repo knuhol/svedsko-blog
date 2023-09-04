@@ -1,6 +1,6 @@
 ---
 title: Jak se žije švédský sen
-date: 2019-09-30
+date: 2019-09-30 20:03
 category: Život ve Švédsku
 tags: Švédsko, Stockholm, bydlení, ostrov, stěhování
 author: Knut Holm

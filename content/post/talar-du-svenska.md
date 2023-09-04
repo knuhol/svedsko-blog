@@ -1,6 +1,6 @@
 ---
 title: Talar du svenska?
-date: 2018-04-06T21:18:00.000Z
+date: 2018-04-06 23:18
 category: Život ve Švédsku
 tags: švédština, Švédsko, životní styl
 author: Knut Holm

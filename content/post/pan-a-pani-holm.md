@@ -1,6 +1,6 @@
 ---
 title: Pan a paní Holm
-date: 2018-07-11
+date: 2018-07-11 21:16
 category: Odjezd z ČR
 tags:  úřady, doklady, Česko
 author: Knut Holm

@@ -1,6 +1,6 @@
 ---
 title: Hledání bydlení ve Švédsku
-date: 2019-07-15
+date: 2019-07-15 17:14
 category: Život ve Švédsku
 tags: Švédsko, bydlení
 author: Knut Holm

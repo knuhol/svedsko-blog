@@ -1,6 +1,6 @@
 ---
 title: Jednu relokaci, prosím!
-date: 2017-10-26
+date: 2017-10-26 15:35
 category: Odjezd z ČR
 tags: Švédsko, bydlení, relokace, úřady
 author: Knut Holm

@@ -1,6 +1,6 @@
 ---
 title: Odjezd a příjezd
-date: 2018-01-13
+date: 2018-01-13 21:17
 category: Odjezd z ČR
 tags: stěhování, auta, lodě, Švédsko, Česko
 author: Knut Holm
