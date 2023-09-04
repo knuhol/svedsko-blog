@@ -17,7 +17,7 @@ const schema = defineSchema({
                 return 'This field is mandatory'
               }
             },
-          }
+          },
         },
         {
           type: 'image',
@@ -29,7 +29,7 @@ const schema = defineSchema({
                 return 'This field is mandatory'
               }
             },
-          }
+          },
         },
         {
           type: 'datetime',
@@ -65,7 +65,7 @@ const schema = defineSchema({
                 return 'This field is mandatory'
               }
             },
-          }
+          },
         },
         {
           type: 'string',
@@ -103,7 +103,7 @@ const schema = defineSchema({
                 return 'This field is mandatory'
               }
             },
-          }
+          },
         },
       ],
       ui: {
@@ -154,20 +154,24 @@ const schema = defineSchema({
           type: 'string',
           label: 'Category',
           name: 'category',
-          validate: (value) => {
-            if (value === undefined || value.length === 0) {
-              return 'This field is mandatory'
-            }
+          ui: {
+            validate: (value) => {
+              if (value === undefined || value.length === 0) {
+                return 'This field is mandatory'
+              }
+            },
           },
         },
         {
           type: 'string',
           label: 'Tags',
           name: 'tags', // TODO: Convert to list
-          validate: (value) => {
-            if (value === undefined || value.length === 0) {
-              return 'This field is mandatory'
-            }
+          ui: {
+            validate: (value) => {
+              if (value === undefined || value.length === 0) {
+                return 'This field is mandatory'
+              }
+            },
           },
         },
         {
@@ -213,7 +217,7 @@ const schema = defineSchema({
                 return 'This field is mandatory'
               }
             },
-          }
+          },
         },
       ],
       ui: {
