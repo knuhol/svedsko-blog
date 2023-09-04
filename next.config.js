@@ -105,6 +105,11 @@ module.exports = {
         permanent: true,
       },
       {
+        source: '/index.html',
+        destination: '/',
+        permanent: true,
+      },
+      {
         source: '/index2.html',
         destination: '/blog/stranka/2',
         permanent: true,
