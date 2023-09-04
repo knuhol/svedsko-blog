@@ -3,6 +3,7 @@
 import type { TinaPosts } from '@/types/tina'
 import { Layout } from '@/components/Layout'
 import { Archive as ArchiveTemplate } from '@/template/components/Archive'
+import { getTags } from '@/utils/getTags'
 
 interface Props {
   posts: TinaPosts
@@ -17,7 +18,7 @@ const Archive = ({ posts }: Props) => (
         frontMatter: {
           title: post.node.title,
           description: post.node.summary,
-          tags: post.node.tags,
+          tags: getTags(post.node.tags),
           author: post.node.author,
           date: post.node.date,
           image: post.node.image,

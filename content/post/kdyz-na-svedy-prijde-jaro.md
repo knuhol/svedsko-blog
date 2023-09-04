@@ -1,13 +1,8 @@
 ---
 title: Když na Švédy přijde jaro
-date: 2018-04-14 23:02
+date: 2018-04-14
 category: Život ve Švédsku
-tags:
-  - Švédsko
-  - Stockholm
-  - příroda
-  - životní styl
-  - zajímavosti
+tags: Švédsko, Stockholm, příroda, životní styl, zajímavosti
 author: Knut Holm
 summary: >-
   Počasí. Nesmrtelné téma všech small talků ve výtahu a vděčný icebreaker na

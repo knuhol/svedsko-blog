@@ -1,13 +1,8 @@
 ---
 title: Ostrovan tvrdý chleba má
-date: 2019-10-01 20:48
+date: 2019-10-01T00:00:00.000Z
 category: Život ve Švédsku
-tags: 
-  - Švédsko
-  - Stockholm
-  - bydlení
-  - ostrov
-  - lodě'
+tags: 'Švédsko, Stockholm, bydlení, ostrov, lodě'
 author: Knut Holm
 summary: >-
   Typický švédský domek s prostornou terasou a velkou zahradou, písečná pláž dvě
