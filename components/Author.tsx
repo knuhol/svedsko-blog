@@ -4,6 +4,7 @@ import { Layout } from '@/components/Layout'
 import type { TinaAuthor, TinaPosts } from '@/types/tina'
 import { getGender } from '@/utils/getGender'
 import { Author as AuthorTemplate } from '@/template/components/Author'
+import { getTags } from '@/utils/getTags'
 import { useTina } from 'tinacms/dist/react'
 
 interface Props {
@@ -38,7 +39,7 @@ const Author = ({ author, posts }: Props) => {
           frontMatter: {
             title: post.node.title,
             description: post.node.summary,
-            tags: post.node.tags,
+            tags: getTags(post.node.tags),
             author: post.node.author,
             date: post.node.date,
             image: post.node.image,

@@ -3,6 +3,7 @@
 import type { TinaAuthors, TinaPosts } from '@/types/tina'
 import { Layout } from '@/components/Layout'
 import { Posts } from '@/template/components/Posts'
+import { getTags } from '@/utils/getTags'
 import { TagMaps } from '@/app/tagSlugs'
 import { getGender } from '@/utils/getGender'
 
@@ -25,7 +26,7 @@ const Tag = ({ posts, tag, authors, slugToTagMap }: Props) => {
           frontMatter: {
             title: post.node.title,
             description: post.node.summary,
-            tags: post.node.tags,
+            tags: getTags(post.node.tags),
             author: post.node.author,
             date: post.node.date,
             image: post.node.image,

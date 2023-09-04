@@ -4,6 +4,7 @@ import type { TinaAuthors, TinaPosts } from '@/types/tina'
 import { Layout } from '@/components/Layout'
 import { Blog as BlogTemplate } from '@/template/components/Blog'
 import { getGender } from '@/utils/getGender'
+import { getTags } from '@/utils/getTags'
 
 interface Props {
   posts: TinaPosts['data']['postConnection']['edges']
@@ -28,7 +29,7 @@ const Blog = ({ posts, authors, numberOfPages, currentPage }: Props) => (
         frontMatter: {
           title: post.node.title,
           description: post.node.summary,
-          tags: post.node.tags,
+          tags: getTags(post.node.tags),
           author: post.node.author,
           date: post.node.date,
           image: post.node.image,
