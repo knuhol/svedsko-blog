@@ -1,8 +1,14 @@
 ---
 title: Road trip po severním Švédsku
-date: 2020-07-21
+date: 2020-07-21 19:32
 category: Turistika
-tags: národní park, příroda, Švédsko, turistika, auta, sever 
+tags:
+  - národní park
+  - příroda
+  - Švédsko
+  - turistika
+  - auta
+  - sever 
 author: Knut Holm
 summary: Před třemi dny jsme se vrátili z dovolené, která původně neměla být pouze náhradním plánem, později se jím však stala a nakonec jsme tento náhradní plán i realizovali. Stále ještě plný dojmů tak píšu tento článek - částečně jako vzpomínku na naprosto úžasné zážitky, ale hlavně se chci podělit o tipy a zkušenosti, které jsme během cesty posbírali. Kdo ví, třeba někoho z vás brzy zavane vítr k nám na sever a budou se vám hodit!
 image: /uploads/posts/road-trip/road_trip_14.jpg
