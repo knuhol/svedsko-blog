@@ -1,6 +1,5 @@
 import { defineConfig, defineSchema } from 'tinacms'
 
-// TODO: Change to required fields instead of custom validation
 // TODO: Add support for <pre> tag
 const schema = defineSchema({
   collections: [
@@ -62,6 +61,7 @@ const schema = defineSchema({
           label: 'Summary',
           name: 'summary',
           ui: {
+            component: 'textarea',
             validate: (value) => {
               if (value === undefined || value.length === 0) {
                 return 'This field is mandatory'
@@ -101,7 +101,7 @@ const schema = defineSchema({
           isBody: true,
           ui: {
             validate: (value) => {
-              if (value === undefined || value.length === 0) {
+              if (value === undefined || value.children[0]?.children[0]?.text === '') {
                 return 'This field is mandatory'
               }
             },
@@ -217,7 +217,7 @@ const schema = defineSchema({
           isBody: true,
           ui: {
             validate: (value) => {
-              if (value === undefined || value.length === 0) {
+              if (value === undefined || value.children[0]?.children[0]?.text === '') {
                 return 'This field is mandatory'
               }
             },
