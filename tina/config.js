@@ -234,12 +234,12 @@ const schema = defineSchema({
                 ...values,
                 date: new Date().toISOString(),
                 lastUpdate: new Date().toISOString(),
-                image: values.image === undefined ? '/no-picture.svg' : values.image,
+                image: values.image === undefined ? '/uploads/no-picture.svg' : values.image,
               }
             : {
                 ...values,
                 lastUpdate: new Date().toISOString(),
-                image: values.image === undefined ? '/no-picture.svg' : values.image,
+                image: values.image === undefined ? '/uploads/no-picture.svg' : values.image,
               },
       },
     },

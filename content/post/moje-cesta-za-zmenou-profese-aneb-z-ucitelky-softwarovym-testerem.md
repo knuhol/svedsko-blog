@@ -11,7 +11,7 @@ summary: >-
   sem – na začátku stál geniální a detailní plán, který se ale hned v úvodu
   příšerně pokazil a následovala jedna improvizace za druhou – a nakonec to
   vlastně všechno dopadlo nad očekávání dobře.
-image: /no-picture.svg
+image: /uploads/no-picture.svg
 ---
 
 Cesta za mojí prací ve Švédsku probíhala v podstatě totožně jako [náš příjezd sem](/blog/odjezd-a-prijezd) – na začátku stál geniální a detailní plán, který se ale hned v úvodu příšerně pokazil a následovala jedna improvizace za druhou – a nakonec to vlastně všechno dopadlo nad očekávání dobře.

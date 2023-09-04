@@ -10,7 +10,7 @@ tags:
 slug: mesic-vypovedi
 author: Knut Holm
 summary: Před stěhováním do zahraničí je třeba vypovědět celou řadu smluv, což obnáší vše si dobře naplánovat a zejména si pohlídat výpovědní lhůty. Prodírání se stohy právnických textů není zrovna zábavná činnost a samotné podávání výpovědí většinou doprovází trocha té nostalgie. Přesto je to třeba udělat. Pojďme si trochu říct o tom, kde všude.
-image: '/no-picture.svg'
+image: '/uploads/no-picture.svg'
 ---
 
 Před stěhováním do zahraničí je třeba vypovědět celou řadu smluv, což obnáší vše si dobře naplánovat a zejména si pohlídat výpovědní lhůty. Prodírání se stohy právnických textů není zrovna zábavná činnost a samotné podávání výpovědí většinou doprovází trocha té nostalgie. Přesto je to třeba udělat. Pojďme si trochu říct o tom, kde všude.
