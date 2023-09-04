@@ -1,5 +1,7 @@
 import { defineConfig, defineSchema } from 'tinacms'
 
+// TODO: Change to required fields instead of custom validation
+// TODO: Add support for <pre> tag
 const schema = defineSchema({
   collections: [
     {
