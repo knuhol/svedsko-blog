@@ -165,11 +165,13 @@ const schema = defineSchema({
         {
           type: 'string',
           label: 'Tags',
-          name: 'tags', // TODO: Convert to list
+          name: 'tags',
+          list: true,
           ui: {
+            component: 'tags',
             validate: (value) => {
               if (value === undefined || value.length === 0) {
-                return 'This field is mandatory'
+                return 'You need to add at least one tag'
               }
             },
           },

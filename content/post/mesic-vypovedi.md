@@ -2,7 +2,11 @@
 title: Měsíc výpovědí
 date: 2017-10-17 13:59
 category: Odjezd z ČR
-tags: Česko, práce, výpověď, úřady
+tags:
+  - Česko
+  - práce
+  - výpověď
+  - úřady
 slug: mesic-vypovedi
 author: Knut Holm
 summary: Před stěhováním do zahraničí je třeba vypovědět celou řadu smluv, což obnáší vše si dobře naplánovat a zejména si pohlídat výpovědní lhůty. Prodírání se stohy právnických textů není zrovna zábavná činnost a samotné podávání výpovědí většinou doprovází trocha té nostalgie. Přesto je to třeba udělat. Pojďme si trochu říct o tom, kde všude.

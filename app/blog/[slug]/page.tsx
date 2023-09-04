@@ -58,7 +58,7 @@ export const generateMetadata = async ({ params }: MetadataProps): Promise<Metad
       url: `${siteConfig.baseURL}/blog/${params.slug}`,
       type: 'article',
       publishedTime: data.post.date,
-      tags: data.post.tags.split(', '),
+      tags: data.post.tags,
       section: data.post.category,
       description: data.post.summary
     },

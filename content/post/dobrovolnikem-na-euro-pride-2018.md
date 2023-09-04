@@ -2,7 +2,12 @@
 title: Dobrovolníkem na Euro Pride 2018
 date: 2018-08-11 14:46
 category: Život ve Švédsku
-tags: LGBT, pride, dobrovolnictví, Švédsko, Stockholm 
+tags:
+  - LGBT
+  - pride
+  - dobrovolnictví
+  - Švédsko
+  - Stockholm 
 author: Knut Holm
 summary: >-
   „Budeme dělat dobrovolníky na Pride ve Stockholmu,“ začali jsme říkat někdy na
