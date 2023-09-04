@@ -152,7 +152,7 @@ const BlogPost = ({
               <TinaMarkdown content={content} />
             </div>
             <ul className="post-meta-tag list-unstyled list-inline mt-3">
-              {tags.map((tag) => (
+              {tags?.map((tag) => (
                 <li
                   key={slugify(tag)}
                   className={`list-inline-item mt-2 ${

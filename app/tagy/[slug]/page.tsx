@@ -4,7 +4,6 @@ import type { Metadata } from 'next'
 import { createTagMaps } from '@/app/tagSlugs'
 import { client } from '@/tina/__generated__/client'
 import { Tag } from '@/components/Tag'
-import { getTags } from '@/utils/getTags'
 import siteConfig from '@/config/site.config.json'
 
 export const generateStaticParams = async () => {
@@ -46,7 +45,7 @@ const TagPage = async ({ params }) => {
     <Tag
       authors={authors}
       posts={posts.data.postConnection.edges.filter(({ node }) =>
-        getTags(node.tags).includes(slugToTagMap[params.slug]),
+        node.tags.includes(slugToTagMap[params.slug]),
       )}
       tag={slugToTagMap[params.slug]}
       slugToTagMap={slugToTagMap}
