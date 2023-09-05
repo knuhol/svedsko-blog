@@ -38,8 +38,6 @@ const BlogPost = ({
   authors,
 }: Props) => {
   let pageUrl = `${siteConfig.baseURL.replace(/\/$|$/, '/')}blog/${slug}`
-  // @ts-ignore
-  // @ts-ignore
   return (
     <section className="section-sm pb-0">
       <div className="container">

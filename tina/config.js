@@ -1,6 +1,5 @@
 import { defineConfig, defineSchema } from 'tinacms'
 
-// TODO: Add support for <sup> tag
 const schema = defineSchema({
   collections: [
     {
