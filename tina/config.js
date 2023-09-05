@@ -1,6 +1,6 @@
 import { defineConfig, defineSchema } from 'tinacms'
 
-// TODO: Add support for <pre> tag
+// TODO: Add support for <sup> tag
 const schema = defineSchema({
   collections: [
     {
@@ -119,6 +119,7 @@ const schema = defineSchema({
       label: 'Blog Posts',
       name: 'post',
       path: 'content/post',
+      format: 'mdx',
       fields: [
         {
           type: 'string',
@@ -222,6 +223,13 @@ const schema = defineSchema({
               }
             },
           },
+          templates: [
+            {
+              name: 'sup',
+              label: 'sup',
+              fields: [{ name: 'text', label: 'text', type: 'string' }],
+            },
+          ],
         },
       ],
       ui: {

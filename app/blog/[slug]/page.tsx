@@ -11,7 +11,7 @@ import { slugify } from '@/utils/slugify'
 const getCachedPost = cache(
   async (slug) =>
     await client.queries.post({
-      relativePath: slug + '.md',
+      relativePath: slug + '.mdx',
     }),
 )
 

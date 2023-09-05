@@ -38,6 +38,8 @@ const BlogPost = ({
   authors,
 }: Props) => {
   let pageUrl = `${siteConfig.baseURL.replace(/\/$|$/, '/')}blog/${slug}`
+  // @ts-ignore
+  // @ts-ignore
   return (
     <section className="section-sm pb-0">
       <div className="container">
@@ -149,7 +151,13 @@ const BlogPost = ({
           </div>
           <div className="col-lg-8 post-content-block order-0 order-lg-2">
             <div className="content">
-              <TinaMarkdown content={content} />
+              <TinaMarkdown
+                content={content}
+                components={{
+                  // @ts-ignore bug in Tina
+                  sup: ({ text }) => <sup>{text}</sup>,
+                }}
+              />
             </div>
             <ul className="post-meta-tag list-unstyled list-inline mt-3">
               {tags?.map((tag) => (
