@@ -491,9 +491,9 @@ ol {
 
   // image & figure style
   img {
+    display: block;
     max-width: 100%;
     height: auto;
-    display: inline-block;
     margin-bottom: 20px;
     @extend .rounded;
   }
