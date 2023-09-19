@@ -2,6 +2,7 @@ import { type ReactNode } from 'react'
 import { Metadata } from 'next'
 import { Crete_Round, Work_Sans } from 'next/font/google'
 import Script from 'next/script'
+import { Analytics } from '@vercel/analytics/react'
 
 import { BootstrapProvider } from '@/providers/BootstrapProvider'
 import siteConfig from '@/config/site.config.json'
@@ -60,6 +61,7 @@ const RootLayout = async ({ children }: { children: ReactNode }) => {
       </head>
       <body>
         <BootstrapProvider>{children}</BootstrapProvider>
+        <Analytics />
       </body>
     </html>
   )
