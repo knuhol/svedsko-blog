@@ -1,6 +1,7 @@
 ---
 name: Knut Holm
 image: /uploads/authors/knut-holm.jpg
+lastUpdate: 2023-10-06T09:18:41.970Z
 gender: male
 summary: Softwarový vývojář a potápěč žijící šestým rokem ve Švédsku.
 facebook: 'https://www.facebook.com/knuhol'
