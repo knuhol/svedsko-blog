@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "@tinacms/cli": "1.5.31",
-    "@types/node": "20.8.6",
+    "@types/node": "20.8.9",
     "eslint": "8.52.0",
     "eslint-config-next": "13.5.6"
   }
