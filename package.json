@@ -18,7 +18,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "sass": "1.69.5",
-    "tinacms": "1.5.24"
+    "tinacms": "1.5.25"
   },
   "devDependencies": {
     "@tinacms/cli": "1.5.31",
