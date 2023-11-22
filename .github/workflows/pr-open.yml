@@ -12,12 +12,13 @@ jobs:
     strategy:
       matrix:
         node: ["20"]
-    name: Node ${{ matrix.node }} sample
+    name: Build project with Node ${{ matrix.node }}
     steps:
       - uses: actions/checkout@v4
       - name: Setup node
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node }}
+      - run: corepack enable
       - run: yarn install
       - run: yarn build
