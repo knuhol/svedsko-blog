@@ -3637,21 +3637,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tabler/icons-react@npm:3.17.0":
-  version: 3.17.0
-  resolution: "@tabler/icons-react@npm:3.17.0"
+"@tabler/icons-react@npm:3.36.1":
+  version: 3.36.1
+  resolution: "@tabler/icons-react@npm:3.36.1"
   dependencies:
-    "@tabler/icons": "npm:3.17.0"
+    "@tabler/icons": "npm:"
   peerDependencies:
     react: ">= 16"
-  checksum: 10c0/08cb76738b7a8c802f140c40c7fbe57eb0e2e46872fe7563574f653300cd0d719f3e2842b727e4bf0e33eabccdbecf6f8e2a20a7a6459fec7d0f7a3a3d897da6
+  checksum: 10c0/325dd0c7a780ec4713a93790b15517dc176af5778c36c49e1fe586113040d2e71330aa85aa9f5900cbae0fe0b78f69016ba73b4b490783c9b7292215f29c686a
   languageName: node
   linkType: hard
 
-"@tabler/icons@npm:3.17.0":
-  version: 3.17.0
-  resolution: "@tabler/icons@npm:3.17.0"
-  checksum: 10c0/262ffe9b78260f9e4ffd13c9ef441afb29169cf73750bf5395458e1d6ac5ef61c4214fd4586b36710f3194088cc04cf55a4dd9a9c5acc7e23210af7d83ed022f
+"@tabler/icons@npm:":
+  version: 3.36.1
+  resolution: "@tabler/icons@npm:3.36.1"
+  checksum: 10c0/3201b3ccace5756ba9e840ece3922718165b820f760b7bc01bcab21bf7d6fed5da6e876ea9e1155ed498d8eb008e3ac3308b270c402d744014dafad20d99534c
   languageName: node
   linkType: hard
 
@@ -12655,7 +12655,7 @@ __metadata:
   resolution: "starter-basic@workspace:."
   dependencies:
     "@popperjs/core": "npm:2.11.8"
-    "@tabler/icons-react": "npm:3.17.0"
+    "@tabler/icons-react": "npm:3.36.1"
     "@tinacms/cli": "npm:1.6.0"
     "@types/node": "npm:20.16.1"
     "@vercel/analytics": "npm:1.3.1"
